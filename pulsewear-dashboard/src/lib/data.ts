@@ -27,6 +27,16 @@ export interface SummaryStats {
   active_themes: number;
 }
 
+export interface AccountProfile {
+  initials: string;
+  name: string;
+  role: string;
+  email: string;
+  team: string;
+  location: string;
+  plan: string;
+}
+
 export interface MonthlyDataPoint {
   month: string;        // e.g. "Mar 2024"
   month_short: string;  // e.g. "Mar"
@@ -49,6 +59,16 @@ export const summaryStats: SummaryStats = {
   positive_pct: 62,
   negative_pct: 38,
   active_themes: 10
+};
+
+export const accountProfile: AccountProfile = {
+  initials: 'EB',
+  name: 'Ethan Brooks',
+  role: 'Product Insights Lead',
+  email: 'ethan.brooks@pulsewearlabs.com',
+  team: 'Customer Feedback Intelligence',
+  location: 'Boston, MA',
+  plan: 'Admin access'
 };
 
 // ── Themes (10 clusters) ──────────────────────────────────────

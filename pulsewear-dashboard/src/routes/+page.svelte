@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { goto } from '$app/navigation';
   import { monthlyTrends, themes, type MonthlyDataPoint } from '$lib/data';
   import PageHeader from '$lib/components/PageHeader.svelte';
 
@@ -317,6 +318,10 @@
     if (legendHover    !== null) return tier === legendHover    ? 1 : 0.15;
     if (bubbleHover    !== null) return bubbleHover === i       ? 1 : 0.15;
     return 1;
+  }
+
+  function openCluster(clusterId: number) {
+    goto(`/feedback?cluster=${clusterId}`);
   }
 </script>
 
@@ -659,7 +664,7 @@
           <g class="bubble-group"
             style={`opacity:${bubbleOpacity(i)}; transition: opacity 0.22s ease`}
             onmouseenter={() => bubbleHover = i}
-            onclick={(e) => { e.stopPropagation(); bubbleSelected = bubbleSelected === i ? null : i; }}>
+            onclick={(e) => { e.stopPropagation(); openCluster(b.cluster_id); }}>
             <circle cx={b.cx} cy={b.cy} r={b.r}
               fill={`url(#bg${i})`}
               stroke={b.color}

@@ -14,6 +14,7 @@
   {sidebarExpanded}
   ontoggle={() => sidebarExpanded = !sidebarExpanded}
   onchatToggle={() => chatOpen = !chatOpen}
+  onchatClose={() => chatOpen = false}
   {chatOpen}
 />
 

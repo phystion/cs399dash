@@ -1,7 +1,7 @@
 <script lang="ts">
-  interface Message {
-    role: 'user' | 'assistant';
-    content: string;
+  import { popupStarters, resolveAssistantReply, type AssistantMessage } from '$lib/chat/engine';
+
+  interface Message extends AssistantMessage {
     ts: string;
   }
 
@@ -18,11 +18,7 @@
   let error    = $state<string | null>(null);
   let chatBottom: HTMLDivElement | undefined = $state();
 
-  const starters = [
-    'Top 3 priorities?',
-    'Battery & Connectivity summary',
-    'Data Security status',
-  ];
+  const starters = popupStarters;
 
   function now() {
     return new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
@@ -32,50 +28,36 @@
     setTimeout(() => chatBottom?.scrollIntoView({ behavior: 'smooth' }), 50);
   }
 
-  async function send() {
-    const text = input.trim();
+  async function send(textOverride?: string) {
+    const text = (textOverride ?? input).trim();
     if (!text || loading) return;
     input   = '';
     error   = null;
     loading = true;
 
-    messages = [...messages, { role: 'user', content: text, ts: now() }];
+    const userMessage: Message = { role: 'user', content: text, ts: now() };
+    const nextMessages: Message[] = [...messages, userMessage];
+    messages = nextMessages;
     scrollBottom();
 
     try {
-      const res = await fetch('http://localhost:8000/chat', {
-        method:  'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body:    JSON.stringify({
-          messages: messages.map(m => ({ role: m.role, content: m.content }))
-        }),
-        signal: AbortSignal.timeout(15_000),
-      });
-
-      if (!res.ok) {
-        const body = await res.text();
-        throw new Error(`Server ${res.status}: ${body.slice(0, 120)}`);
-      }
-
-      const data = await res.json();
+      const data = await resolveAssistantReply(
+        nextMessages.map(({ role, content }): AssistantMessage => ({ role, content }))
+      );
       const reply: string = data.reply ?? '(no reply)';
+      const assistantMessage: Message = { role: 'assistant', content: reply, ts: now() };
 
-      messages = [...messages, { role: 'assistant', content: reply, ts: now() }];
+      messages = [...nextMessages, assistantMessage];
       scrollBottom();
     } catch (e: unknown) {
-      const msg = e instanceof Error ? e.message : String(e);
-      if (msg.includes('Failed to fetch') || msg.includes('NetworkError') || msg.includes('fetch')) {
-        error = 'Backend offline. Start FastAPI: uvicorn main:app --reload --port 8000';
-      } else {
-        error = msg;
-      }
+      error = e instanceof Error ? e.message : String(e);
     }
 
     loading = false;
   }
 
   function useStarter(s: string) {
-    input = s;
+    void send(s);
   }
 
   function handleKeydown(e: KeyboardEvent) {
@@ -87,7 +69,7 @@
 </script>
 
 {#if open}
-  <div class="chat-panel" role="dialog" aria-label="AI Assistant">
+  <div class="chat-panel" role="dialog" aria-label="Feedback assistant">
     <!-- Header -->
     <div class="panel-header">
       <div class="header-left">
@@ -95,9 +77,9 @@
              stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
           <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
         </svg>
-        <span class="panel-title">AI Assistant</span>
+        <span class="panel-title">Assistant</span>
       </div>
-      <button class="close-btn" onclick={onclose} aria-label="Close AI Assistant">
+      <button class="close-btn" onclick={onclose} aria-label="Close assistant">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
              stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
           <line x1="18" y1="6" x2="6" y2="18"/>
@@ -115,14 +97,14 @@
                stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
           </svg>
-          <p class="empty-text">Ask about your feedback data</p>
+          <p class="empty-text">Ask about feedback</p>
         </div>
       {:else}
         <div class="messages-list">
           {#each messages as msg, i (i)}
             <div class="msg" class:user={msg.role === 'user'} class:assistant={msg.role === 'assistant'}>
               <div class="msg-meta">
-                <span class="msg-role">{msg.role === 'user' ? 'You' : 'AI'}</span>
+                <span class="msg-role">{msg.role === 'user' ? 'You' : 'Assistant'}</span>
                 <span class="msg-ts">{msg.ts}</span>
               </div>
               <div class="msg-bubble">
@@ -133,7 +115,7 @@
           {#if loading}
             <div class="msg assistant">
               <div class="msg-meta">
-                <span class="msg-role">AI</span>
+                <span class="msg-role">Assistant</span>
               </div>
               <div class="msg-bubble">
                 <span class="typing-dots">
@@ -164,12 +146,12 @@
       <div class="input-row">
         <textarea
           rows="2"
-          placeholder="Ask about clusters, trends, priorities…"
+          placeholder="Ask about themes or priorities…"
           bind:value={input}
           disabled={loading}
           onkeydown={handleKeydown}
         ></textarea>
-        <button class="send-btn" onclick={send} disabled={loading || !input.trim()} aria-label="Send">
+        <button class="send-btn" onclick={() => void send()} disabled={loading || !input.trim()} aria-label="Send">
           {#if loading}
             <svg class="spin" width="13" height="13" viewBox="0 0 24 24" fill="none"
                  stroke="currentColor" stroke-width="2.5">

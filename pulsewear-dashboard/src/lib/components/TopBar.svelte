@@ -1,7 +1,7 @@
 <script lang="ts">
   import { tick } from 'svelte';
   import { page } from '$app/stores';
-  import { roadmapItems, themes } from '$lib/data';
+  import { accountProfile, roadmapItems, themes } from '$lib/data';
 
   type SearchCategory = 'Page' | 'Theme' | 'Roadmap';
 
@@ -17,9 +17,10 @@
     sidebarExpanded: boolean;
     ontoggle: () => void;
     onchatToggle: () => void;
+    onchatClose: () => void;
     chatOpen?: boolean;
   }
-  let { sidebarExpanded, ontoggle, onchatToggle, chatOpen = false }: Props = $props();
+  let { sidebarExpanded, ontoggle, onchatToggle, onchatClose, chatOpen = false }: Props = $props();
 
   const pageItems: SearchItem[] = [
     { label: 'Dashboard', description: 'Overview of feedback volume, sentiment, and theme activity', href: '/', category: 'Page', keywords: 'home overview dashboard stats' },
@@ -29,7 +30,7 @@
     { label: 'Trends', description: 'Track feedback movement across time windows and topics', href: '/trends', category: 'Page', keywords: 'trends charts movement time series' },
     { label: 'Roadmap Priorities', description: 'See active initiatives mapped to customer pain points', href: '/roadmap', category: 'Page', keywords: 'roadmap priorities initiatives status' },
     { label: 'Feedback Explorer', description: 'Browse raw customer quotes by theme and channel', href: '/feedback', category: 'Page', keywords: 'feedback explorer quotes customer comments' },
-    { label: 'AI Chat', description: 'Ask the assistant about clusters, trends, and priorities', href: '/chat', category: 'Page', keywords: 'chat ai assistant copilot' },
+    { label: 'Assistant', description: 'Ask the rule-based assistant about clusters, trends, and priorities', href: '/chat', category: 'Page', keywords: 'chat assistant rule-based copilot' },
   ];
 
   const themeItems: SearchItem[] = themes.map((theme) => ({
@@ -59,8 +60,9 @@
   ];
 
   const notifications = [...roadmapItems]
+    .filter((item) => item.priority_score >= 60)
     .sort((a, b) => b.priority_score - a.priority_score)
-    .slice(0, 4)
+    .slice(0, 3)
     .map((item) => {
       const negativePct = 100 - item.positive_pct;
       return {
@@ -77,13 +79,16 @@
 
   let searchOpen = $state(false);
   let notifOpen = $state(false);
+  let profileOpen = $state(false);
   let searchQuery = $state('');
   let hasUnreadNotifications = $state(true);
 
   let searchButton: HTMLButtonElement | undefined = $state();
   let notifButton: HTMLButtonElement | undefined = $state();
+  let profileButton: HTMLButtonElement | undefined = $state();
   let searchPanel: HTMLDivElement | undefined = $state();
   let notifPanel: HTMLDivElement | undefined = $state();
+  let profilePanel: HTMLDivElement | undefined = $state();
   let searchInput: HTMLInputElement | undefined = $state();
 
   const currentPath = $derived($page.url.pathname);
@@ -104,6 +109,8 @@
     const nextOpen = !searchOpen;
     searchOpen = nextOpen;
     notifOpen = false;
+    profileOpen = false;
+    if (nextOpen && chatOpen) onchatClose();
 
     if (nextOpen) {
       await tick();
@@ -116,15 +123,31 @@
     const nextOpen = !notifOpen;
     notifOpen = nextOpen;
     searchOpen = false;
+    profileOpen = false;
+    if (nextOpen && chatOpen) onchatClose();
 
     if (nextOpen) {
       hasUnreadNotifications = false;
     }
   }
 
+  function toggleProfile() {
+    const nextOpen = !profileOpen;
+    profileOpen = nextOpen;
+    searchOpen = false;
+    notifOpen = false;
+    if (nextOpen && chatOpen) onchatClose();
+  }
+
+  function handleAiToggle() {
+    closePanels();
+    onchatToggle();
+  }
+
   function closePanels() {
     searchOpen = false;
     notifOpen = false;
+    profileOpen = false;
   }
 
   function clearSearch() {
@@ -144,6 +167,10 @@
       if (notifOpen && notifPanel && notifButton && !notifPanel.contains(target) && !notifButton.contains(target)) {
         notifOpen = false;
       }
+
+      if (profileOpen && profilePanel && profileButton && !profilePanel.contains(target) && !profileButton.contains(target)) {
+        profileOpen = false;
+      }
     }
 
     function handleDocumentKeydown(event: KeyboardEvent) {
@@ -158,7 +185,7 @@
         target instanceof HTMLTextAreaElement ||
         (target instanceof HTMLElement && target.isContentEditable);
 
-      if (!isTyping && (event.key === '/' || ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k'))) {
+      if (!isTyping && ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k')) {
         event.preventDefault();
         toggleSearch();
       }
@@ -200,8 +227,8 @@
   </div>
 
   <div class="topbar-right">
-    <!-- AI Assistant -->
-    <button class="topbar-btn ai-btn" class:active={chatOpen} onclick={onchatToggle} aria-label="AI Assistant">
+    <!-- Feedback Assistant -->
+    <button class="topbar-btn ai-btn" class:active={chatOpen} onclick={handleAiToggle} aria-label="Feedback assistant">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
            stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
         <rect x="3" y="11" width="18" height="10" rx="2"/>
@@ -234,7 +261,6 @@
         <div class="popover search-popover" bind:this={searchPanel} role="dialog" aria-label="Search dashboard">
           <div class="popover-header">
             <span class="popover-title">Search dashboard</span>
-            <span class="shortcut-hint">Press `/`</span>
           </div>
 
           <div class="search-input-wrap">
@@ -313,10 +339,7 @@
       {#if notifOpen}
         <div class="popover notif-popover" bind:this={notifPanel} role="dialog" aria-label="Notifications">
           <div class="popover-header">
-            <div>
-              <span class="popover-title">Priority alerts</span>
-              <p class="popover-subtitle">{notifications.length} active signals from roadmap-linked themes</p>
-            </div>
+            <span class="popover-title">Alerts</span>
             <a class="popover-link" href="/roadmap" onclick={closePanels}>Open roadmap</a>
           </div>
 
@@ -338,10 +361,54 @@
 
     <div class="topbar-sep"></div>
 
-    <!-- Profile avatar -->
-    <button class="topbar-btn profile-btn" aria-label="Profile — Ethan Brooks">
-      <span class="avatar">EB</span>
-    </button>
+    <div class="topbar-action">
+      <button
+        class="topbar-btn profile-btn"
+        class:active={profileOpen || currentPath.startsWith('/settings')}
+        bind:this={profileButton}
+        onclick={toggleProfile}
+        aria-label={`Profile for ${accountProfile.name}`}
+        aria-expanded={profileOpen}
+        aria-haspopup="dialog"
+      >
+        <span class="avatar">{accountProfile.initials}</span>
+      </button>
+
+      {#if profileOpen}
+        <div class="popover profile-popover" bind:this={profilePanel} role="dialog" aria-label="Account information">
+          <div class="profile-card-header">
+            <div class="profile-card-avatar">{accountProfile.initials}</div>
+            <div class="profile-card-copy">
+              <span class="profile-card-name">{accountProfile.name}</span>
+              <span class="profile-card-role">{accountProfile.role}</span>
+            </div>
+          </div>
+
+          <div class="profile-card-grid">
+            <div class="profile-card-field">
+              <span class="profile-card-label">Email</span>
+              <span class="profile-card-value">{accountProfile.email}</span>
+            </div>
+            <div class="profile-card-field">
+              <span class="profile-card-label">Team</span>
+              <span class="profile-card-value">{accountProfile.team}</span>
+            </div>
+            <div class="profile-card-field">
+              <span class="profile-card-label">Location</span>
+              <span class="profile-card-value">{accountProfile.location}</span>
+            </div>
+            <div class="profile-card-field">
+              <span class="profile-card-label">Access</span>
+              <span class="profile-card-value">{accountProfile.plan}</span>
+            </div>
+          </div>
+
+          <div class="profile-actions">
+            <a class="popover-link" href="/settings" onclick={closePanels}>Open settings</a>
+          </div>
+        </div>
+      {/if}
+    </div>
 
   </div>
 </header>
@@ -465,7 +532,7 @@
     pointer-events: none;
   }
 
-  /* AI assistant button — slightly distinctive */
+  /* Assistant button — slightly distinctive */
   .ai-btn {
     color: var(--blue);
   }
@@ -514,6 +581,15 @@
     width: min(380px, calc(100vw - 24px));
   }
 
+  .notif-popover {
+    width: min(312px, calc(100vw - 24px));
+  }
+
+  .profile-popover {
+    width: min(308px, calc(100vw - 24px));
+    padding: 16px;
+  }
+
   .popover-header {
     display: flex;
     align-items: flex-start;
@@ -536,7 +612,6 @@
     color: var(--text-subtle);
   }
 
-  .shortcut-hint,
   .popover-link {
     font-size: 0.7rem;
     font-weight: 600;
@@ -592,6 +667,84 @@
     padding: 8px;
   }
 
+  .profile-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.07);
+  }
+
+  .profile-card-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #4A90E2 0%, #1B3A6B 100%);
+    color: #FFFFFF;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    flex-shrink: 0;
+  }
+
+  .profile-card-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+  }
+
+  .profile-card-name {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--navy);
+  }
+
+  .profile-card-role {
+    font-size: 0.74rem;
+    color: var(--text-muted);
+  }
+
+  .profile-card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 10px;
+    padding-top: 14px;
+  }
+
+  .profile-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 14px;
+    margin-top: 14px;
+    border-top: 1px solid rgba(15, 23, 42, 0.07);
+  }
+
+  .profile-card-field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+  }
+
+  .profile-card-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: var(--text-subtle);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .profile-card-value {
+    font-size: 0.78rem;
+    color: var(--text);
+    line-height: 1.35;
+    word-break: break-word;
+  }
+
   .search-result,
   .notif-item {
     display: flex;
@@ -619,6 +772,10 @@
     flex-direction: column;
     gap: 3px;
     min-width: 0;
+  }
+
+  .notif-copy {
+    flex: 1;
   }
 
   .result-label,
@@ -669,6 +826,8 @@
 
   .notif-item {
     align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
   }
 
   .notif-tone {
@@ -691,7 +850,8 @@
     }
 
     .search-popover,
-    .notif-popover {
+    .notif-popover,
+    .profile-popover {
       right: -42px;
     }
   }

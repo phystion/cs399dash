@@ -1,226 +1,611 @@
 <script lang="ts">
   import PageHeader from '$lib/components/PageHeader.svelte';
+  import { summaryStats, themes } from '$lib/data';
 
-  let inputText = $state('');
-  let loading   = $state(false);
-  let result    = $state<{ label: string; score: number } | null>(null);
-  let error     = $state<string | null>(null);
+  type BandKey = 'positive' | 'negative' | 'mixed';
 
-  interface HistoryItem { text: string; label: string; score: number; ts: string; }
-  let history = $state<HistoryItem[]>([]);
+  type GroupData = {
+    key: BandKey;
+    title: string;
+    tone: string;
+    items: typeof themes;
+    totalVolume: number;
+    share: number;
+    topCluster: (typeof themes)[number] | null;
+    summary: string;
+    weightedPositive: number;
+    weightedNegative: number;
+  };
 
-  const examples = [
-    { text: 'Battery is dead by 6pm. Barely usable.', label: 'Negative' },
-    { text: 'Love the run tracking — comparing splits with friends is amazing!', label: 'Positive' },
-    { text: 'The setup took 3 hours and two support calls.', label: 'Negative' },
-    { text: 'Smart notifications are perfectly timed — not too many, not too few.', label: 'Positive' },
-    { text: 'My health data was still on the device after I sold it. Unacceptable.', label: 'Negative' },
-    { text: 'The ECG feature in the latest update is exceptional.', label: 'Positive' },
-  ];
+  const BAND_META: Record<BandKey, { title: string; tone: string }> = {
+    negative: { title: 'Negative', tone: 'Most important issues to resolve' },
+    mixed: { title: 'Mixed', tone: 'Themes that could still move positive' },
+    positive: { title: 'Positive', tone: 'Strengths worth protecting' }
+  };
 
-  async function analyze() {
-    if (!inputText.trim()) return;
-    loading = true; result = null; error = null;
+  const BAND_COLORS: Record<BandKey, string> = {
+    positive: '#059669',
+    negative: '#dc2626',
+    mixed: '#4A90E2'
+  };
 
-    try {
-      const res = await fetch('http://localhost:8000/sentiment', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ text: inputText.trim() }),
-        signal: AbortSignal.timeout(5000),
-      });
-      if (!res.ok) throw new Error(`Server ${res.status}`);
-      const data = await res.json();
-      result = { label: data.label, score: data.score };
-    } catch {
-      // Client-side heuristic fallback when backend is offline
-      const t = inputText.toLowerCase();
-      const neg = ['dead','bad','terrible','broken','crash','slow','fail','worst','annoying','hate','disconnect','issue','problem','bug','useless','overpriced','unacceptable','confusing','frustrat'].filter(w => t.includes(w)).length;
-      const pos = ['love','great','amazing','perfect','excellent','good','awesome','impressive','fantastic','best','smooth','easy','helpful','happy','satisfied','thank','flawless','exceptional'].filter(w => t.includes(w)).length;
-      const isPos = pos >= neg;
-      result = { label: isPos ? 'POSITIVE' : 'NEGATIVE', score: Math.min(0.98, 0.52 + Math.abs(pos - neg) * 0.07) };
-      error = 'Backend offline — heuristic fallback active. Start FastAPI for model inference.';
-    }
+  const RING_R = 78;
+  const RING_C = 2 * Math.PI * RING_R;
 
-    history = [{
-      text: inputText.trim().slice(0, 90) + (inputText.length > 90 ? '…' : ''),
-      label: result!.label, score: result!.score,
-      ts: new Date().toLocaleTimeString(),
-    }, ...history.slice(0, 9)];
+  let hoveredGroup = $state<BandKey | null>(null);
+  let selectedGroup = $state<BandKey | null>(null);
 
-    loading = false;
+  function getBand(positivePct: number): BandKey {
+    if (positivePct >= 65) return 'positive';
+    if (positivePct >= 45) return 'mixed';
+    return 'negative';
   }
 
-  function useExample(text: string) { inputText = text; result = null; error = null; }
+  function pct(part: number, total: number) {
+    return Math.round((part / Math.max(total, 1)) * 100);
+  }
+
+  function bandImportance(theme: typeof themes[number], key: BandKey) {
+    if (key === 'positive') return theme.volume * (theme.positive_pct / 100);
+    if (key === 'negative') return theme.volume * (theme.negative_pct / 100);
+    return theme.volume * (1 - Math.abs(theme.positive_pct - 50) / 50);
+  }
+
+  function fallbackSummary(key: BandKey) {
+    if (key === 'negative') return 'Placeholder: add the main issue patterns for this group.';
+    if (key === 'mixed') return 'Placeholder: add the themes that could be improved to push sentiment positive.';
+    return 'Placeholder: add the strengths that should be maintained.';
+  }
+
+  function sentimentHeadline(key: BandKey) {
+    if (key === 'positive') return 'Positive';
+    if (key === 'negative') return 'Negative';
+    return 'Mixed';
+  }
+
+  function themeMetric(theme: (typeof themes)[number], key: BandKey) {
+    if (key === 'negative') return `${theme.negative_pct}% negative`;
+    if (key === 'positive') return `${theme.positive_pct}% positive`;
+    return `${theme.positive_pct}% / ${theme.negative_pct}%`;
+  }
+
+  const groupedThemes = $derived(() =>
+    (['negative', 'mixed', 'positive'] as BandKey[]).map((key) => {
+      const items = [...themes]
+        .filter((theme) => getBand(theme.positive_pct) === key)
+        .sort((a, b) => bandImportance(b, key) - bandImportance(a, key));
+
+      const totalVolume = items.reduce((sum, theme) => sum + theme.volume, 0);
+      const topCluster = items[0] ?? null;
+      const weightedPositive = Math.round(
+        items.reduce((sum, theme) => sum + theme.volume * (theme.positive_pct / 100), 0) / Math.max(totalVolume, 1)
+      );
+      const weightedNegative = 100 - weightedPositive;
+
+      return {
+        key,
+        ...BAND_META[key],
+        items,
+        totalVolume,
+        share: pct(totalVolume, summaryStats.total_feedback),
+        topCluster,
+        summary: topCluster?.description ?? fallbackSummary(key),
+        weightedPositive,
+        weightedNegative
+      } satisfies GroupData;
+    })
+  );
+
+  const groupMap = $derived(() =>
+    Object.fromEntries(groupedThemes().map((group) => [group.key, group])) as Record<BandKey, GroupData>
+  );
+
+  const defaultGroup = $derived(() => groupMap().mixed);
+
+  const activeGroup = $derived(() => {
+    if (selectedGroup) return groupMap()[selectedGroup];
+    if (hoveredGroup) return groupMap()[hoveredGroup];
+    return defaultGroup();
+  });
+
+  const ringSegments = $derived(() => {
+    let offset = 0;
+    return (['positive', 'negative', 'mixed'] as BandKey[]).map((key) => {
+      const share = groupMap()[key].share;
+      const rawLength = (share / 100) * RING_C;
+      const segment = {
+        key,
+        share,
+        color: BAND_COLORS[key],
+        dasharray: `${rawLength} ${Math.max(RING_C - rawLength, 0)}`,
+        dashoffset: -offset,
+      };
+      offset += rawLength;
+      return segment;
+    });
+  });
 </script>
 
-<PageHeader
-  eyebrow="NLP · DistilBERT"
-  title="Sentiment Analyzer"
-  subtitle="Real-time sentiment classification on wearable device feedback — powered by DistilBERT fine-tuned on SST-2."
-  meta="85% accuracy on golden test set · Ethan Brooks, Sr. PM"
->
-  <span class="badge badge-blue">SST-2 · 85% accuracy</span>
-</PageHeader>
+<PageHeader title="Sentiment" />
 
 <main class="page-container">
-  <div class="main-grid">
-    <div class="left-col">
+  <section class="glass sentiment-hero fade-in-up">
+    <div class="hero-ring-col">
+      <svg viewBox="0 0 200 200" class="ring-svg" aria-label="Sentiment distribution">
+        <circle cx="100" cy="100" r={RING_R} class="ring-track"></circle>
 
-      <!-- Input -->
-      <div class="glass input-card fade-in-up">
-        <p class="card-label">Feedback Text</p>
-        <textarea
-          rows="5"
-          placeholder="Paste or type user feedback here…"
-          bind:value={inputText}
-          onkeydown={(e) => { if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) analyze(); }}
-        ></textarea>
-        <div class="input-footer">
-          <span class="char-hint">{inputText.length} chars · Ctrl+Enter to analyze</span>
-          <button
-            class="btn-primary"
-            onclick={analyze}
-            disabled={loading || !inputText.trim()}
-          >
-            {#if loading}
-              <svg class="spin" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>Analyzing…
-            {:else}
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Analyze
-            {/if}
-          </button>
-        </div>
-      </div>
+        {#each ringSegments() as segment (segment.key)}
+          <circle
+            cx="100"
+            cy="100"
+            r={RING_R}
+            class="ring-segment"
+            class:segment-active={hoveredGroup === segment.key || selectedGroup === segment.key}
+            role="button"
+            tabindex="0"
+            aria-label={`${segment.key} sentiment sector`}
+            aria-pressed={selectedGroup === segment.key}
+            stroke={segment.color}
+            stroke-dasharray={segment.dasharray}
+            stroke-dashoffset={segment.dashoffset}
+            onmouseenter={() => hoveredGroup = segment.key}
+            onmouseleave={() => hoveredGroup = null}
+            onclick={() => selectedGroup = selectedGroup === segment.key ? null : segment.key}
+            onkeydown={(event) => {
+              if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                selectedGroup = selectedGroup === segment.key ? null : segment.key;
+              }
+            }}
+          ></circle>
+        {/each}
 
-      <!-- Result -->
-      {#if result}
-        <div class="glass result-card fade-in-up" class:pos={result.label === 'POSITIVE'} class:neg={result.label === 'NEGATIVE'}>
-          <div class="result-row">
-            <span class="result-label">{result.label}</span>
-            <span class="result-score">{(result.score * 100).toFixed(1)}% confidence</span>
-          </div>
-          <div class="conf-track">
-            <div class="conf-fill" style="width:{result.score * 100}%"></div>
-          </div>
-          {#if error}<p class="offline-note">{error}</p>{/if}
-        </div>
-      {/if}
-
-      <!-- Examples -->
-      <div class="glass examples-card fade-in-up" style="animation-delay:60ms">
-        <p class="card-label" style="margin-bottom:12px">Quick Examples</p>
-        <div class="examples-list">
-          {#each examples as ex}
-            <button class="ex-btn" onclick={() => useExample(ex.text)}>
-              <span class="ex-tag" class:ex-pos={ex.label==='Positive'} class:ex-neg={ex.label==='Negative'}>{ex.label}</span>
-              <span class="ex-text">{ex.text}</span>
-            </button>
-          {/each}
-        </div>
-      </div>
+        <circle cx="100" cy="100" r="52" class="ring-core"></circle>
+        <text x="100" y="94" text-anchor="middle" class="ring-core-label">
+          {selectedGroup || hoveredGroup ? activeGroup().title : 'Overall'}
+        </text>
+        <text x="100" y="118" text-anchor="middle" class="ring-core-value">
+          {selectedGroup || hoveredGroup ? `${activeGroup().share}%` : 'Mixed'}
+        </text>
+      </svg>
     </div>
 
-    <!-- History + info -->
-    <aside class="right-col">
-      <div class="glass history-card fade-in-up" style="animation-delay:80ms">
-        <div class="history-hdr">
-          <p class="section-title">Analysis History</p>
-          {#if history.length > 0}
-            <button class="btn-ghost" onclick={() => history = []}>Clear</button>
-          {/if}
+    <div class="hero-copy">
+      <span class="hero-label">Sentiment Summary</span>
+      <h2 class="hero-title">{activeGroup().title}</h2>
+      <p class="hero-text">{activeGroup().tone}</p>
+
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="hero-stat-label">Share of feedback</span>
+          <strong>{activeGroup().share}%</strong>
         </div>
-        {#if history.length === 0}
-          <div class="history-empty">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="rgba(15,23,42,0.18)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
-            <p>No analyses yet</p>
-          </div>
-        {:else}
-          <div class="history-list">
-            {#each history as item, i (i)}
-              <div class="h-item fade-in-up" style="animation-delay:{i*25}ms">
-                <div class="h-top">
-                  <span class="h-badge" class:h-pos={item.label==='POSITIVE'} class:h-neg={item.label==='NEGATIVE'}>{item.label}</span>
-                  <span class="h-ts">{item.ts}</span>
-                </div>
-                <p class="h-text">{item.text}</p>
-                <span class="h-score">{(item.score*100).toFixed(1)}% confidence</span>
-              </div>
-            {/each}
-          </div>
-        {/if}
+        <div class="hero-stat">
+          <span class="hero-stat-label">Amount of data</span>
+          <strong>{activeGroup().totalVolume.toLocaleString()} responses</strong>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-label">Highest priority cluster</span>
+          <strong>{activeGroup().topCluster?.name ?? 'Placeholder cluster'}</strong>
+        </div>
       </div>
 
-      <div class="glass info-card fade-in-up" style="animation-delay:120ms">
-        <p class="section-title" style="margin-bottom:10px">Model Info</p>
-        <p class="info-text">Sends text to FastAPI running <strong>DistilBERT</strong> via HuggingFace Transformers. Trained on SST-2, achieves <strong>85% accuracy</strong> on PulseWear golden test set of 20 labeled samples.</p>
-        <div class="info-tags">
-          <span class="badge badge-blue">DistilBERT-base-uncased</span>
-          <span class="badge badge-indigo">SST-2</span>
-        </div>
+      <div class="hero-detail-card">
+        <span class="hero-stat-label">Group description</span>
+        <p class="hero-detail">{activeGroup().summary}</p>
       </div>
-    </aside>
-  </div>
+
+      <div class="hero-legend">
+        {#each groupedThemes() as group}
+          <button
+            type="button"
+            class="legend-item"
+            class:legend-active={hoveredGroup === group.key || selectedGroup === group.key}
+            onmouseenter={() => hoveredGroup = group.key}
+            onmouseleave={() => hoveredGroup = null}
+            onclick={() => selectedGroup = selectedGroup === group.key ? null : group.key}
+          >
+            <span class={`legend-dot dot-${group.key}`}></span>
+            <span>{group.title}</span>
+            <strong>{group.share}%</strong>
+          </button>
+        {/each}
+      </div>
+    </div>
+  </section>
+
+  <section class="actions-grid">
+    {#each groupedThemes() as group, groupIndex (group.key)}
+      <section class="glass action-card fade-in-up" style={`animation-delay:${60 + groupIndex * 40}ms`}>
+        <div class="action-head">
+          <div>
+            <p class="action-title">{group.title}</p>
+            <p class="action-copy">{group.tone}</p>
+          </div>
+          <span class={`action-pill band-${group.key}`}>{group.share}%</span>
+        </div>
+
+        <p class="group-detail">{group.summary}</p>
+
+        <div class="theme-list">
+          {#each group.items as theme}
+            <a href={`/feedback?cluster=${theme.cluster_id}`} class="theme-row">
+              <div class="theme-row-top">
+                <span class="theme-name">{theme.name}</span>
+                <span class={`theme-pill band-${group.key}`}>
+                  {group.key === 'negative' ? theme.negative_pct : theme.positive_pct}%
+                </span>
+              </div>
+
+              <div class="sentiment-bar" aria-hidden="true">
+                <div class="bar-positive" style={`width:${theme.positive_pct}%`}></div>
+                <div class="bar-negative" style={`width:${theme.negative_pct}%`}></div>
+              </div>
+
+              <div class="theme-meta">
+                <span>{themeMetric(theme, group.key)}</span>
+                <span>{theme.volume.toLocaleString()} responses</span>
+              </div>
+            </a>
+          {/each}
+        </div>
+      </section>
+    {/each}
+  </section>
 </main>
 
 <style>
-  main { padding-top: 0; padding-bottom: 72px; }
+  main {
+    padding-bottom: 72px;
+  }
 
-  .main-grid { display:grid; grid-template-columns:1fr 300px; gap:20px; align-items:start; }
-  @media (max-width:960px) { .main-grid { grid-template-columns:1fr; } }
-  .left-col  { display:flex; flex-direction:column; gap:16px; }
-  .right-col { display:flex; flex-direction:column; gap:16px; }
+  .sentiment-hero {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 24px;
+    align-items: center;
+    padding: 22px;
+    margin-bottom: 18px;
+  }
 
-  /* Input */
-  .input-card { padding:22px; display:flex; flex-direction:column; gap:14px; }
-  .card-label { font-size:.77rem; font-weight:600; color:var(--text-muted); text-transform:uppercase; letter-spacing:.05em; }
-  .input-footer { display:flex; align-items:center; justify-content:space-between; }
-  .char-hint { font-size:.73rem; color:var(--text-subtle); }
-  @keyframes spin { to { transform:rotate(360deg); } }
-  .spin { animation:spin .8s linear infinite; }
+  .hero-ring-col {
+    display: flex;
+    justify-content: center;
+  }
 
-  /* Result */
-  .result-card { padding:20px 22px; }
-  .result-card.pos { border-color:rgba(5,150,105,.28); background:rgba(5,150,105,.05); }
-  .result-card.neg { border-color:rgba(220,38,38,.28);  background:rgba(220,38,38,.05);  }
-  .result-row { display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; }
-  .result-label { font-size:1.4rem; font-weight:800; letter-spacing:-.02em; }
-  .pos .result-label { color:#059669; }
-  .neg .result-label { color:#DC2626; }
-  .result-score { font-size:.82rem; color:var(--text-muted); }
-  .conf-track { height:6px; background:rgba(15,23,42,.08); border-radius:6px; overflow:hidden; }
-  .conf-fill { height:100%; border-radius:6px; transition:width .6s var(--ease); }
-  .pos .conf-fill { background:#059669; }
-  .neg .conf-fill { background:#DC2626; }
-  .offline-note { font-size:.73rem; color:var(--text-muted); margin-top:10px; font-style:italic; }
+  .ring-svg {
+    width: 188px;
+    height: 188px;
+    overflow: visible;
+  }
 
-  /* Examples */
-  .examples-card { padding:20px 22px; }
-  .examples-list { display:flex; flex-direction:column; gap:7px; }
-  .ex-btn { display:flex; align-items:flex-start; gap:10px; padding:10px 12px; background:rgba(255,255,255,.50); border:1px solid rgba(15,23,42,.07); border-radius:var(--radius-sm); cursor:pointer; text-align:left; transition:background var(--transition); }
-  .ex-btn:hover { background:rgba(255,255,255,.82); }
-  .ex-tag { font-size:.64rem; font-weight:700; padding:2px 7px; border-radius:6px; flex-shrink:0; margin-top:1px; }
-  .ex-pos { background:rgba(5,150,105,.10); color:#059669; }
-  .ex-neg { background:rgba(220,38,38,.10); color:#DC2626; }
-  .ex-text { font-size:.82rem; color:var(--text); line-height:1.4; }
+  .ring-track,
+  .ring-segment {
+    fill: none;
+    stroke-width: 22;
+    transform: rotate(-90deg);
+    transform-origin: 100px 100px;
+    stroke-linecap: butt;
+  }
 
-  /* History */
-  .history-card { padding:20px; }
-  .history-hdr { display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; }
-  .history-empty { display:flex; flex-direction:column; align-items:center; gap:10px; padding:30px 0; }
-  .history-empty p { font-size:.82rem; color:var(--text-subtle); }
-  .history-list { display:flex; flex-direction:column; gap:2px; }
-  .h-item { padding:9px 6px; border-bottom:1px solid rgba(15,23,42,.05); display:flex; flex-direction:column; gap:3px; }
-  .h-item:last-child { border-bottom:none; }
-  .h-top { display:flex; align-items:center; justify-content:space-between; }
-  .h-badge { font-size:.66rem; font-weight:700; padding:2px 7px; border-radius:6px; }
-  .h-pos { background:rgba(5,150,105,.10); color:#059669; }
-  .h-neg { background:rgba(220,38,38,.10); color:#DC2626; }
-  .h-ts { font-size:.68rem; color:var(--text-subtle); }
-  .h-text { font-size:.79rem; color:var(--text); line-height:1.35; }
-  .h-score { font-size:.69rem; color:var(--text-muted); }
+  .ring-track {
+    stroke: rgba(15, 23, 42, 0.06);
+  }
 
-  /* Info */
-  .info-card { padding:18px 20px; }
-  .info-text { font-size:.81rem; color:var(--text-muted); line-height:1.55; margin-bottom:12px; }
-  .info-tags { display:flex; gap:7px; flex-wrap:wrap; }
+  .ring-segment {
+    cursor: pointer;
+    transition: opacity 0.2s ease, stroke-width 0.2s ease;
+    opacity: 0.82;
+    animation: ringReveal 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .ring-segment:hover,
+  .ring-segment.segment-active {
+    opacity: 1;
+    stroke-width: 26;
+  }
+
+  .ring-segment:focus {
+    outline: none;
+  }
+
+  .ring-segment:focus-visible {
+    outline: none;
+    opacity: 1;
+    stroke-width: 26;
+  }
+
+  .ring-core {
+    fill: #fff;
+    stroke: rgba(15, 23, 42, 0.08);
+  }
+
+  .ring-core-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    fill: #7A9BB8;
+  }
+
+  .ring-core-value {
+    font-size: 18px;
+    font-weight: 800;
+    fill: #0D1B2E;
+  }
+
+  .hero-label,
+  .action-copy,
+  .group-detail,
+  .theme-meta span,
+  .hero-text,
+  .hero-detail,
+  .hero-stat-label {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    line-height: 1.45;
+  }
+
+  .hero-label {
+    display: inline-block;
+    margin-bottom: 6px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-subtle);
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    color: var(--text);
+  }
+
+  .hero-text {
+    margin-top: 6px;
+  }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  .hero-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 10px 12px;
+    border-radius: var(--radius);
+    background: rgba(15, 23, 42, 0.04);
+  }
+
+  .hero-stat strong {
+    font-size: 0.86rem;
+    color: var(--text);
+  }
+
+  .hero-detail-card {
+    margin-top: 14px;
+    padding: 12px 14px;
+    border-radius: var(--radius);
+    background: rgba(15, 23, 42, 0.04);
+  }
+
+  .hero-detail {
+    margin-top: 6px;
+  }
+
+  .group-detail {
+    margin-top: 14px;
+  }
+
+  .hero-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 16px;
+  }
+
+  .legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 999px;
+    background: #fff;
+    font-size: 0.76rem;
+    color: var(--text-muted);
+    transition: border-color var(--transition), background var(--transition);
+  }
+
+  .legend-item.legend-active,
+  .legend-item:hover {
+    border-color: rgba(27, 58, 107, 0.18);
+    background: rgba(255, 255, 255, 0.88);
+  }
+
+  .legend-item strong {
+    color: var(--text);
+  }
+
+  .legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .dot-positive { background: #059669; }
+  .dot-negative { background: #dc2626; }
+  .dot-mixed { background: #4A90E2; }
+
+  .actions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .action-card {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .action-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .action-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .action-copy {
+    margin-top: 4px;
+  }
+
+  .group-detail {
+    margin-top: 0;
+    padding: 12px 14px;
+    border-radius: var(--radius);
+    background: rgba(15, 23, 42, 0.04);
+  }
+
+  .action-pill,
+  .theme-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 9px;
+    border-radius: 999px;
+    font-size: 0.67rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+
+  .band-positive {
+    background: rgba(5, 150, 105, 0.10);
+    color: var(--positive);
+  }
+
+  .band-negative {
+    background: rgba(220, 38, 38, 0.10);
+    color: var(--negative);
+  }
+
+  .band-mixed {
+    background: rgba(74, 144, 226, 0.12);
+    color: #1a5faf;
+  }
+
+  .theme-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .theme-row {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px;
+    border: 1px solid rgba(15, 23, 42, 0.07);
+    border-radius: var(--radius);
+    text-decoration: none;
+    color: inherit;
+    transition: border-color var(--transition), background var(--transition);
+  }
+
+  .theme-row:hover {
+    border-color: rgba(27, 58, 107, 0.18);
+    background: rgba(255, 255, 255, 0.88);
+  }
+
+  .theme-row-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .theme-name {
+    font-size: 0.84rem;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.35;
+  }
+
+  .sentiment-bar {
+    display: flex;
+    width: 100%;
+    height: 8px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.06);
+  }
+
+  .bar-positive {
+    background: linear-gradient(90deg, rgba(5, 150, 105, 0.72), #059669);
+  }
+
+  .bar-negative {
+    background: linear-gradient(90deg, rgba(220, 38, 38, 0.72), #dc2626);
+  }
+
+  .theme-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  @media (max-width: 1100px) {
+    .sentiment-hero {
+      grid-template-columns: 1fr;
+    }
+
+    .actions-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-stats {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 680px) {
+    .hero-legend,
+    .theme-row-top,
+    .action-head {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .hero-stats {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @keyframes ringReveal {
+    from {
+      opacity: 0;
+      transform: rotate(-100deg) scale(0.96);
+      transform-origin: 100px 100px;
+    }
+    to {
+      opacity: 0.82;
+      transform: rotate(-90deg) scale(1);
+      transform-origin: 100px 100px;
+    }
+  }
 </style>
