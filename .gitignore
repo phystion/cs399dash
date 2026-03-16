@@ -1,0 +1,22 @@
+# Node / SvelteKit
+pulsewear-dashboard/node_modules/
+pulsewear-dashboard/.svelte-kit/
+pulsewear-dashboard/build/
+pulsewear-dashboard/dist/
+
+# Python
+backend/__pycache__/
+*.py[cod]
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Local tool state
+.claude/
+pulsewear-dashboard/.claude/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db

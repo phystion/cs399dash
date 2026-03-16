@@ -1,0 +1,501 @@
+feedback_id,user_id,timestamp,channel,platform,category,topic,feedback_text,sentiment_score,word_count,priority_score,status
+FB00488,beta_tester_6104,2026-02-25 14:34:22,Support Ticket,Support Ticket,Vague,General,It's okay I guess,2,4,1,New
+FB00062,charles_7278,2026-02-25 10:45:43,Social Media,Reddit,Bug Report,Technical,"GPS tracking is way off, shows me running through buildings Happens every single time.",1,14,8,In Progress
+FB00170,james524,2026-02-25 08:47:27,Social Media,Reddit,Feature Request,metrics,Add VO2 max tracking Hope this gets prioritized.,4,8,3,Reviewed
+FB00060,mary_6844,2026-02-24 11:09:13,Support Ticket,Support Ticket,Feature Request,ui_ux,Dark mode for the app would be perfect,3,8,10,New
+FB00469,david189,2026-02-23 22:42:08,App Review,iOS App Store,Question,Support,Can I replace the wristband with a third-party one?,3,9,1,Closed
+FB00293,susan_4812,2026-02-23 18:49:28,Social Media,Twitter,General Complaint,General,App drains my phone battery,2,5,7,New
+FB00044,robert_9800,2026-02-23 15:57:04,App Review,Google Play Store,Bug Report,Technical,"Screen doesn't turn on when I raise my wrist Running on iOS 17, app version 2.3.1",1,16,9,Resolved
+FB00279,susan545,2026-02-23 15:37:24,Beta Testing,Beta Testing,Bug Report,Technical,"Historical data disappeared after app update Running on iOS 17, app version 2.3.1",1,13,9,New
+FB00399,user_73394,2026-02-23 15:08:00,Support Ticket,Support Ticket,General Complaint,General,Battery life is terrible compared to competitors,2,7,6,Reviewed
+FB00472,beta_tester_5649,2026-02-22 21:12:12,Social Media,Reddit,Bug Report,Technical,Historical data disappeared after app update,2,6,8,New
+FB00261,mary_3743,2026-02-22 12:34:46,App Review,iOS App Store,Bug Report,Technical,"GPS tracking is way off, shows me running through buildings",2,10,10,Reviewed
+FB00194,beta_tester_6803,2026-02-22 11:01:02,Support Ticket,Support Ticket,Vague,General,Nothing special,3,2,3,New
+FB00056,barbara82,2026-02-22 01:36:46,Support Ticket,Support Ticket,General Complaint,General,Customer support takes forever to respond,2,6,6,New
+FB00268,linda919,2026-02-21 21:59:07,App Review,Google Play Store,Feature Request,integrations,Spotify control from the device screen,3,6,6,New
+FB00324,karen292,2026-02-21 07:35:06,App Review,iOS App Store,General Complaint,General,Updates break features that were working fine,2,7,8,New
+FB00355,elizabeth_6475,2026-02-21 04:28:39,App Review,iOS App Store,Bug Report,Technical,Touch screen not responsive in certain areas,3,7,8,In Progress
+FB00139,beta_tester_2521,2026-02-21 01:55:56,App Review,Google Play Store,Bug Report,Technical,Heart rate zones are calculated incorrectly,1,6,4,New
+FB00260,beta_tester_5336,2026-02-20 22:12:31,Support Ticket,Support Ticket,Vague,General,"I don't know, it's alright",4,5,4,Closed
+FB00120,susan830,2026-02-19 22:56:20,Support Ticket,Support Ticket,General Complaint,General,This device is overpriced for what it offers Other brands do this better.,2,13,6,Reviewed
+FB00408,user_77652,2026-02-19 21:56:46,Beta Testing,Beta Testing,General Complaint,General,"Can't use device without creating an account, privacy concern",1,9,4,New
+FB00286,user_93000,2026-02-19 14:33:07,Social Media,Reddit,Vague,General,Nothing special,1,2,4,Closed
+FB00403,mary954,2026-02-19 10:33:28,Support Ticket,Support Ticket,Question,Support,What's the difference between active minutes and steps?,3,8,4,Reviewed
+FB00373,william_927,2026-02-19 07:25:06,Support Ticket,Support Ticket,Bug Report,Technical,Bluetooth connection drops every 10 minutes,3,6,10,Reviewed
+FB00434,beta_tester_7654,2026-02-19 01:55:03,Beta Testing,Beta Testing,Bug Report,Technical,Sync between device and app fails constantly Happens every single time.,2,11,8,Reviewed
+FB00105,user_94675,2026-02-18 08:31:47,Social Media,Twitter,Feature Request,ui_ux,Make the dashboard more customizable,3,5,6,Closed
+FB00329,beta_tester_5885,2026-02-18 07:30:03,Social Media,Twitter,Vague,General,Works fine,3,2,1,Resolved
+FB00245,user_21233,2026-02-18 05:37:52,App Review,iOS App Store,Vague,General,"I don't know, it's alright",4,5,2,Reviewed
+FB00313,joseph53,2026-02-18 00:38:33,Support Ticket,Support Ticket,Bug Report,Technical,"Device doesn't charge, charging icon doesn't appear Please fix this ASAP.",2,11,8,New
+FB00387,linda237,2026-02-18 00:29:56,Support Ticket,Support Ticket,Bug Report,Technical,"Can't export workout data to CSV, export button doesn't work This started after the latest update.",2,16,4,Resolved
+FB00149,robert420,2026-02-17 20:35:13,App Review,iOS App Store,General Complaint,General,Device looks cheap and plasticky,1,5,4,New
+FB00306,user_48096,2026-02-17 19:34:00,Beta Testing,Beta Testing,Question,Support,How do I calibrate the heart rate sensor?,3,8,3,New
+FB00204,robert390,2026-02-17 16:44:25,Social Media,Twitter,Feature Request,battery,Low power mode would be great for long hikes Hope this gets prioritized.,2,13,6,New
+FB00031,linda81,2026-02-17 05:08:10,Social Media,Facebook,General Complaint,General,Workout detection doesn't work automatically,2,5,3,Reviewed
+FB00104,user_86380,2026-02-15 22:15:48,Social Media,Reddit,Question,Support,Can I use this without a smartphone?,3,7,6,New
+FB00055,richard_4435,2026-02-15 20:04:12,App Review,iOS App Store,Vague,General,"I don't know, it's alright",2,5,1,New
+FB00208,james878,2026-02-15 04:05:48,Support Ticket,Support Ticket,Praise,General,Syncs perfectly with my phone every time Exceeded my expectations.,4,10,9,New
+FB00325,beta_tester_2362,2026-02-14 21:26:59,Support Ticket,Support Ticket,Bug Report,Technical,"Historical data disappeared after app update Running on iOS 17, app version 2.3.1",2,13,7,New
+FB00217,user_82465,2026-02-14 08:22:58,Support Ticket,Support Ticket,Question,Support,How do I update the firmware?,3,6,4,New
+FB00150,user_44282,2026-02-14 06:12:18,Support Ticket,Support Ticket,Bug Report,Technical,"Bluetooth connection drops every 10 minutes Running on iOS 17, app version 2.3.1",2,13,3,New
+FB00478,elizabeth137,2026-02-14 03:35:18,Support Ticket,Support Ticket,Vague,General,Works fine,3,2,1,New
+FB00379,john486,2026-02-13 17:25:03,Beta Testing,Beta Testing,Bug Report,Technical,"GPS tracking is way off, shows me running through buildings Running on iOS 17, app version 2.3.1",1,17,10,Reviewed
+FB00463,jessica_1960,2026-02-13 10:32:08,Social Media,Instagram,General Complaint,General,The wristband is uncomfortable and causes skin irritation,2,8,3,New
+FB00059,beta_tester_8602,2026-02-13 09:12:54,App Review,iOS App Store,Praise,General,Love the automatic workout detection feature Already told my gym buddies about it.,5,13,8,Reviewed
+FB00256,richard_4508,2026-02-13 08:01:25,Support Ticket,Support Ticket,Question,Support,How long does the battery typically last?,3,7,5,Resolved
+FB00145,beta_tester_7922,2026-02-13 00:22:34,Support Ticket,Support Ticket,Question,Support,Is my health data stored securely?,3,6,5,New
+FB00358,user_56598,2026-02-11 22:43:05,App Review,Google Play Store,Question,Support,How do I reset my device to factory settings?,3,9,2,New
+FB00280,user_11526,2026-02-10 22:49:39,Social Media,Facebook,Vague,General,It does what it says,3,5,1,New
+FB00366,beta_tester_1828,2026-02-10 14:06:22,Social Media,Facebook,General Complaint,General,Not enough watch faces to choose from,1,7,4,New
+FB00364,user_71349,2026-02-09 19:19:27,App Review,iOS App Store,Question,Support,How do I calibrate the heart rate sensor?,3,8,6,In Progress
+FB00263,beta_tester_979,2026-02-09 14:21:41,Beta Testing,Beta Testing,Bug Report,Technical,Calorie calculation seems way too high,2,6,7,New
+FB00400,beta_tester_8614,2026-02-08 11:14:10,App Review,iOS App Store,Bug Report,Technical,"Water resistance rating seems wrong, device got wet and stopped working",1,11,8,In Progress
+FB00053,user_85631,2026-02-07 19:03:57,Beta Testing,Beta Testing,Feature Request,social_features,Can we get a feature to challenge friends to fitness competitions?,2,11,9,New
+FB00310,user_76476,2026-02-07 18:14:59,Beta Testing,Beta Testing,Feature Request,notifications,More customizable notification options please,4,5,10,In Progress
+FB00068,beta_tester_5288,2026-02-07 10:52:47,App Review,iOS App Store,General Complaint,General,Battery life is terrible compared to competitors,2,7,2,Reviewed
+FB00200,sarah_4502,2026-02-07 08:11:44,Social Media,Twitter,Praise,General,Syncs perfectly with my phone every time,5,7,4,Reviewed
+FB00010,susan_1843,2026-02-07 03:58:48,Support Ticket,Support Ticket,Bug Report,Technical,"Sleep tracking doesn't record anything, shows blank screen",2,8,10,New
+FB00394,barbara305,2026-02-06 23:41:35,Social Media,Twitter,Feature Request,battery,Battery life is good but could be better. Maybe add a power saving mode?,2,14,4,Reviewed
+FB00008,user_30033,2026-02-06 22:56:20,Support Ticket,Support Ticket,Feature Request,integrations,Strava integration please!,4,3,10,New
+FB00346,charles_7360,2026-02-06 21:43:00,Beta Testing,Beta Testing,Feature Request,social_features,Let me compete with friends in step challenges,2,8,4,New
+FB00090,linda_9290,2026-02-06 15:27:13,App Review,Google Play Store,Feature Request,ui_ux,The app interface is confusing. Needs a redesign,3,8,9,New
+FB00040,beta_tester_2191,2026-02-06 12:33:39,App Review,iOS App Store,Bug Report,Technical,Screen doesn't turn on when I raise my wrist,1,9,7,New
+FB00078,beta_tester_510,2026-02-05 13:33:15,Social Media,Facebook,Feature Request,ui_ux,The app interface is confusing. Needs a redesign,3,8,8,Reviewed
+FB00096,david830,2026-02-05 09:51:56,Social Media,Reddit,Vague,General,Not great,4,2,2,Resolved
+FB00307,michael_4771,2026-02-04 19:39:20,Support Ticket,Support Ticket,Question,Support,How long does the battery typically last?,3,7,4,New
+FB00327,beta_tester_6664,2026-02-04 17:00:17,Social Media,Instagram,Feature Request,ui_ux,The app interface is confusing. Needs a redesign,3,8,7,Resolved
+FB00032,beta_tester_2951,2026-02-04 13:50:04,Social Media,Facebook,Bug Report,Technical,App login fails with 'invalid credentials' even with correct password This is making the device unusable.,1,16,5,New
+FB00401,user_37175,2026-02-04 08:12:37,Beta Testing,Beta Testing,Vague,General,Decent,3,1,2,Reviewed
+FB00180,beta_tester_9828,2026-02-04 00:14:01,App Review,iOS App Store,Feature Request,social_features,Need better integration with social media platforms Really need this feature.,3,11,6,New
+FB00397,david_4759,2026-02-03 14:46:34,App Review,Google Play Store,Vague,General,Nothing special,3,2,4,New
+FB00343,linda656,2026-02-03 13:55:36,Support Ticket,Support Ticket,Feature Request,battery,"Extend battery life please, I have to charge every 2 days",3,11,3,New
+FB00047,barbara_9436,2026-02-03 06:54:45,App Review,iOS App Store,Question,Support,How do I calibrate the heart rate sensor?,3,8,6,New
+FB00338,elizabeth991,2026-02-03 05:36:21,App Review,iOS App Store,General Complaint,General,Not enough watch faces to choose from,1,7,5,In Progress
+FB00393,beta_tester_8483,2026-02-02 22:56:09,App Review,iOS App Store,Feature Request,ui_ux,The app interface is confusing. Needs a redesign,3,8,6,Reviewed
+FB00135,karen706,2026-02-02 21:26:23,Support Ticket,Support Ticket,Feature Request,social_features,Let me compete with friends in step challenges,2,8,6,New
+FB00043,patricia181,2026-02-02 15:13:24,App Review,Google Play Store,General Complaint,General,Customer support takes forever to respond,2,6,4,New
+FB00272,beta_tester_3354,2026-02-02 00:23:12,Beta Testing,Beta Testing,Bug Report,Technical,Device freezes on the clock face and needs restart This started after the latest update.,2,15,8,New
+FB00320,beta_tester_2550,2026-02-01 20:37:13,App Review,Google Play Store,Vague,General,It's okay I guess,2,4,1,Resolved
+FB00237,user_33865,2026-02-01 04:42:00,App Review,Google Play Store,General Complaint,General,Updates break features that were working fine,2,7,6,New
+FB00058,beta_tester_5380,2026-02-01 02:13:47,Beta Testing,Beta Testing,Bug Report,Technical,Heart rate monitor stops working mid-workout randomly,1,7,8,Reviewed
+FB00023,thomas_4716,2026-02-01 00:46:58,Social Media,Twitter,Feature Request,battery,Low power mode would be great for long hikes This is a must-have!,4,13,10,Reviewed
+FB00181,charles_5353,2026-02-01 00:25:37,Social Media,Twitter,Praise,General,Battery lasts longer than advertised!,5,5,6,New
+FB00294,sarah569,2026-02-01 00:16:02,Social Media,Reddit,Feature Request,integrations,Need better sync with Apple Health,4,6,8,New
+FB00360,barbara291,2026-01-31 13:18:13,Support Ticket,Support Ticket,Bug Report,Technical,Historical data disappeared after app update Please fix this ASAP.,1,10,8,New
+FB00328,richard44,2026-01-31 11:42:09,Social Media,Twitter,General Complaint,General,Customer support takes forever to respond,1,6,2,New
+FB00089,user_47700,2026-01-31 04:29:24,Social Media,Facebook,Bug Report,Technical,Workout auto-pause doesn't work when I stop running,1,8,5,Reviewed
+FB00436,user_17455,2026-01-30 17:01:13,Social Media,Twitter,Vague,General,Not impressed,5,2,1,In Progress
+FB00241,user_54295,2026-01-30 15:27:22,App Review,Google Play Store,Feature Request,social_features,Add a community feature where users can share workout tips,4,10,7,Reviewed
+FB00322,beta_tester_5842,2026-01-28 14:05:24,Social Media,Twitter,Bug Report,Technical,"Device doesn't charge, charging icon doesn't appear",1,7,7,Resolved
+FB00269,richard_459,2026-01-28 11:29:14,Beta Testing,Beta Testing,Vague,General,It's okay I guess,2,4,1,New
+FB00236,joseph691,2026-01-27 23:29:54,Beta Testing,Beta Testing,General Complaint,General,Not enough watch faces to choose from,1,7,4,New
+FB00332,beta_tester_7648,2026-01-27 18:06:35,Beta Testing,Beta Testing,General Complaint,General,"Can't use device without creating an account, privacy concern",1,9,3,New
+FB00455,robert_7816,2026-01-27 10:45:03,App Review,iOS App Store,Feature Request,metrics,Heart rate variability (HRV) would be awesome,2,7,8,New
+FB00295,william174,2026-01-27 02:23:56,Social Media,Facebook,Feature Request,social_features,Let me compete with friends in step challenges Hope this gets prioritized.,2,12,4,New
+FB00222,beta_tester_1491,2026-01-25 20:35:38,Beta Testing,Beta Testing,Praise,General,"Water resistance is legit, wore it swimming with no issues",5,10,4,Reviewed
+FB00448,user_99664,2026-01-25 12:59:21,Support Ticket,Support Ticket,Praise,General,Syncs perfectly with my phone every time,4,7,2,Reviewed
+FB00425,beta_tester_9048,2026-01-25 06:28:30,Support Ticket,Support Ticket,Feature Request,workout_types,Add support for weight training with rep counting,2,8,7,New
+FB00301,jessica82,2026-01-25 01:24:08,App Review,iOS App Store,Vague,General,"I don't know, it's alright",5,5,3,New
+FB00030,user_60488,2026-01-25 00:02:05,Support Ticket,Support Ticket,General Complaint,General,Setup process is overly complicated,1,5,4,Reviewed
+FB00336,jennifer237,2026-01-24 21:47:00,Beta Testing,Beta Testing,Praise,General,Customer support was very helpful when I had an issue,4,10,7,Resolved
+FB00415,patricia628,2026-01-24 21:45:08,App Review,iOS App Store,Bug Report,Technical,Calorie calculation seems way too high,2,6,8,New
+FB00142,charles134,2026-01-24 12:53:28,Social Media,Reddit,Bug Report,Technical,App login fails with 'invalid credentials' even with correct password,1,10,6,New
+FB00417,david_1376,2026-01-24 10:49:54,Support Ticket,Support Ticket,Praise,General,Step counter is very accurate,4,5,8,New
+FB00383,linda_4038,2026-01-23 22:40:32,App Review,iOS App Store,Bug Report,Technical,Battery percentage stuck at 50% and won't update This is making the device unusable.,1,14,9,New
+FB00458,sarah_2540,2026-01-23 17:17:56,Social Media,Twitter,General Complaint,General,Too many features locked behind premium subscription,1,7,8,New
+FB00057,charles_9849,2026-01-23 03:37:19,Support Ticket,Support Ticket,General Complaint,General,Updates break features that were working fine My Fitbit was better.,1,11,6,Reviewed
+FB00413,user_71039,2026-01-22 21:54:45,App Review,Google Play Store,Praise,General,Syncs perfectly with my phone every time,4,7,4,New
+FB00082,joseph138,2026-01-22 00:35:07,Social Media,Instagram,Vague,General,"I don't know, it's alright",1,5,3,New
+FB00070,susan_6851,2026-01-21 23:40:11,App Review,iOS App Store,Praise,General,Battery lasts longer than advertised!,4,5,8,Reviewed
+FB00249,user_23845,2026-01-21 20:47:28,Social Media,Reddit,Vague,General,Not impressed,4,2,3,New
+FB00154,beta_tester_7584,2026-01-21 19:12:58,Beta Testing,Beta Testing,Vague,General,Meh,3,1,3,In Progress
+FB00341,patricia378,2026-01-21 13:24:42,App Review,iOS App Store,Feature Request,social_features,Let me compete with friends in step challenges,4,8,6,New
+FB00125,user_57303,2026-01-19 13:57:00,Support Ticket,Support Ticket,Feature Request,battery,"Extend battery life please, I have to charge every 2 days",3,11,8,Reviewed
+FB00172,beta_tester_6279,2026-01-19 10:26:41,Social Media,Twitter,General Complaint,General,"Can't use device without creating an account, privacy concern Other brands do this better.",1,14,2,New
+FB00309,charles508,2026-01-18 21:04:35,Support Ticket,Support Ticket,General Complaint,General,Screen is too small to read notifications,1,7,5,Resolved
+FB00402,charles528,2026-01-18 04:54:28,Social Media,Twitter,Feature Request,notifications,Notification filtering is needed - too many spam alerts,4,9,7,New
+FB00012,william_7887,2026-01-17 23:07:34,App Review,Google Play Store,Vague,General,"I don't know, it's alright",2,5,1,Resolved
+FB00416,karen_4092,2026-01-17 22:54:14,Social Media,Twitter,Praise,General,GPS tracking is spot-on during my runs,5,7,4,Resolved
+FB00398,user_66010,2026-01-17 19:28:40,App Review,iOS App Store,Praise,General,"Perfect size, not too bulky like other trackers",4,8,5,Reviewed
+FB00282,user_83024,2026-01-17 17:07:13,Support Ticket,Support Ticket,Bug Report,Technical,App crashes when I try to view workout history from last month This is making the device unusable.,2,18,10,Reviewed
+FB00314,thomas602,2026-01-17 13:52:23,Support Ticket,Support Ticket,Feature Request,ui_ux,The app interface is confusing. Needs a redesign,2,8,10,New
+FB00196,user_67850,2026-01-17 01:04:15,Support Ticket,Support Ticket,Feature Request,ui_ux,Add widgets for home screen,4,5,4,New
+FB00106,user_76543,2026-01-16 12:17:04,App Review,iOS App Store,Praise,General,Heart rate monitoring is super accurate 5 stars from me!,4,10,6,Reviewed
+FB00124,robert573,2026-01-16 03:41:09,Social Media,Reddit,Question,Support,How long does the battery typically last?,3,7,3,In Progress
+FB00348,patricia503,2026-01-16 01:23:01,Social Media,Facebook,General Complaint,General,Not enough watch faces to choose from,2,7,6,New
+FB00466,linda708,2026-01-15 21:55:16,App Review,iOS App Store,General Complaint,General,Updates break features that were working fine My Fitbit was better.,1,11,3,New
+FB00335,beta_tester_208,2026-01-15 18:39:10,Support Ticket,Support Ticket,Vague,General,Could be better,4,3,4,New
+FB00046,karen837,2026-01-15 10:43:03,Beta Testing,Beta Testing,General Complaint,General,Workout detection doesn't work automatically Garmin handles this way better.,1,10,7,New
+FB00300,user_36945,2026-01-15 08:57:38,App Review,Google Play Store,General Complaint,General,Updates break features that were working fine,2,7,2,New
+FB00007,joseph_9297,2026-01-15 02:40:49,Support Ticket,Support Ticket,Question,Support,How accurate is the calorie tracking?,3,6,8,Resolved
+FB00050,mary_2058,2026-01-14 23:51:18,Support Ticket,Support Ticket,Bug Report,Technical,Device freezes on the clock face and needs restart This started after the latest update.,1,15,10,New
+FB00165,jennifer487,2026-01-14 16:44:00,Social Media,Twitter,General Complaint,General,Customer support takes forever to respond,1,6,8,New
+FB00433,user_22761,2026-01-14 16:19:19,Support Ticket,Support Ticket,Bug Report,Technical,Calorie calculation seems way too high Please fix this ASAP.,1,10,10,Resolved
+FB00108,beta_tester_8339,2026-01-13 08:21:25,Beta Testing,Beta Testing,Question,Support,How accurate is the calorie tracking?,3,6,3,Resolved
+FB00086,jennifer621,2026-01-13 03:51:03,Support Ticket,Support Ticket,Praise,General,Heart rate monitoring is super accurate 5 stars from me!,5,10,8,New
+FB00221,michael220,2026-01-13 01:47:08,App Review,Google Play Store,Praise,General,Battery lasts longer than advertised! Worth every penny.,5,8,4,New
+FB00019,beta_tester_8338,2026-01-12 22:50:46,App Review,iOS App Store,Feature Request,sleep_tracking,Sleep monitoring would be amazing. Can you add it? This would make the product perfect.,2,15,4,Reviewed
+FB00363,beta_tester_8126,2026-01-12 15:49:56,App Review,iOS App Store,Feature Request,sleep_tracking,Add sleep stages tracking like deep sleep and light sleep,4,10,6,Reviewed
+FB00253,beta_tester_2322,2026-01-12 13:49:08,Social Media,Twitter,Bug Report,Technical,Device freezes on the clock face and needs restart,1,9,4,New
+FB00457,robert_6845,2026-01-11 10:55:33,Social Media,Twitter,Feature Request,battery,"Extend battery life please, I have to charge every 2 days",4,11,9,New
+FB00153,david_5475,2026-01-11 09:12:03,Social Media,Twitter,Question,Support,Is there a warranty on this device?,3,7,6,New
+FB00271,user_96832,2026-01-11 02:56:37,Support Ticket,Support Ticket,Feature Request,sleep_tracking,Sleep monitoring would be amazing. Can you add it?,3,9,9,New
+FB00378,richard_9052,2026-01-11 02:31:53,Social Media,Facebook,Bug Report,Technical,Bluetooth connection drops every 10 minutes Happens every single time.,2,10,4,New
+FB00013,barbara931,2026-01-10 09:33:08,Social Media,Twitter,General Complaint,General,Device looks cheap and plasticky,1,5,3,Reviewed
+FB00118,beta_tester_6118,2026-01-10 02:49:30,Social Media,Instagram,Praise,General,Heart rate monitoring is super accurate,5,6,4,Reviewed
+FB00048,jessica20,2026-01-10 00:04:13,App Review,Google Play Store,Praise,General,"Perfect size, not too bulky like other trackers",4,8,8,In Progress
+FB00365,user_38298,2026-01-09 20:39:00,App Review,iOS App Store,General Complaint,General,Workout detection doesn't work automatically Apple Watch doesn't have this problem.,1,11,5,New
+FB00331,michael832,2026-01-09 02:29:47,Support Ticket,Support Ticket,Vague,General,Works fine,5,2,3,Reviewed
+FB00216,user_39937,2026-01-07 17:12:27,Support Ticket,Support Ticket,Feature Request,battery,Low power mode would be great for long hikes This is a must-have!,2,13,4,New
+FB00137,sarah354,2026-01-07 11:40:20,Social Media,Instagram,Bug Report,Technical,Heart rate zones are calculated incorrectly This is making the device unusable.,2,12,8,Resolved
+FB00036,barbara637,2026-01-07 08:39:04,App Review,iOS App Store,Praise,General,Step counter is very accurate,5,5,5,New
+FB00407,robert_7370,2026-01-06 18:01:19,Beta Testing,Beta Testing,Feature Request,social_features,Need better integration with social media platforms,4,7,8,New
+FB00464,beta_tester_8066,2026-01-06 12:17:24,Beta Testing,Beta Testing,Bug Report,Technical,"GPS tracking is way off, shows me running through buildings Please fix this ASAP.",2,14,10,Reviewed
+FB00101,mary_7892,2026-01-05 22:36:24,Beta Testing,Beta Testing,Vague,General,"I don't know, it's alright",5,5,1,Resolved
+FB00122,user_34385,2026-01-05 11:57:52,Support Ticket,Support Ticket,Bug Report,Technical,"Sleep tracking doesn't record anything, shows blank screen This started after the latest update.",1,14,7,New
+FB00214,user_31473,2026-01-05 05:44:14,Social Media,Instagram,General Complaint,General,This device is overpriced for what it offers,1,8,4,New
+FB00440,barbara29,2026-01-04 22:32:01,App Review,iOS App Store,Bug Report,Technical,"GPS tracking is way off, shows me running through buildings Happens every single time.",2,14,6,New
+FB00418,beta_tester_5464,2026-01-04 16:35:51,App Review,iOS App Store,Bug Report,Technical,Screen doesn't turn on when I raise my wrist This started after the latest update.,2,15,8,Resolved
+FB00080,linda_1722,2026-01-03 15:31:45,Social Media,Reddit,General Complaint,General,Device looks cheap and plasticky,1,5,3,New
+FB00193,jessica_2833,2026-01-03 03:37:49,App Review,iOS App Store,Bug Report,Technical,App login fails with 'invalid credentials' even with correct password,1,10,10,New
+FB00168,william_9054,2026-01-02 23:48:54,Support Ticket,Support Ticket,General Complaint,General,Screen is too small to read notifications Apple Watch doesn't have this problem.,2,13,5,Reviewed
+FB00251,charles297,2026-01-02 20:41:24,Beta Testing,Beta Testing,Vague,General,"I don't know, it's alright",5,5,1,New
+FB00423,user_28873,2026-01-02 17:04:06,Beta Testing,Beta Testing,Vague,General,Decent,3,1,1,New
+FB00371,elizabeth187,2026-01-02 14:05:38,Support Ticket,Support Ticket,Question,Support,What heart rate zones does the device use?,3,8,5,Reviewed
+FB00230,elizabeth567,2026-01-02 05:38:24,Social Media,Facebook,Feature Request,sleep_tracking,I want detailed sleep analytics with recommendations,4,7,8,New
+FB00277,beta_tester_9778,2026-01-01 13:49:43,Social Media,Facebook,Question,Support,Is the device waterproof or just water resistant?,3,8,6,New
+FB00287,beta_tester_9686,2026-01-01 11:37:19,App Review,Google Play Store,Bug Report,Technical,"GPS tracking is way off, shows me running through buildings",2,10,10,New
+FB00187,patricia_502,2025-12-31 20:55:14,Support Ticket,Support Ticket,Bug Report,Technical,Historical data disappeared after app update,1,6,3,Resolved
+FB00085,user_17972,2025-12-31 07:44:11,Support Ticket,Support Ticket,Feature Request,sleep_tracking,Add sleep stages tracking like deep sleep and light sleep,3,10,6,In Progress
+FB00349,user_74478,2025-12-31 04:01:21,App Review,iOS App Store,Feature Request,battery,Low power mode would be great for long hikes This would make the product perfect.,2,15,9,New
+FB00229,beta_tester_9122,2025-12-30 19:20:03,App Review,iOS App Store,General Complaint,General,App drains my phone battery,1,5,5,Reviewed
+FB00493,beta_tester_5934,2025-12-30 15:04:29,Support Ticket,Support Ticket,Bug Report,Technical,Historical data disappeared after app update,3,6,10,New
+FB00432,beta_tester_5037,2025-12-30 12:30:09,Social Media,Facebook,Feature Request,social_features,Can we get a feature to challenge friends to fitness competitions? Surprised this isn't already included.,3,16,9,New
+FB00138,user_88238,2025-12-30 02:46:54,Support Ticket,Support Ticket,General Complaint,General,Setup process is overly complicated,2,5,9,New
+FB00111,beta_tester_2373,2025-12-29 09:26:50,App Review,Google Play Store,Feature Request,ui_ux,Make the dashboard more customizable Hope this gets prioritized.,3,9,5,New
+FB00114,user_61177,2025-12-28 18:41:57,App Review,Google Play Store,Vague,General,It does what it says,3,5,1,New
+FB00071,james930,2025-12-28 03:35:11,Support Ticket,Support Ticket,General Complaint,General,App drains my phone battery,2,5,2,New
+FB00157,user_49107,2025-12-27 12:56:12,App Review,iOS App Store,Feature Request,battery,"Extend battery life please, I have to charge every 2 days",3,11,5,New
+FB00189,jessica446,2025-12-27 01:33:20,App Review,Google Play Store,Feature Request,workout_types,Missing dance workout tracking Really need this feature.,4,8,7,New
+FB00460,user_69616,2025-12-26 22:09:40,Social Media,Facebook,Feature Request,notifications,Let me choose which apps can send notifications to my device,4,11,8,In Progress
+FB00195,david809,2025-12-26 13:42:31,Support Ticket,Support Ticket,Praise,General,Love this device! Best fitness tracker I've owned Exceeded my expectations.,5,11,8,Reviewed
+FB00337,user_77922,2025-12-26 04:36:24,App Review,iOS App Store,Bug Report,Technical,Notifications don't vibrate anymore after latest update,2,7,7,Reviewed
+FB00483,user_64702,2025-12-25 19:53:44,App Review,iOS App Store,Feature Request,workout_types,Missing dance workout tracking,2,4,6,New
+FB00424,beta_tester_3045,2025-12-25 11:39:41,Social Media,Instagram,Praise,General,"Water resistance is legit, wore it swimming with no issues",5,10,6,New
+FB00054,susan_6332,2025-12-24 09:13:59,App Review,Google Play Store,General Complaint,General,Setup process is overly complicated,1,5,6,Reviewed
+FB00496,user_60283,2025-12-24 04:34:00,Beta Testing,Beta Testing,Bug Report,Technical,"GPS tracking is way off, shows me running through buildings",2,10,9,New
+FB00107,barbara_4768,2025-12-23 01:38:02,App Review,iOS App Store,Feature Request,battery,Battery optimization needed - drains too fast with GPS on Hope this gets prioritized.,3,14,7,New
+FB00312,susan_2399,2025-12-22 22:54:40,App Review,iOS App Store,Question,Support,How long does the battery typically last?,3,7,6,In Progress
+FB00344,beta_tester_4544,2025-12-22 06:20:11,App Review,iOS App Store,Bug Report,Technical,"Sleep tracking doesn't record anything, shows blank screen",2,8,9,New
+FB00475,beta_tester_6909,2025-12-22 03:37:22,App Review,Google Play Store,Bug Report,Technical,"Step counter seems inaccurate, counts steps while driving",1,8,9,New
+FB00252,user_34633,2025-12-22 00:48:38,Social Media,Facebook,Praise,General,"Water resistance is legit, wore it swimming with no issues",5,10,8,Resolved
+FB00491,user_61952,2025-12-21 12:08:37,Beta Testing,Beta Testing,Praise,General,Battery lasts longer than advertised! Worth every penny.,5,8,1,New
+FB00188,elizabeth109,2025-12-21 09:35:14,Social Media,Twitter,Bug Report,Technical,"Step counter seems inaccurate, counts steps while driving",1,8,8,New
+FB00102,john_4159,2025-12-21 09:06:46,Social Media,Facebook,Vague,General,Decent,3,1,2,Resolved
+FB00239,user_60585,2025-12-21 08:23:35,App Review,Google Play Store,General Complaint,General,"Can't use device without creating an account, privacy concern My Fitbit was better.",2,13,7,New
+FB00099,mary164,2025-12-20 19:36:01,Social Media,Facebook,Bug Report,Technical,Historical data disappeared after app update,1,6,9,New
+FB00278,user_63907,2025-12-20 18:47:16,Support Ticket,Support Ticket,Feature Request,battery,Battery optimization needed - drains too fast with GPS on,2,10,10,New
+FB00441,beta_tester_7933,2025-12-20 07:49:12,Social Media,Instagram,Question,Support,Is there a warranty on this device?,3,7,5,New
+FB00479,beta_tester_9366,2025-12-20 02:30:15,Social Media,Facebook,Bug Report,Technical,Heart rate zones are calculated incorrectly,2,6,8,New
+FB00093,user_55242,2025-12-18 21:09:05,Support Ticket,Support Ticket,General Complaint,General,Customer support takes forever to respond,1,6,8,Reviewed
+FB00412,user_21287,2025-12-18 07:23:00,App Review,Google Play Store,Vague,General,Nothing special,2,2,4,Reviewed
+FB00474,jennifer161,2025-12-18 06:34:19,Support Ticket,Support Ticket,Bug Report,Technical,Touch screen not responsive in certain areas,1,7,5,New
+FB00215,user_53910,2025-12-18 03:01:00,Social Media,Twitter,Praise,General,The app interface is clean and intuitive,5,7,5,New
+FB00461,user_48874,2025-12-18 02:56:12,App Review,Google Play Store,General Complaint,General,Workout detection doesn't work automatically,2,5,6,In Progress
+FB00308,mary991,2025-12-17 23:15:14,App Review,iOS App Store,General Complaint,General,The wristband is uncomfortable and causes skin irritation,1,8,5,New
+FB00119,barbara627,2025-12-17 23:10:53,Social Media,Twitter,Bug Report,Technical,Heart rate monitor stops working mid-workout randomly Please fix this ASAP.,2,11,5,Reviewed
+FB00113,william_4872,2025-12-17 17:10:16,Social Media,Twitter,Feature Request,integrations,Spotify control from the device screen,3,6,7,Reviewed
+FB00018,barbara302,2025-12-17 13:20:56,Beta Testing,Beta Testing,Vague,General,Nothing special,4,2,1,New
+FB00001,user_87397,2025-12-16 18:16:16,Social Media,Twitter,Feature Request,workout_types,Need swimming workout support with pool length tracking,2,8,10,New
+FB00039,jennifer883,2025-12-16 12:42:36,Social Media,Facebook,Vague,General,Pretty good,4,2,2,New
+FB00210,beta_tester_9412,2025-12-16 06:25:06,Beta Testing,Beta Testing,Question,Support,Can I replace the wristband with a third-party one?,3,9,6,In Progress
+FB00064,robert_4626,2025-12-15 05:29:19,Support Ticket,Support Ticket,Bug Report,Technical,Battery percentage stuck at 50% and won't update Happens every single time.,3,12,9,Resolved
+FB00146,user_32946,2025-12-14 23:30:51,App Review,iOS App Store,Praise,General,"Great value for money, highly recommend",5,6,7,New
+FB00038,jessica487,2025-12-14 19:22:52,App Review,iOS App Store,General Complaint,General,Battery life is terrible compared to competitors,1,7,5,Resolved
+FB00162,user_83713,2025-12-14 08:16:43,App Review,iOS App Store,Vague,General,Average product,3,2,1,New
+FB00385,user_51771,2025-12-14 08:05:14,App Review,Google Play Store,General Complaint,General,Battery life is terrible compared to competitors Garmin handles this way better.,1,12,4,In Progress
+FB00406,john288,2025-12-13 20:16:27,Support Ticket,Support Ticket,General Complaint,General,"Can't use device without creating an account, privacy concern",1,9,4,New
+FB00067,user_28894,2025-12-13 16:57:14,Support Ticket,Support Ticket,Praise,General,The sleep insights have helped me improve my sleep quality Worth every penny.,5,13,4,In Progress
+FB00264,richard_5714,2025-12-13 13:50:43,App Review,Google Play Store,Feature Request,notifications,Add smart notifications that learn my preferences Really need this feature.,4,11,6,Resolved
+FB00183,robert848,2025-12-13 11:17:35,Social Media,Twitter,Question,Support,Can I get notifications from all apps?,3,7,4,New
+FB00224,beta_tester_5245,2025-12-12 21:30:36,Social Media,Reddit,Vague,General,Average product,3,2,2,New
+FB00184,beta_tester_9639,2025-12-11 12:34:11,App Review,Google Play Store,Bug Report,Technical,Calorie calculation seems way too high,2,6,10,Reviewed
+FB00374,user_81847,2025-12-11 02:40:24,App Review,iOS App Store,Feature Request,battery,Low power mode would be great for long hikes This would make the product perfect.,2,15,9,In Progress
+FB00254,barbara527,2025-12-10 16:14:55,Support Ticket,Support Ticket,Question,Support,How accurate is the calorie tracking?,3,6,1,New
+FB00077,robert819,2025-12-09 17:37:15,Social Media,Twitter,Question,Support,Can I get notifications from all apps?,3,7,4,New
+FB00223,mary958,2025-12-09 04:59:33,App Review,iOS App Store,Vague,General,Works fine,2,2,1,New
+FB00498,susan_1013,2025-12-09 02:42:14,Social Media,Reddit,General Complaint,General,Screen is too small to read notifications,1,7,7,In Progress
+FB00326,user_31068,2025-12-08 16:15:56,Support Ticket,Support Ticket,Praise,General,Love the automatic workout detection feature,4,6,2,New
+FB00438,john401,2025-12-08 05:13:32,App Review,iOS App Store,Bug Report,Technical,Bluetooth connection drops every 10 minutes This started after the latest update.,3,12,6,New
+FB00177,jennifer_2627,2025-12-08 04:38:38,App Review,iOS App Store,General Complaint,General,Workout detection doesn't work automatically Apple Watch doesn't have this problem.,1,11,6,New
+FB00066,beta_tester_6346,2025-12-07 16:51:12,App Review,iOS App Store,Bug Report,Technical,"Workout auto-pause doesn't work when I stop running Running on iOS 17, app version 2.3.1",3,15,4,Reviewed
+FB00276,beta_tester_4553,2025-12-07 10:31:35,Social Media,Facebook,Bug Report,Technical,Sync between device and app fails constantly,2,7,4,New
+FB00462,john123,2025-12-07 06:25:29,App Review,iOS App Store,Praise,General,Love this device! Best fitness tracker I've owned,5,8,4,Reviewed
+FB00380,beta_tester_3887,2025-12-06 11:37:46,Beta Testing,Beta Testing,Vague,General,Works fine,5,2,1,New
+FB00291,user_13312,2025-12-05 22:24:19,Beta Testing,Beta Testing,Bug Report,Technical,Workout auto-pause doesn't work when I stop running,1,8,4,New
+FB00163,john_4498,2025-12-05 15:08:25,Social Media,Facebook,Question,Support,Is the device waterproof or just water resistant?,3,8,2,Resolved
+FB00156,beta_tester_7448,2025-12-05 06:47:27,App Review,Google Play Store,Feature Request,metrics,Please include stress level monitoring,2,5,8,Reviewed
+FB00350,david_6485,2025-12-05 01:08:44,App Review,iOS App Store,Bug Report,Technical,App login fails with 'invalid credentials' even with correct password,1,10,8,In Progress
+FB00476,user_87421,2025-12-04 20:20:04,Support Ticket,Support Ticket,Feature Request,integrations,Spotify control from the device screen,2,6,10,New
+FB00171,beta_tester_1394,2025-12-04 07:53:49,App Review,iOS App Store,General Complaint,General,Too many features locked behind premium subscription,1,7,4,Reviewed
+FB00110,beta_tester_8324,2025-12-04 01:41:54,Beta Testing,Beta Testing,Praise,General,"Perfect size, not too bulky like other trackers Would definitely recommend to friends!",5,13,3,New
+FB00025,jessica_690,2025-12-03 14:19:21,Support Ticket,Support Ticket,Vague,General,Could be better,3,3,1,New
+FB00131,jennifer143,2025-12-03 11:51:50,Support Ticket,Support Ticket,Feature Request,ui_ux,Dark mode for the app would be perfect,3,8,6,New
+FB00244,beta_tester_3129,2025-12-03 07:00:07,App Review,iOS App Store,Bug Report,Technical,"Sleep tracking doesn't record anything, shows blank screen Happens every single time.",1,12,8,New
+FB00361,user_91229,2025-12-02 15:41:41,Social Media,Instagram,Bug Report,Technical,Touch screen not responsive in certain areas Very frustrating!,1,9,10,Resolved
+FB00370,william_4441,2025-12-02 14:18:35,Support Ticket,Support Ticket,General Complaint,General,Battery life is terrible compared to competitors Apple Watch doesn't have this problem.,1,13,5,New
+FB00414,karen_4327,2025-12-02 07:23:21,Social Media,Reddit,General Complaint,General,Customer support takes forever to respond,1,6,5,New
+FB00011,user_24662,2025-12-01 04:18:37,Support Ticket,Support Ticket,Feature Request,sleep_tracking,Add sleep stages tracking like deep sleep and light sleep,3,10,8,Resolved
+FB00231,beta_tester_8774,2025-11-30 14:22:35,App Review,Google Play Store,Feature Request,notifications,More customizable notification options please,4,5,4,Reviewed
+FB00225,robert_4166,2025-11-30 07:32:27,App Review,Google Play Store,Feature Request,notifications,More customizable notification options please Hope this gets prioritized.,3,9,6,New
+FB00284,james_5692,2025-11-29 16:11:06,Social Media,Twitter,Vague,General,"I don't know, it's alright",5,5,3,In Progress
+FB00290,michael789,2025-11-29 13:35:10,Social Media,Facebook,Question,Support,What heart rate zones does the device use?,3,8,8,Reviewed
+FB00115,william55,2025-11-29 12:59:38,App Review,Google Play Store,Feature Request,social_features,Add a community feature where users can share workout tips,3,10,10,Closed
+FB00315,susan_6749,2025-11-29 05:40:35,Social Media,Facebook,Praise,General,GPS tracking is spot-on during my runs,5,7,5,Reviewed
+FB00228,beta_tester_2931,2025-11-29 00:55:54,Support Ticket,Support Ticket,Praise,General,Love this device! Best fitness tracker I've owned,5,8,5,New
+FB00232,sarah_6463,2025-11-28 23:26:19,App Review,Google Play Store,Praise,General,Love this device! Best fitness tracker I've owned,4,8,7,New
+FB00467,beta_tester_9581,2025-11-26 16:59:22,App Review,iOS App Store,Praise,General,Comfortable to wear all day and night,5,7,9,Resolved
+FB00427,karen64,2025-11-26 12:35:38,Social Media,Facebook,Vague,General,Decent,4,1,4,Reviewed
+FB00499,user_91940,2025-11-26 06:58:13,App Review,iOS App Store,Feature Request,battery,Low power mode would be great for long hikes,2,9,8,New
+FB00041,barbara_5455,2025-11-25 06:55:03,Support Ticket,Support Ticket,Praise,General,Customer support was very helpful when I had an issue,4,10,6,Resolved
+FB00065,beta_tester_5754,2025-11-24 13:12:31,App Review,iOS App Store,Feature Request,integrations,Need better sync with Apple Health,4,6,6,Closed
+FB00353,beta_tester_619,2025-11-22 20:02:06,Support Ticket,Support Ticket,Bug Report,Technical,"Device doesn't charge, charging icon doesn't appear",2,7,4,New
+FB00342,charles_5918,2025-11-22 11:41:55,Beta Testing,Beta Testing,Question,Support,Can multiple users share one device?,3,6,7,Resolved
+FB00075,user_48680,2025-11-22 08:14:31,Social Media,Twitter,Bug Report,Technical,Historical data disappeared after app update Very frustrating!,1,8,9,Reviewed
+FB00248,beta_tester_9144,2025-11-22 03:10:13,Social Media,Reddit,Feature Request,ui_ux,The app interface is confusing. Needs a redesign This would make the product perfect.,3,14,7,Reviewed
+FB00094,thomas_4842,2025-11-21 21:28:57,App Review,Google Play Store,Feature Request,sleep_tracking,Would love to see sleep quality tracking with REM cycle analysis Really need this feature.,2,15,5,New
+FB00362,linda666,2025-11-20 21:08:09,App Review,Google Play Store,General Complaint,General,The wristband is uncomfortable and causes skin irritation,1,8,2,New
+FB00296,robert812,2025-11-20 12:14:35,App Review,iOS App Store,Feature Request,notifications,Add smart notifications that learn my preferences,3,7,7,New
+FB00470,user_97235,2025-11-20 05:37:59,Support Ticket,Support Ticket,Bug Report,Technical,"Step counter seems inaccurate, counts steps while driving",1,8,10,Closed
+FB00367,beta_tester_5872,2025-11-19 13:08:31,App Review,iOS App Store,Bug Report,Technical,Notifications don't vibrate anymore after latest update,3,7,8,In Progress
+FB00490,beta_tester_9936,2025-11-18 09:16:41,App Review,iOS App Store,Vague,General,Works fine,2,2,1,Resolved
+FB00233,elizabeth_8982,2025-11-17 23:30:21,Social Media,Facebook,Question,Support,Can multiple users share one device?,3,6,1,New
+FB00267,joseph_5741,2025-11-17 21:48:30,Support Ticket,Support Ticket,Vague,General,Fine for the price,1,4,5,New
+FB00212,thomas_1469,2025-11-17 19:59:28,Social Media,Twitter,Praise,General,GPS tracking is spot-on during my runs Exceeded my expectations.,5,10,6,New
+FB00049,jennifer_4086,2025-11-17 14:17:16,Social Media,Facebook,General Complaint,General,"Can't use device without creating an account, privacy concern Apple Watch doesn't have this problem.",1,15,6,Closed
+FB00192,michael254,2025-11-16 21:22:19,Social Media,Facebook,Praise,General,Love the automatic workout detection feature Already told my gym buddies about it.,4,13,8,New
+FB00022,barbara_9000,2025-11-16 15:23:04,Support Ticket,Support Ticket,Feature Request,social_features,Social sharing is too limited. I want to share workouts with my running club,4,14,10,New
+FB00442,mary708,2025-11-16 07:42:00,Support Ticket,Support Ticket,General Complaint,General,Battery life is terrible compared to competitors,1,7,3,Reviewed
+FB00443,beta_tester_3229,2025-11-15 07:19:02,Beta Testing,Beta Testing,Feature Request,notifications,Let me choose which apps can send notifications to my device This is a must-have!,4,15,10,New
+FB00151,michael664,2025-11-14 06:29:45,App Review,iOS App Store,General Complaint,General,No way to contact support directly from the app,2,9,5,New
+FB00116,beta_tester_705,2025-11-14 00:27:13,Support Ticket,Support Ticket,Vague,General,Fine for the price,1,4,1,New
+FB00390,user_34884,2025-11-13 09:07:04,Support Ticket,Support Ticket,General Complaint,General,Not enough watch faces to choose from,1,7,5,New
+FB00419,beta_tester_8804,2025-11-13 07:18:46,Social Media,Facebook,Vague,General,Meh,3,1,1,New
+FB00147,user_53914,2025-11-11 09:39:23,Social Media,Facebook,Praise,General,Love this device! Best fitness tracker I've owned Exceeded my expectations.,5,11,5,Resolved
+FB00450,robert_9827,2025-11-11 08:16:06,Social Media,Instagram,Bug Report,Technical,"Device doesn't charge, charging icon doesn't appear This started after the latest update.",2,13,7,New
+FB00202,mary858,2025-11-11 05:24:41,Support Ticket,Support Ticket,Question,Support,How do I calibrate the heart rate sensor?,3,8,9,New
+FB00318,user_96736,2025-11-10 20:14:10,Support Ticket,Support Ticket,Feature Request,battery,Battery optimization needed - drains too fast with GPS on,3,10,10,Resolved
+FB00421,michael891,2025-11-10 18:14:58,Beta Testing,Beta Testing,Vague,General,It does what it says,2,5,5,New
+FB00004,user_59823,2025-11-10 09:37:20,App Review,iOS App Store,General Complaint,General,Battery life is terrible compared to competitors,2,7,5,New
+FB00405,user_29569,2025-11-09 18:14:56,App Review,iOS App Store,General Complaint,General,No way to contact support directly from the app,1,9,6,Reviewed
+FB00199,beta_tester_1071,2025-11-09 16:59:40,Support Ticket,Support Ticket,Question,Support,Can I replace the wristband with a third-party one?,3,9,3,New
+FB00288,beta_tester_4167,2025-11-09 07:36:00,Social Media,Reddit,Feature Request,ui_ux,Add widgets for home screen,4,5,7,New
+FB00259,mary892,2025-11-09 02:37:20,Support Ticket,Support Ticket,Feature Request,integrations,Strava integration please!,3,3,10,New
+FB00265,user_69251,2025-11-09 00:44:15,App Review,iOS App Store,Feature Request,battery,Low power mode would be great for long hikes,4,9,7,In Progress
+FB00081,john417,2025-11-09 00:01:29,Support Ticket,Support Ticket,Feature Request,ui_ux,Add widgets for home screen,4,5,6,Reviewed
+FB00160,linda_5023,2025-11-08 19:20:00,Social Media,Facebook,Bug Report,Technical,Bluetooth connection drops every 10 minutes Very frustrating!,2,8,9,Reviewed
+FB00452,barbara_3509,2025-11-08 19:02:46,Support Ticket,Support Ticket,Feature Request,social_features,Add a community feature where users can share workout tips,2,10,7,New
+FB00375,joseph_1273,2025-11-07 08:46:20,Support Ticket,Support Ticket,Feature Request,workout_types,Missing dance workout tracking,3,4,7,New
+FB00352,michael_4722,2025-11-06 21:40:00,App Review,Google Play Store,General Complaint,General,This device is overpriced for what it offers My Fitbit was better.,2,12,2,New
+FB00274,barbara_4950,2025-11-06 10:01:04,App Review,Google Play Store,Bug Report,Technical,Sync between device and app fails constantly,1,7,5,New
+FB00319,karen_8469,2025-11-05 23:13:14,App Review,iOS App Store,Praise,General,Step counter is very accurate,5,5,8,Reviewed
+FB00468,david818,2025-11-05 01:22:15,Support Ticket,Support Ticket,Vague,General,"I don't know, it's alright",3,5,1,New
+FB00029,user_25118,2025-11-04 23:36:56,Beta Testing,Beta Testing,Feature Request,metrics,Add calorie burn accuracy improvements,3,5,5,New
+FB00255,patricia177,2025-11-04 20:24:18,Support Ticket,Support Ticket,Bug Report,Technical,"Device doesn't charge, charging icon doesn't appear",1,7,6,New
+FB00285,beta_tester_1852,2025-11-04 15:21:16,App Review,iOS App Store,Vague,General,Fine for the price,2,4,1,New
+FB00382,user_92023,2025-11-04 07:12:38,App Review,Google Play Store,General Complaint,General,App is slow and laggy on older phones Apple Watch doesn't have this problem.,2,14,5,Resolved
+FB00368,beta_tester_9115,2025-11-04 06:13:18,Support Ticket,Support Ticket,General Complaint,General,Setup process is overly complicated,2,5,7,New
+FB00257,user_39329,2025-11-03 15:15:47,Beta Testing,Beta Testing,General Complaint,General,The wristband is uncomfortable and causes skin irritation,2,8,5,New
+FB00340,elizabeth317,2025-11-03 13:34:51,Beta Testing,Beta Testing,Feature Request,battery,Battery optimization needed - drains too fast with GPS on,4,10,6,New
+FB00453,richard455,2025-11-03 05:17:07,App Review,Google Play Store,Vague,General,Pretty good,3,2,1,New
+FB00392,barbara_1577,2025-11-03 04:54:48,Support Ticket,Support Ticket,Bug Report,Technical,Historical data disappeared after app update,2,6,9,In Progress
+FB00437,michael_3118,2025-11-03 03:50:20,App Review,Google Play Store,Vague,General,Decent,3,1,4,Resolved
+FB00429,user_46418,2025-11-02 21:56:23,Social Media,Twitter,Vague,General,It does what it says,3,5,1,In Progress
+FB00185,user_24335,2025-11-02 17:03:24,Social Media,Twitter,Bug Report,Technical,App login fails with 'invalid credentials' even with correct password,2,10,7,Reviewed
+FB00381,user_15210,2025-11-02 12:23:22,Support Ticket,Support Ticket,Feature Request,integrations,Spotify control from the device screen,3,6,9,In Progress
+FB00354,user_25985,2025-11-02 07:07:27,Support Ticket,Support Ticket,Bug Report,Technical,"Sleep tracking doesn't record anything, shows blank screen",2,8,7,In Progress
+FB00333,user_44517,2025-11-02 03:34:26,Social Media,Facebook,Feature Request,ui_ux,"Improve the navigation, too many clicks to get to workout history",2,11,5,Reviewed
+FB00132,beta_tester_6950,2025-11-01 22:55:43,App Review,Google Play Store,Vague,General,Works fine,4,2,3,New
+FB00026,richard708,2025-11-01 20:51:24,Support Ticket,Support Ticket,Question,Support,How do I reset my device to factory settings?,3,9,7,Resolved
+FB00377,user_17148,2025-11-01 15:43:27,App Review,Google Play Store,Praise,General,Battery lasts longer than advertised! Would definitely recommend to friends!,5,10,3,New
+FB00167,beta_tester_9435,2025-11-01 11:17:35,Support Ticket,Support Ticket,General Complaint,General,Customer support takes forever to respond,1,6,5,In Progress
+FB00034,james_857,2025-11-01 10:24:48,Social Media,Instagram,Praise,General,"Great value for money, highly recommend",5,6,7,Resolved
+FB00130,charles504,2025-11-01 07:53:58,Social Media,Twitter,Bug Report,Technical,"Device doesn't charge, charging icon doesn't appear",1,7,4,New
+FB00317,beta_tester_467,2025-10-31 18:41:06,App Review,Google Play Store,Feature Request,integrations,Need better sync with Apple Health,2,6,8,New
+FB00158,beta_tester_356,2025-10-31 00:37:02,App Review,Google Play Store,Feature Request,social_features,Can we get a feature to challenge friends to fitness competitions?,2,11,10,Reviewed
+FB00339,michael_4522,2025-10-30 13:20:00,Support Ticket,Support Ticket,Praise,General,Heart rate monitoring is super accurate,5,6,5,New
+FB00246,beta_tester_9483,2025-10-30 10:27:15,Social Media,Twitter,Praise,General,Comfortable to wear all day and night,4,7,5,Reviewed
+FB00454,user_19287,2025-10-30 09:18:34,App Review,iOS App Store,Bug Report,Technical,App crashes when I try to view workout history from last month,2,12,6,New
+FB00431,beta_tester_6377,2025-10-30 09:08:26,Support Ticket,Support Ticket,Feature Request,battery,"Extend battery life please, I have to charge every 2 days",4,11,5,Reviewed
+FB00112,user_47762,2025-10-30 04:04:43,App Review,iOS App Store,Question,Support,Does this track swimming workouts?,3,5,5,Reviewed
+FB00334,elizabeth_3371,2025-10-30 01:55:37,App Review,iOS App Store,Bug Report,Technical,"Historical data disappeared after app update Running on iOS 17, app version 2.3.1",2,13,5,Resolved
+FB00017,user_22224,2025-10-29 23:10:09,Beta Testing,Beta Testing,Feature Request,social_features,Can we get a feature to challenge friends to fitness competitions?,3,11,7,Resolved
+FB00242,charles314,2025-10-29 20:36:22,Support Ticket,Support Ticket,Feature Request,workout_types,Can you add HIIT workout presets?,2,6,10,Resolved
+FB00087,linda_7498,2025-10-28 08:10:50,Social Media,Facebook,Praise,General,Step counter is very accurate,5,5,4,New
+FB00176,beta_tester_8138,2025-10-28 06:04:07,App Review,iOS App Store,Feature Request,metrics,Please include stress level monitoring Hope this gets prioritized.,3,9,8,Reviewed
+FB00028,charles850,2025-10-28 01:13:50,Social Media,Twitter,Feature Request,integrations,Need better sync with Apple Health Surprised this isn't already included.,2,11,7,Resolved
+FB00218,user_33507,2025-10-27 11:53:34,Beta Testing,Beta Testing,Bug Report,Technical,Historical data disappeared after app update Happens every single time.,3,10,6,Resolved
+FB00283,john846,2025-10-27 09:39:37,Beta Testing,Beta Testing,General Complaint,General,Screen is too small to read notifications,1,7,9,New
+FB00305,david_3114,2025-10-26 15:34:27,Social Media,Twitter,General Complaint,General,No way to contact support directly from the app,2,9,6,Resolved
+FB00473,sarah_8725,2025-10-26 03:13:59,App Review,iOS App Store,General Complaint,General,Too many features locked behind premium subscription My Fitbit was better.,1,11,4,Closed
+FB00369,james317,2025-10-26 00:56:08,App Review,iOS App Store,Vague,General,Meh,5,1,3,Resolved
+FB00035,user_65724,2025-10-25 23:31:04,Support Ticket,Support Ticket,General Complaint,General,Device looks cheap and plasticky My Fitbit was better.,2,9,8,New
+FB00484,user_25544,2025-10-25 21:48:01,Social Media,Twitter,Feature Request,ui_ux,Make the dashboard more customizable,4,5,6,New
+FB00297,patricia310,2025-10-25 15:37:30,Support Ticket,Support Ticket,Bug Report,Technical,"Step counter seems inaccurate, counts steps while driving",2,8,7,New
+FB00395,beta_tester_3997,2025-10-25 14:33:14,App Review,iOS App Store,Bug Report,Technical,App login fails with 'invalid credentials' even with correct password,2,10,6,Reviewed
+FB00289,jessica657,2025-10-25 00:25:41,Social Media,Instagram,Praise,General,The workout summaries are detailed and useful,4,7,4,Closed
+FB00356,user_97385,2025-10-24 21:13:32,Support Ticket,Support Ticket,Feature Request,notifications,Let me choose which apps can send notifications to my device,3,11,8,New
+FB00211,user_44365,2025-10-24 18:33:51,Beta Testing,Beta Testing,Vague,General,Could be better,5,3,4,New
+FB00173,user_40115,2025-10-24 13:45:00,Support Ticket,Support Ticket,Praise,General,The workout summaries are detailed and useful,5,7,1,Reviewed
+FB00197,user_41056,2025-10-23 14:31:11,Beta Testing,Beta Testing,Bug Report,Technical,Heart rate monitor stops working mid-workout randomly,2,7,10,Reviewed
+FB00174,james994,2025-10-23 14:29:14,App Review,Google Play Store,Bug Report,Technical,Notifications don't vibrate anymore after latest update,1,7,6,New
+FB00292,user_48684,2025-10-22 12:49:03,Social Media,Twitter,Question,Support,Can I replace the wristband with a third-party one?,3,9,4,Reviewed
+FB00143,beta_tester_3605,2025-10-21 12:43:23,App Review,Google Play Store,General Complaint,General,Screen is too small to read notifications,1,7,4,New
+FB00495,beta_tester_7735,2025-10-21 03:48:08,App Review,iOS App Store,Bug Report,Technical,Heart rate monitor stops working mid-workout randomly,2,7,9,New
+FB00219,user_58354,2025-10-21 03:43:50,Beta Testing,Beta Testing,Praise,General,The app interface is clean and intuitive,5,7,7,New
+FB00128,user_42847,2025-10-20 16:14:09,App Review,Google Play Store,Question,Support,How accurate is the calorie tracking?,3,6,4,Reviewed
+FB00072,beta_tester_5049,2025-10-20 07:07:13,App Review,iOS App Store,General Complaint,General,Device looks cheap and plasticky,2,5,8,New
+FB00492,user_57672,2025-10-20 05:26:36,Support Ticket,Support Ticket,Vague,General,Meh,2,1,1,New
+FB00485,beta_tester_796,2025-10-19 21:02:22,App Review,Google Play Store,Feature Request,social_features,Can we get a feature to challenge friends to fitness competitions? Surprised this isn't already included.,2,16,7,New
+FB00330,joseph630,2025-10-19 09:40:17,Support Ticket,Support Ticket,General Complaint,General,Setup process is overly complicated,2,5,5,New
+FB00141,karen505,2025-10-19 02:05:22,App Review,iOS App Store,Feature Request,ui_ux,Add widgets for home screen,3,5,7,In Progress
+FB00016,michael264,2025-10-19 00:02:22,App Review,iOS App Store,General Complaint,General,This device is overpriced for what it offers,1,8,4,New
+FB00247,david_3571,2025-10-18 21:42:30,Support Ticket,Support Ticket,General Complaint,General,The wristband is uncomfortable and causes skin irritation Other brands do this better.,1,13,4,New
+FB00074,joseph661,2025-10-18 15:43:12,Social Media,Twitter,Question,Support,What's the difference between active minutes and steps?,3,8,2,Resolved
+FB00422,beta_tester_2378,2025-10-18 13:20:11,App Review,Google Play Store,Bug Report,Technical,App login fails with 'invalid credentials' even with correct password Very frustrating!,1,12,7,New
+FB00486,sarah_3377,2025-10-17 05:54:47,Beta Testing,Beta Testing,Feature Request,sleep_tracking,Would love to see sleep quality tracking with REM cycle analysis,2,11,6,Resolved
+FB00316,richard163,2025-10-16 22:50:36,App Review,Google Play Store,Vague,General,Decent,2,1,1,New
+FB00148,beta_tester_4315,2025-10-16 17:37:37,Support Ticket,Support Ticket,Vague,General,Meh,4,1,4,Reviewed
+FB00451,user_88154,2025-10-16 11:18:52,Social Media,Twitter,Bug Report,Technical,Notifications don't vibrate anymore after latest update,2,7,7,New
+FB00262,thomas_9259,2025-10-16 05:20:03,Social Media,Twitter,Praise,General,Heart rate monitoring is super accurate Worth every penny.,5,9,4,New
+FB00027,linda_506,2025-10-15 05:12:31,Support Ticket,Support Ticket,General Complaint,General,No way to contact support directly from the app Garmin handles this way better.,2,14,5,New
+FB00234,william_5682,2025-10-15 04:53:44,App Review,iOS App Store,Vague,General,Not impressed,1,2,2,In Progress
+FB00051,joseph379,2025-10-15 04:07:09,Support Ticket,Support Ticket,Praise,General,The app interface is clean and intuitive,4,7,6,New
+FB00098,thomas_3332,2025-10-14 15:02:48,App Review,Google Play Store,General Complaint,General,Updates break features that were working fine My Fitbit was better.,1,11,2,Closed
+FB00430,beta_tester_6158,2025-10-14 02:37:33,Social Media,Instagram,Question,Support,How long does the battery typically last?,3,7,5,New
+FB00033,susan_7852,2025-10-13 17:06:07,Support Ticket,Support Ticket,General Complaint,General,Screen is too small to read notifications,1,7,9,New
+FB00179,sarah_8637,2025-10-13 06:58:34,App Review,iOS App Store,Bug Report,Technical,App login fails with 'invalid credentials' even with correct password,1,10,8,New
+FB00376,user_49953,2025-10-13 05:50:49,Support Ticket,Support Ticket,Bug Report,Technical,"Water resistance rating seems wrong, device got wet and stopped working",2,11,10,New
+FB00198,karen561,2025-10-13 04:53:52,App Review,iOS App Store,Feature Request,workout_types,Add yoga workout tracking!,4,4,9,Closed
+FB00097,joseph351,2025-10-12 19:53:42,App Review,iOS App Store,General Complaint,General,Device looks cheap and plasticky,1,5,6,Resolved
+FB00411,sarah260,2025-10-12 19:42:28,App Review,Google Play Store,Bug Report,Technical,"Sleep tracking doesn't record anything, shows blank screen Running on iOS 17, app version 2.3.1",1,15,10,New
+FB00500,user_54249,2025-10-12 17:49:54,Social Media,Twitter,Feature Request,social_features,Can we get a feature to challenge friends to fitness competitions?,3,11,10,Reviewed
+FB00481,michael_9910,2025-10-12 12:54:36,Support Ticket,Support Ticket,Question,Support,Can I get notifications from all apps?,3,7,5,Resolved
+FB00449,patricia_9167,2025-10-12 09:05:07,App Review,Google Play Store,Vague,General,Nothing special,2,2,1,In Progress
+FB00005,jessica_4110,2025-10-11 09:56:40,App Review,iOS App Store,Question,Support,Can multiple users share one device?,3,6,6,Reviewed
+FB00092,user_30392,2025-10-10 15:36:32,Support Ticket,Support Ticket,Feature Request,ui_ux,Add widgets for home screen,2,5,5,New
+FB00303,user_72126,2025-10-10 12:32:13,App Review,iOS App Store,Question,Support,How do I update the firmware?,3,6,8,New
+FB00002,james787,2025-10-10 08:30:03,App Review,iOS App Store,General Complaint,General,Customer support takes forever to respond,1,6,3,New
+FB00063,user_94896,2025-10-09 11:15:34,App Review,iOS App Store,Feature Request,workout_types,Add yoga workout tracking!,4,4,10,New
+FB00121,user_89310,2025-10-09 09:29:43,Support Ticket,Support Ticket,Feature Request,ui_ux,Dark mode for the app would be perfect,4,8,8,In Progress
+FB00357,beta_tester_9868,2025-10-09 06:38:10,Social Media,Twitter,General Complaint,General,Customer support takes forever to respond My Fitbit was better.,2,10,4,Reviewed
+FB00471,barbara_5346,2025-10-08 17:16:13,Support Ticket,Support Ticket,Vague,General,Average product,5,2,5,New
+FB00161,linda428,2025-10-08 04:01:57,Support Ticket,Support Ticket,Bug Report,Technical,Screen doesn't turn on when I raise my wrist,1,9,10,New
+FB00220,jessica_4116,2025-10-07 17:20:46,Support Ticket,Support Ticket,Question,Support,Can I get notifications from all apps?,3,7,4,New
+FB00083,user_46342,2025-10-06 21:50:49,Beta Testing,Beta Testing,Vague,General,Not impressed,3,2,1,Reviewed
+FB00396,john_3128,2025-10-06 19:07:08,App Review,iOS App Store,Praise,General,Syncs perfectly with my phone every time,5,7,5,Resolved
+FB00091,beta_tester_1240,2025-10-06 16:10:02,App Review,iOS App Store,Praise,General,Battery lasts longer than advertised! Already told my gym buddies about it.,5,12,6,New
+FB00439,beta_tester_1876,2025-10-06 12:47:52,Support Ticket,Support Ticket,Question,Support,Can I replace the wristband with a third-party one?,3,9,5,Reviewed
+FB00446,robert_704,2025-10-06 10:54:51,Social Media,Facebook,Vague,General,Not impressed,4,2,1,New
+FB00275,user_11267,2025-10-05 16:40:40,Social Media,Twitter,Vague,General,"I don't know, it's alright",2,5,4,New
+FB00140,beta_tester_1120,2025-10-05 11:59:55,App Review,iOS App Store,Feature Request,metrics,Add calorie burn accuracy improvements,3,5,10,Reviewed
+FB00482,william23,2025-10-05 11:58:48,Social Media,Instagram,Bug Report,Technical,"Water resistance rating seems wrong, device got wet and stopped working Happens every single time.",1,15,8,Resolved
+FB00175,jennifer783,2025-10-04 19:58:10,Support Ticket,Support Ticket,General Complaint,General,App drains my phone battery,1,5,3,New
+FB00206,william401,2025-10-04 16:28:23,App Review,iOS App Store,Feature Request,social_features,Need better integration with social media platforms,4,7,10,New
+FB00347,jessica465,2025-10-04 12:44:56,Support Ticket,Support Ticket,Question,Support,How do I calibrate the heart rate sensor?,3,8,6,Reviewed
+FB00311,sarah_4867,2025-10-04 10:02:00,App Review,iOS App Store,Feature Request,integrations,Need better sync with Apple Health,3,6,9,New
+FB00384,charles_8682,2025-10-04 08:46:20,App Review,Google Play Store,General Complaint,General,App drains my phone battery,2,5,6,Resolved
+FB00497,beta_tester_7156,2025-10-04 04:29:25,App Review,iOS App Store,General Complaint,General,No way to contact support directly from the app,2,9,5,Reviewed
+FB00134,user_66482,2025-10-04 02:44:35,App Review,Google Play Store,Feature Request,integrations,Google Fit integration not working properly,4,6,5,New
+FB00084,thomas_958,2025-10-02 08:26:27,App Review,Google Play Store,Feature Request,workout_types,Missing dance workout tracking,3,4,9,In Progress
+FB00203,beta_tester_366,2025-09-30 22:51:58,Beta Testing,Beta Testing,Praise,General,Step counter is very accurate Would definitely recommend to friends!,5,10,4,New
+FB00123,beta_tester_3379,2025-09-30 22:03:21,App Review,iOS App Store,Bug Report,Technical,Device freezes on the clock face and needs restart,2,9,10,Closed
+FB00410,barbara697,2025-09-30 03:02:28,Social Media,Twitter,General Complaint,General,Customer support takes forever to respond Apple Watch doesn't have this problem.,1,12,5,Reviewed
+FB00372,linda436,2025-09-30 01:22:07,App Review,Google Play Store,Praise,General,Step counter is very accurate 5 stars from me!,5,9,4,New
+FB00182,beta_tester_6080,2025-09-29 13:38:36,Social Media,Reddit,Bug Report,Technical,"Can't export workout data to CSV, export button doesn't work Please fix this ASAP.",1,14,8,New
+FB00009,user_99166,2025-09-29 12:39:52,Support Ticket,Support Ticket,Question,Support,Is there a warranty on this device?,3,7,5,New
+FB00076,mary833,2025-09-29 10:09:56,Beta Testing,Beta Testing,Praise,General,The workout summaries are detailed and useful,5,7,3,Resolved
+FB00298,jennifer947,2025-09-29 07:09:48,App Review,Google Play Store,Feature Request,workout_types,Add yoga workout tracking!,3,4,7,Resolved
+FB00191,beta_tester_9717,2025-09-29 05:46:54,Support Ticket,Support Ticket,Feature Request,ui_ux,Add widgets for home screen,3,5,10,New
+FB00489,michael487,2025-09-28 12:02:12,Support Ticket,Support Ticket,Bug Report,Technical,"Can't export workout data to CSV, export button doesn't work",1,10,7,Reviewed
+FB00209,beta_tester_6422,2025-09-28 01:53:30,Support Ticket,Support Ticket,General Complaint,General,"Can't use device without creating an account, privacy concern",1,9,5,Reviewed
+FB00389,user_78242,2025-09-27 09:33:24,Beta Testing,Beta Testing,General Complaint,General,App drains my phone battery,1,5,2,Reviewed
+FB00447,sarah_1147,2025-09-26 21:16:16,Social Media,Instagram,Feature Request,notifications,More customizable notification options please,3,5,4,Resolved
+FB00258,beta_tester_9676,2025-09-25 17:22:54,Support Ticket,Support Ticket,Bug Report,Technical,Calorie calculation seems way too high Happens every single time.,2,10,10,Reviewed
+FB00069,user_93066,2025-09-25 09:16:04,Beta Testing,Beta Testing,Question,Support,Does this track swimming workouts?,3,5,4,Resolved
+FB00144,joseph_960,2025-09-25 08:09:43,Social Media,Facebook,Vague,General,It does what it says,2,5,2,New
+FB00235,beta_tester_9701,2025-09-25 05:22:04,Social Media,Twitter,Praise,General,Battery lasts longer than advertised!,5,5,5,In Progress
+FB00103,robert347,2025-09-24 13:25:44,Support Ticket,Support Ticket,Praise,General,Love this device! Best fitness tracker I've owned,5,8,5,In Progress
+FB00088,user_66606,2025-09-24 06:40:54,App Review,Google Play Store,Feature Request,integrations,Strava integration please! This is a must-have!,4,7,10,Reviewed
+FB00079,elizabeth128,2025-09-24 01:39:46,Support Ticket,Support Ticket,General Complaint,General,Battery life is terrible compared to competitors My Fitbit was better.,2,11,5,New
+FB00299,susan94,2025-09-23 23:12:31,Support Ticket,Support Ticket,Praise,General,Love this device! Best fitness tracker I've owned Already told my gym buddies about it.,5,15,9,New
+FB00015,beta_tester_3219,2025-09-23 20:38:35,App Review,iOS App Store,Feature Request,integrations,Need better sync with Apple Health,3,6,9,Resolved
+FB00243,beta_tester_3371,2025-09-23 18:03:04,App Review,Google Play Store,Bug Report,Technical,Device freezes on the clock face and needs restart,1,9,6,Resolved
+FB00100,user_94497,2025-09-23 15:30:21,Support Ticket,Support Ticket,Bug Report,Technical,"GPS tracking is way off, shows me running through buildings Please fix this ASAP.",2,14,9,Reviewed
+FB00391,barbara_7500,2025-09-23 11:20:33,Support Ticket,Support Ticket,Vague,General,It does what it says,1,5,5,New
+FB00201,sarah12,2025-09-23 09:48:20,App Review,Google Play Store,Question,Support,How do I calibrate the heart rate sensor?,3,8,3,In Progress
+FB00133,elizabeth33,2025-09-23 07:25:54,App Review,iOS App Store,Question,Support,Is my health data stored securely?,3,6,3,Reviewed
+FB00227,barbara_2210,2025-09-23 05:11:07,Beta Testing,Beta Testing,Feature Request,social_features,Can we get a feature to challenge friends to fitness competitions?,2,11,6,New
+FB00238,david661,2025-09-22 16:22:59,Support Ticket,Support Ticket,Vague,General,Pretty good,4,2,3,New
+FB00213,john_4105,2025-09-22 08:55:59,Support Ticket,Support Ticket,Praise,General,Syncs perfectly with my phone every time Worth every penny.,4,10,9,New
+FB00207,beta_tester_3659,2025-09-21 20:46:19,Social Media,Twitter,Bug Report,Technical,Battery percentage stuck at 50% and won't update,1,8,10,New
+FB00109,user_47363,2025-09-20 22:57:03,App Review,Google Play Store,Feature Request,ui_ux,Add widgets for home screen,3,5,7,New
+FB00003,user_59615,2025-09-20 13:12:48,App Review,Google Play Store,Praise,General,Step counter is very accurate Worth every penny.,4,8,7,New
+FB00152,joseph_9861,2025-09-20 12:14:50,Social Media,Instagram,General Complaint,General,Not enough watch faces to choose from,1,7,5,New
+FB00426,beta_tester_8569,2025-09-20 12:10:08,Support Ticket,Support Ticket,General Complaint,General,Battery life is terrible compared to competitors Apple Watch doesn't have this problem.,2,13,2,New
+FB00386,james_5986,2025-09-20 10:28:00,App Review,Google Play Store,Feature Request,notifications,Let me choose which apps can send notifications to my device,2,11,8,New
+FB00281,beta_tester_3950,2025-09-20 09:49:45,Support Ticket,Support Ticket,Feature Request,sleep_tracking,Add sleep stages tracking like deep sleep and light sleep Surprised this isn't already included.,3,15,10,New
+FB00465,beta_tester_1530,2025-09-20 07:20:18,Support Ticket,Support Ticket,Feature Request,social_features,Social sharing is too limited. I want to share workouts with my running club,4,14,5,New
+FB00037,thomas_7306,2025-09-19 03:31:01,Social Media,Twitter,Praise,General,Step counter is very accurate,4,5,5,New
+FB00126,beta_tester_9519,2025-09-17 21:40:37,App Review,Google Play Store,Bug Report,Technical,"Device doesn't charge, charging icon doesn't appear",3,7,9,Reviewed
+FB00240,david_7493,2025-09-17 18:19:50,Support Ticket,Support Ticket,Praise,General,Love the automatic workout detection feature,4,6,5,Closed
+FB00021,barbara333,2025-09-17 17:27:11,App Review,Google Play Store,General Complaint,General,App is slow and laggy on older phones,1,8,1,Reviewed
+FB00045,beta_tester_6171,2025-09-17 11:32:08,Social Media,Twitter,Vague,General,It does what it says,3,5,3,New
+FB00351,linda202,2025-09-16 23:45:19,Beta Testing,Beta Testing,Praise,General,Customer support was very helpful when I had an issue,4,10,4,Reviewed
+FB00014,user_40007,2025-09-16 18:15:28,App Review,iOS App Store,Vague,General,Decent,5,1,1,Reviewed
+FB00190,richard_4660,2025-09-16 14:08:05,Social Media,Reddit,Praise,General,GPS tracking is spot-on during my runs,4,7,4,New
+FB00444,elizabeth_6469,2025-09-16 12:47:42,Beta Testing,Beta Testing,Bug Report,Technical,"GPS tracking is way off, shows me running through buildings Running on iOS 17, app version 2.3.1",2,17,10,Closed
+FB00345,user_22524,2025-09-16 10:20:32,Beta Testing,Beta Testing,Feature Request,notifications,More customizable notification options please Surprised this isn't already included.,3,10,6,Reviewed
+FB00006,beta_tester_4486,2025-09-16 00:47:44,Social Media,Facebook,Praise,General,Love this device! Best fitness tracker I've owned,5,8,4,Reviewed
+FB00428,sarah276,2025-09-15 16:01:34,App Review,iOS App Store,Bug Report,Technical,Device freezes on the clock face and needs restart This started after the latest update.,1,15,5,Resolved
+FB00456,user_84536,2025-09-15 03:19:50,Support Ticket,Support Ticket,Feature Request,ui_ux,Dark mode for the app would be perfect Really need this feature.,2,12,9,New
+FB00226,michael_295,2025-09-15 01:12:26,Support Ticket,Support Ticket,Bug Report,Technical,"Can't export workout data to CSV, export button doesn't work This started after the latest update.",1,16,8,Reviewed
+FB00155,robert564,2025-09-14 19:37:37,Support Ticket,Support Ticket,Praise,General,Love the automatic workout detection feature Worth every penny.,5,9,4,New
+FB00404,beta_tester_6882,2025-09-14 12:05:09,Support Ticket,Support Ticket,General Complaint,General,Not enough watch faces to choose from,1,7,7,Reviewed
+FB00159,jessica_3659,2025-09-13 22:12:58,Beta Testing,Beta Testing,Vague,General,Average product,3,2,1,Resolved
+FB00127,linda_8338,2025-09-13 21:38:05,App Review,iOS App Store,Praise,General,Syncs perfectly with my phone every time,5,7,4,Resolved
+FB00480,patricia_2775,2025-09-13 03:02:30,Social Media,Facebook,Feature Request,sleep_tracking,Please add sleep tracking! My old device had this and I miss it,3,13,5,New
+FB00494,james_1731,2025-09-12 19:35:53,Social Media,Twitter,Feature Request,integrations,Need better sync with Apple Health,3,6,7,Reviewed
+FB00117,charles_5948,2025-09-12 16:59:19,App Review,iOS App Store,Bug Report,Technical,"Device doesn't charge, charging icon doesn't appear Running on iOS 17, app version 2.3.1",1,14,8,Resolved
+FB00166,mary433,2025-09-11 13:35:42,Social Media,Instagram,General Complaint,General,Too many features locked behind premium subscription,2,7,3,Reviewed
+FB00409,barbara920,2025-09-10 20:52:04,Beta Testing,Beta Testing,Feature Request,sleep_tracking,Add sleep stages tracking like deep sleep and light sleep,3,10,10,New
+FB00302,user_86756,2025-09-10 19:45:25,App Review,iOS App Store,General Complaint,General,App drains my phone battery,1,5,5,Reviewed
+FB00024,beta_tester_4633,2025-09-10 17:14:35,App Review,iOS App Store,Vague,General,Decent,2,1,1,In Progress
+FB00020,sarah_9840,2025-09-10 15:39:54,Social Media,Facebook,Vague,General,Not impressed,1,2,5,New
+FB00388,linda_6733,2025-09-10 15:14:53,Beta Testing,Beta Testing,Praise,General,Battery lasts longer than advertised!,5,5,6,New
+FB00445,user_54265,2025-09-10 07:52:41,Social Media,Instagram,Vague,General,Pretty good,1,2,5,New
+FB00477,jessica512,2025-09-10 04:06:33,Support Ticket,Support Ticket,General Complaint,General,The wristband is uncomfortable and causes skin irritation Other brands do this better.,2,13,6,Reviewed
+FB00250,karen_6681,2025-09-09 07:31:28,Social Media,Twitter,General Complaint,General,The wristband is uncomfortable and causes skin irritation,2,8,2,In Progress
+FB00136,user_15938,2025-09-08 22:06:12,Beta Testing,Beta Testing,General Complaint,General,The wristband is uncomfortable and causes skin irritation Other brands do this better.,2,13,8,New
+FB00042,robert_759,2025-09-07 02:07:02,Support Ticket,Support Ticket,Vague,General,Pretty good,2,2,3,New
+FB00129,sarah52,2025-09-06 20:04:17,Social Media,Facebook,Feature Request,battery,"Extend battery life please, I have to charge every 2 days",2,11,9,Reviewed
+FB00178,beta_tester_1792,2025-09-05 20:22:37,App Review,iOS App Store,Feature Request,integrations,Spotify control from the device screen,3,6,9,Resolved
+FB00359,beta_tester_3261,2025-09-05 06:52:05,App Review,iOS App Store,General Complaint,General,Too many features locked behind premium subscription,1,7,4,In Progress
+FB00270,user_95664,2025-09-04 18:52:13,Social Media,Facebook,Praise,General,Love the automatic workout detection feature,5,6,4,Reviewed
+FB00095,user_67176,2025-09-04 09:51:11,Social Media,Reddit,Bug Report,Technical,"Water resistance rating seems wrong, device got wet and stopped working Running on iOS 17, app version 2.3.1",3,18,10,Reviewed
+FB00052,beta_tester_1780,2025-09-03 14:00:54,Beta Testing,Beta Testing,General Complaint,General,The wristband is uncomfortable and causes skin irritation,1,8,7,New
+FB00487,user_85777,2025-09-03 12:22:06,App Review,iOS App Store,Feature Request,workout_types,Missing dance workout tracking,3,4,6,Resolved
+FB00435,user_18906,2025-09-03 08:05:14,Social Media,Twitter,Question,Support,How do I reset my device to factory settings?,3,9,4,New
+FB00459,robert_9250,2025-09-03 07:55:07,Support Ticket,Support Ticket,Bug Report,Technical,Sync between device and app fails constantly,3,7,6,New
+FB00164,charles989,2025-09-03 00:49:33,Support Ticket,Support Ticket,General Complaint,General,Customer support takes forever to respond,2,6,4,Resolved
+FB00273,joseph12,2025-09-02 20:21:16,Support Ticket,Support Ticket,Feature Request,workout_types,Add support for weight training with rep counting,4,8,10,New
+FB00420,robert606,2025-09-02 15:22:40,Social Media,Facebook,General Complaint,General,No way to contact support directly from the app,2,9,4,New
+FB00073,beta_tester_4597,2025-09-02 13:43:08,App Review,Google Play Store,Vague,General,Decent,5,1,3,In Progress
+FB00205,beta_tester_252,2025-09-02 05:37:23,App Review,Google Play Store,Feature Request,social_features,Social sharing is too limited. I want to share workouts with my running club,4,14,7,New
+FB00169,robert_2574,2025-09-02 01:04:39,Social Media,Twitter,Feature Request,sleep_tracking,Would love to see sleep quality tracking with REM cycle analysis,3,11,10,Resolved
+FB00186,beta_tester_1835,2025-09-01 20:42:15,Social Media,Facebook,General Complaint,General,Too many features locked behind premium subscription,1,7,9,Reviewed
+FB00304,michael_784,2025-09-01 13:57:58,Social Media,Facebook,Feature Request,ui_ux,The app interface is confusing. Needs a redesign,3,8,5,New
+FB00323,user_78126,2025-09-01 06:46:06,App Review,Google Play Store,General Complaint,General,App is slow and laggy on older phones My Fitbit was better.,2,12,6,New
+FB00266,beta_tester_6380,2025-08-31 18:29:15,Social Media,Instagram,Feature Request,metrics,Blood oxygen tracking missing,3,4,5,In Progress
+FB00061,beta_tester_8531,2025-08-31 17:03:31,App Review,iOS App Store,Vague,General,"I don't know, it's alright",5,5,1,Reviewed
+FB00321,karen_8935,2025-08-31 16:45:07,Support Ticket,Support Ticket,Vague,General,Decent,3,1,2,Resolved
