@@ -266,7 +266,7 @@
       <div class="chart-header">
         <div>
           <p class="section-title">Sentiment vs. Impact</p>
-          <p class="chart-sub">Each bubble = one theme · size = priority score · hover for details</p>
+          <p class="chart-sub">Each bubble = one theme · size = priority score</p>
         </div>
         <button class="print-btn" onclick={() => window.print()}>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">

@@ -151,12 +151,37 @@
     return () => { cancelled = true; };
   });
 
-  // Ring animation
+  // Ring animation — single rAF loop drives both arcs as one continuous sweep
   const RING_R = 80;
   const RING_C = +(2 * Math.PI * RING_R).toFixed(2);
-  const ringDashOffset = $derived(() =>
-    mounted ? RING_C * (1 - overallPositive() / Math.max(overallVolume(), 1)) : RING_C
-  );
+  let ringProgress = $state(0);
+
+  $effect(() => {
+    if (!mounted) return;
+    let start: number | null = null;
+    let raf: number;
+    const DURATION = 1400;
+    function easeOutCubic(t: number) { return 1 - Math.pow(1 - t, 3); }
+    function step(ts: number) {
+      if (start === null) start = ts;
+      const t = Math.min((ts - start) / DURATION, 1);
+      ringProgress = easeOutCubic(t);
+      if (t < 1) raf = requestAnimationFrame(step);
+    }
+    const delay = setTimeout(() => { raf = requestAnimationFrame(step); }, 200);
+    return () => { clearTimeout(delay); cancelAnimationFrame(raf); };
+  });
+
+  const ringGreenLen   = $derived(() => (overallPositive() / Math.max(overallVolume(), 1)) * RING_C);
+  const ringTotalLen   = $derived(() => Math.min(((overallPositive() + overallNegative()) / Math.max(overallVolume(), 1)) * RING_C, RING_C));
+  const ringGreenDrawn = $derived(() => Math.min(ringProgress * ringTotalLen(), ringGreenLen()));
+  const ringRedDrawn   = $derived(() => Math.max(0, ringProgress * ringTotalLen() - ringGreenLen()));
+
+  // Green: dashoffset shrinks as it draws
+  const ringDashOffset    = $derived(() => RING_C - ringGreenDrawn());
+  // Red: rotation tracks green's current endpoint so red starts exactly there
+  const ringRedRotation   = $derived(() => -90 + (ringGreenDrawn() / RING_C) * 360);
+  const ringNegDashOffset = $derived(() => RING_C - ringRedDrawn());
 
   const daysLabel = $derived(() => {
     if (rangeKey === '30d') return '30 days';
@@ -696,8 +721,9 @@
             stroke={sentHover === 'negative' ? 'rgba(220,38,38,0.65)' : 'rgba(220,38,38,0.28)'}
             stroke-width="16"
             stroke-linecap="round"
-            stroke-dasharray={`${RING_C * negPct() / 100} ${RING_C}`}
-            transform={`rotate(${-90 + posPct() * 3.6} 110 110)`}
+            stroke-dasharray={RING_C}
+            stroke-dashoffset={ringNegDashOffset()}
+            transform={`rotate(${ringRedRotation()} 110 110)`}
             style="cursor:pointer; transition: stroke 0.22s ease, opacity 0.22s ease; {sentHover === 'positive' ? 'opacity:0.30' : 'opacity:1'}"
             onmouseenter={() => sentHover = 'negative'}
           />
@@ -760,7 +786,7 @@
     <div class="card-head">
       <div>
         <p class="section-title">Sentiment vs Impact</p>
-        <p class="chart-sub">Each bubble = a feedback theme · X = positive sentiment · Y = volume · size = relative volume</p>
+        <p class="chart-sub">Select a cluster to access more data</p>
       </div>
       <div class="scatter-legend">
         <!-- svelte-ignore a11y_no_static_element_interactions -->
@@ -980,7 +1006,7 @@
   }
   .date-btn:hover { background: #F7F8FA; color: var(--text); }
 
-  .date-menu { position: absolute; top: calc(100% + 6px); right: 0; z-index: 51; padding: 6px; min-width: 160px; }
+  .date-menu { position: absolute; top: calc(100% + 6px); right: 0; left: 0; z-index: 51; padding: 6px; min-width: 100%; }
   .date-opt {
     display: block; width: 100%; text-align: left; padding: 8px 12px;
     font-size: .82rem; font-weight: 500; color: var(--text-muted);
@@ -1048,7 +1074,7 @@
     font-size: .82rem; font-weight: 700; padding: 4px 10px;
     border-radius: var(--radius-sm); line-height: 1;
     opacity: 0;
-    transform: translateY(-5px);
+    transform: translateY(5px);
     transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.34, 1.2, 0.64, 1);
   }
   .above-stat-badge.visible { opacity: 1; transform: translateY(0); }
@@ -1129,7 +1155,7 @@
 
   .ring-wrap { flex-shrink: 0; align-self: center; position: relative; }
   .ring-svg  { width: 200px; height: 200px; display: block; }
-  .ring-arc  { transition: stroke-dashoffset 1.4s cubic-bezier(0.34, 1.2, 0.64, 1) 0.15s, stroke-width 0.22s ease, opacity 0.22s ease; }
+  .ring-arc  { transition: stroke-width 0.22s ease, opacity 0.22s ease; }
 
 .sent-row { cursor: pointer; border-radius: 6px; padding: 3px 5px; margin: 0 -5px; transition: background 0.18s; }
   .sent-row:hover, .sent-row-active { background: rgba(15,23,42,0.045); }
