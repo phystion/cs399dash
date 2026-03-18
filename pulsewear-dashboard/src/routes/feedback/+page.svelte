@@ -1,7 +1,11 @@
 <script lang="ts">
-  import { themes, sampleFeedback } from '$lib/data';
+  import { themes as staticThemes, sampleFeedback, type FeedbackItem } from '$lib/data';
+  import { API_BASE } from '$lib/api';
   import PageHeader from '$lib/components/PageHeader.svelte';
   import { page } from '$app/stores';
+
+  let { data } = $props();
+  const themes = $derived(data.themes ?? staticThemes);
 
   // Cluster from URL ?cluster=N, default to first
   const urlCluster = $derived(() => {
@@ -25,7 +29,23 @@
   }
 
   const selectedTheme = $derived(themes.find(t => t.cluster_id === selectedCid)!);
-  const feedbackItems = $derived(sampleFeedback[selectedCid] ?? []);
+
+  // Live feedback from API, falling back to pre-sampled static JSON
+  let liveFeedback = $state<FeedbackItem[] | null>(null);
+  let feedbackLoading = $state(false);
+
+  $effect(() => {
+    const cid = selectedCid;
+    liveFeedback = null;
+    feedbackLoading = true;
+    fetch(`${API_BASE}/feedback/${cid}?limit=30`)
+      .then(r => r.ok ? r.json() : Promise.reject(r.status))
+      .then(body => { if (selectedCid === cid) liveFeedback = body.feedback; })
+      .catch(() => { /* silently fall back to static */ })
+      .finally(() => { if (selectedCid === cid) feedbackLoading = false; });
+  });
+
+  const feedbackItems = $derived<FeedbackItem[]>(liveFeedback ?? sampleFeedback[selectedCid] ?? []);
 
   // Filter state
   type SentFilter = 'all' | 'POSITIVE' | 'NEGATIVE';
@@ -34,43 +54,14 @@
   let sentFilter = $state<SentFilter>('all');
   let chanFilter = $state<ChanFilter>('all');
 
-  const filtered = $derived(feedbackItems.filter(f => {
+  const displayFiltered = $derived(feedbackItems.filter(f => {
     if (sentFilter !== 'all' && f.sentiment !== sentFilter) return false;
     if (chanFilter !== 'all' && f.channel !== chanFilter) return false;
     return true;
   }));
 
-  // Try loading from backend; fallback to static
-  let apiQuotes = $state<typeof feedbackItems | null>(null);
-  let apiLoading = $state(false);
-  let apiError   = $state(false);
-
-  async function loadFromApi(cid: number) {
-    apiLoading = true; apiError = false; apiQuotes = null;
-    try {
-      const res = await fetch(`http://localhost:8000/feedback/${cid}`, {
-        signal: AbortSignal.timeout(4000),
-      });
-      if (!res.ok) throw new Error();
-      const data = await res.json();
-      apiQuotes = data.feedback ?? null;
-    } catch {
-      apiError = true;
-    }
-    apiLoading = false;
-  }
-
-  $effect(() => { loadFromApi(selectedCid); });
-
-  const displayItems = $derived(apiQuotes ?? feedbackItems);
-  const displayFiltered = $derived(displayItems.filter(f => {
-    if (sentFilter !== 'all' && f.sentiment !== sentFilter) return false;
-    if (chanFilter !== 'all' && f.channel !== chanFilter) return false;
-    return true;
-  }));
-
-  const posCount = $derived(displayItems.filter(f => f.sentiment === 'POSITIVE').length);
-  const negCount = $derived(displayItems.filter(f => f.sentiment === 'NEGATIVE').length);
+  const posCount = $derived(feedbackItems.filter(f => f.sentiment === 'POSITIVE').length);
+  const negCount = $derived(feedbackItems.filter(f => f.sentiment === 'NEGATIVE').length);
 
   const channels = ['all', 'App Review', 'Support Ticket', 'Social Media', 'Beta Testing'] as const;
 </script>
@@ -105,8 +96,8 @@
                 {/if}
                 <span
                   class="tb-sent"
-                  class:tb-pos={t.positive_pct >= 60}
-                  class:tb-neg={t.positive_pct < 45}
+                  class:tb-pos={t.positive_pct > 60}
+                  class:tb-neg={t.positive_pct < 40}
                 >{t.positive_pct}%</span>
               </div>
             </button>
@@ -191,24 +182,11 @@
         </div>
         <div class="filter-meta">
           <span>{displayFiltered.length} quotes · {posCount} pos / {negCount} neg</span>
-          {#if apiError}
-            <span class="offline-tag">Static data (backend offline)</span>
-          {:else if !apiLoading && !apiError}
-            <span class="live-tag">
-              <svg width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="4" fill="#059669"/></svg>
-              Live
-            </span>
-          {/if}
         </div>
       </div>
 
       <!-- Quote cards -->
-      {#if apiLoading}
-        <div class="loading-state">
-          <svg class="spin" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(15,23,42,0.3)" stroke-width="2"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>
-          <p>Loading feedback…</p>
-        </div>
-      {:else if displayFiltered.length === 0}
+      {#if displayFiltered.length === 0}
         <div class="glass empty-state fade-in-up">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(15,23,42,0.18)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
           <p>No quotes match these filters</p>
@@ -292,13 +270,8 @@
   .ftab.active { background:rgba(27,58,107,.10); color:var(--navy); border-color:rgba(27,58,107,.20); font-weight:700; }
   .ftab:hover:not(.active) { background:rgba(15,23,42,.09); color:var(--text); }
   .filter-meta { display:flex; align-items:center; gap:10px; font-size:.74rem; color:var(--text-muted); }
-  .offline-tag { color:var(--text-subtle); font-style:italic; }
-  .live-tag { display:flex; align-items:center; gap:4px; color:#059669; font-weight:600; }
 
-  /* Loading / empty */
-  .loading-state { display:flex; align-items:center; gap:12px; padding:32px 0; color:var(--text-muted); font-size:.85rem; }
-  @keyframes spin { to { transform:rotate(360deg); } }
-  .spin { animation:spin .8s linear infinite; }
+  /* Empty state */
   .empty-state { padding:36px 24px; display:flex; flex-direction:column; align-items:center; gap:12px; text-align:center; }
   .empty-state p { font-size:.85rem; color:var(--text-muted); }
 

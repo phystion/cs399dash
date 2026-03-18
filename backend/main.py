@@ -5,7 +5,7 @@ Serves endpoints for the SvelteKit dashboard.
 
 Endpoints:
   POST /sentiment          — DistilBERT sentiment analysis
-  GET  /themes             — all 10 clusters with stats
+  GET  /themes             — all clusters with stats (count derived from CSV)
   GET  /trends             — monthly pivot data (Mar 2024 – Feb 2025)
   GET  /feedback/{cluster} — raw feedback quotes for a cluster
   GET  /roadmap            — priority-scored roadmap initiatives
@@ -67,51 +67,48 @@ def load_data() -> pd.DataFrame:
 try:
     DATA = load_data()
     print(f"[PulseWear] Loaded {len(DATA):,} rows from {CSV_PATH.name}")
+    # Build cluster name lookup from cluster_description column
+    if "cluster_description" in DATA.columns:
+        _desc_map = (
+            DATA.groupby("cluster_label")["cluster_description"]
+            .first().to_dict()
+        )
+        CLUSTER_NAMES: dict[int, str] = {
+            int(cid): str(desc).split(".")[0].strip() if pd.notna(desc) else f"Cluster {int(cid)}"
+            for cid, desc in _desc_map.items()
+        }
+    else:
+        CLUSTER_NAMES = {}
 except Exception as e:
     DATA = None
+    CLUSTER_NAMES = {}
     print(f"[PulseWear] WARNING: Could not load CSV — {e}")
 
-# ── Roadmap mapping ───────────────────────────────────────────────────────────
-ROADMAP = {
-    0: {"id": "PWL-ROAD-01", "status": "Active"},
-    1: {"id": "PWL-ROAD-02", "status": "Active"},
-    2: {"id": "PWL-ROAD-03", "status": "Planned"},
-    3: {"id": "PWL-ROAD-04", "status": "Active"},
-    4: {"id": "PWL-ROAD-05", "status": "Under Review"},
-    5: None,
-    6: {"id": "PWL-ROAD-06", "status": "Backlog"},
-    7: None,
-    8: {"id": "PWL-ROAD-07", "status": "Active"},
-    9: {"id": "PWL-ROAD-08", "status": "Planned"},
-}
-
-CLUSTER_NAMES = {
-    0: "Fitness & Social Features",
-    1: "Battery & Connectivity",
-    2: "Multi-User & Privacy",
-    3: "Customer Support & Setup",
-    4: "Notifications & Alerts",
-    5: "General Feedback (Cluster A)",
-    6: "Water Resistance & Durability",
-    7: "General Feedback (Cluster B)",
-    8: "Data Security & Health",
-    9: "Premium Features & Updates",
-}
+# ── Roadmap mapping (read from roadmap_config.json if present) ───────────────
+_ROADMAP_CFG_PATH = Path(__file__).parent / "roadmap_config.json"
+try:
+    with open(_ROADMAP_CFG_PATH, encoding="utf-8") as _f:
+        _raw = json.load(_f)
+    ROADMAP: dict[int, dict] = {int(k): v for k, v in _raw.items() if v is not None}
+    print(f"[PulseWear] Loaded roadmap_config.json — {len(ROADMAP)} entries")
+except FileNotFoundError:
+    ROADMAP = {}
+    print("[PulseWear] No roadmap_config.json — roadmap fields will be null")
 
 # ── Rule-based chat engine ────────────────────────────────────────────────────
 
 # Hardcoded cluster data (matches CSV-derived values)
 CLUSTER_DATA = {
-    0: {"name": "Fitness & Social Features",     "vol": 2340, "pos": 71, "neg": 29, "priority": 72, "roadmap_id": "PWL-ROAD-01", "status": "Active",        "topics": "workout tracking, social sharing, avatar customization, community challenges"},
-    1: {"name": "Battery & Connectivity",        "vol": 2180, "pos": 32, "neg": 68, "priority": 94, "roadmap_id": "PWL-ROAD-02", "status": "Active",        "topics": "battery drain, Bluetooth lag, GPS connectivity, sync failures"},
-    2: {"name": "Multi-User & Privacy",          "vol": 1950, "pos": 58, "neg": 42, "priority": 58, "roadmap_id": "PWL-ROAD-03", "status": "Planned",       "topics": "family profiles, data sharing controls, privacy settings, subscription value"},
-    3: {"name": "Customer Support & Setup",      "vol": 1820, "pos": 44, "neg": 56, "priority": 76, "roadmap_id": "PWL-ROAD-04", "status": "Active",        "topics": "onboarding flow, pairing issues, support response time, documentation"},
-    4: {"name": "Notifications & Alerts",        "vol": 2100, "pos": 65, "neg": 35, "priority": 54, "roadmap_id": "PWL-ROAD-05", "status": "Under Review",  "topics": "push notification timing, alert customization, do-not-disturb, smart reminders"},
-    5: {"name": "General Feedback (Cluster A)",  "vol": 1640, "pos": 55, "neg": 45, "priority": 20, "roadmap_id": None,          "status": None,            "topics": "mixed general satisfaction, vague praise, average experience comments"},
-    6: {"name": "Water Resistance & Durability", "vol": 1980, "pos": 69, "neg": 31, "priority": 48, "roadmap_id": "PWL-ROAD-06", "status": "Backlog",       "topics": "swim tracking, waterproof rating, physical durability, strap comfort"},
-    7: {"name": "General Feedback (Cluster B)",  "vol": 1560, "pos": 48, "neg": 52, "priority": 18, "roadmap_id": None,          "status": None,            "topics": "mediocre ratings, unspecific complaints, transition-period comments"},
-    8: {"name": "Data Security & Health",        "vol": 2220, "pos": 41, "neg": 59, "priority": 88, "roadmap_id": "PWL-ROAD-07", "status": "Active",        "topics": "health data encryption, HIPAA concerns, third-party sharing, account security"},
-    9: {"name": "Premium Features & Updates",    "vol": 2210, "pos": 60, "neg": 40, "priority": 62, "roadmap_id": "PWL-ROAD-08", "status": "Planned",       "topics": "premium tier value, firmware update quality, new feature requests, OS compatibility"},
+    0: {"name": "Fitness Tracking & Customization",       "vol": 7843, "pos": 36, "neg": 64, "priority": 78, "roadmap_id": "PWL-ROAD-01", "status": "Active",       "topics": "fitness tracking accuracy, social connectivity, avatar customization, device customization"},
+    1: {"name": "Battery, Connectivity & Lag",            "vol": 4202, "pos": 10, "neg": 90, "priority": 94, "roadmap_id": "PWL-ROAD-02", "status": "Active",       "topics": "battery drain, Bluetooth instability, software lag, sync failures"},
+    2: {"name": "Privacy & Multi-User Support",           "vol":  869, "pos": 19, "neg": 81, "priority": 63, "roadmap_id": "PWL-ROAD-03", "status": "Planned",      "topics": "multi-user support, account registration privacy, data sharing controls, product value"},
+    3: {"name": "Support & Setup Experience",             "vol":  811, "pos": 24, "neg": 76, "priority": 59, "roadmap_id": "PWL-ROAD-04", "status": "Active",       "topics": "customer support responsiveness, onboarding flow, pairing issues, setup documentation"},
+    4: {"name": "Notification Settings",                  "vol": 2135, "pos": 31, "neg": 69, "priority": 76, "roadmap_id": "PWL-ROAD-05", "status": "Under Review", "topics": "push notification timing, alert customization, do-not-disturb, smart reminders"},
+    5: {"name": "Average Product Feedback",               "vol":  232, "pos":  0, "neg": 100,"priority": 64, "roadmap_id": None,          "status": None,           "topics": "uniformly average ratings, lukewarm general satisfaction, calls for incremental improvement"},
+    6: {"name": "Water Resistance Reliability",           "vol":  496, "pos": 34, "neg": 66, "priority": 48, "roadmap_id": "PWL-ROAD-06", "status": "Backlog",      "topics": "swim tracking, waterproof rating accuracy, physical durability, strap comfort"},
+    7: {"name": "Mixed & Neutral Sentiment",              "vol": 2925, "pos": 68, "neg": 32, "priority": 59, "roadmap_id": None,          "status": None,           "topics": "mediocre and lukewarm feedback, indifferent or underwhelming sentiments"},
+    8: {"name": "Health Data Security",                   "vol":  105, "pos":  0, "neg": 100,"priority": 62, "roadmap_id": "PWL-ROAD-07", "status": "Active",       "topics": "health data encryption, HIPAA concerns, third-party data sharing, account security"},
+    9: {"name": "Subscriptions & Update Regressions",     "vol":  382, "pos": 46, "neg": 54, "priority": 39, "roadmap_id": "PWL-ROAD-08", "status": "Planned",      "topics": "premium subscription value, firmware update regressions, new feature requests, OS compatibility"},
 }
 
 def _cluster_detail(cid: int) -> tuple[str, list[str]]:
@@ -140,7 +137,7 @@ def _match_intent(text: str, history: list[dict]) -> tuple[str, list[str], Optio
     last_cluster: Optional[int] = None
     for msg in reversed(history):
         if msg["role"] == "assistant":
-            for cid in range(10):
+            for cid in CLUSTER_DATA:
                 if f"cluster {cid}" in msg["content"].lower() or CLUSTER_DATA[cid]["name"].lower() in msg["content"].lower():
                     last_cluster = cid
                     break
@@ -184,11 +181,11 @@ def _match_intent(text: str, history: list[dict]) -> tuple[str, list[str], Optio
     if re.search(r"\b(top (issue|issues|problem|problems|priority|priorities)|focus|urgent|most critical|highest priority|what to fix|what should we fix)\b", t):
         return (
             "Top 3 priorities by urgency score:\n"
-            "1. Battery & Connectivity (score 94, 68% negative) — PWL-ROAD-02 Active\n"
-            "2. Data Security & Health (score 88, 59% negative) — PWL-ROAD-07 Active\n"
-            "3. Customer Support & Setup (score 76, 56% negative) — PWL-ROAD-04 Active\n"
-            "Battery & Connectivity is the highest-priority item with nearly 7 in 10 users dissatisfied.",
-            ["cluster:1", "cluster:8", "cluster:3", "summary"],
+            "1. Battery, Connectivity & Lag (score 94, 90% negative) — PWL-ROAD-02 Active\n"
+            "2. Fitness Tracking & Customization (score 78, 64% negative) — PWL-ROAD-01 Active\n"
+            "3. Notification Settings (score 76, 69% negative) — PWL-ROAD-05 Under Review\n"
+            "Battery, Connectivity & Lag is the highest-priority item with 9 in 10 users dissatisfied.",
+            ["cluster:1", "cluster:0", "cluster:4", "summary"],
             None,
         )
 
@@ -232,14 +229,14 @@ def _match_intent(text: str, history: list[dict]) -> tuple[str, list[str], Optio
         reply, sources = _cluster_detail(2)
         return reply, sources, 2
 
-    # Intent 10: general feedback clusters A & B
-    if re.search(r"\b(general feedback|cluster a|cluster b|app firmware|cluster 5|cluster 7)\b", t):
+    # Intent 10: general / neutral feedback clusters 5 & 7
+    if re.search(r"\b(general feedback|average feedback|neutral|cluster 5|cluster 7)\b", t):
         c5, c7 = CLUSTER_DATA[5], CLUSTER_DATA[7]
         return (
-            f"There are two general feedback clusters with no roadmap items.\n"
-            f"Cluster A ({c5['name']}): {c5['vol']:,} entries, {c5['pos']}% positive, priority {c5['priority']}.\n"
-            f"Cluster B ({c7['name']}): {c7['vol']:,} entries, {c7['pos']}% positive, priority {c7['priority']}.\n"
-            "Both have low priority scores and represent catch-all or transitional feedback with limited actionable signal.",
+            f"There are two unlinked feedback clusters with no roadmap items.\n"
+            f"Cluster 5 ({c5['name']}): {c5['vol']:,} entries, {c5['pos']}% positive, priority {c5['priority']}.\n"
+            f"Cluster 7 ({c7['name']}): {c7['vol']:,} entries, {c7['pos']}% positive, priority {c7['priority']}.\n"
+            "Cluster 7 is largely neutral/positive; Cluster 5 shows uniformly average sentiment with no clear actionable signal.",
             ["cluster:5", "cluster:7"],
             None,
         )
@@ -247,10 +244,10 @@ def _match_intent(text: str, history: list[dict]) -> tuple[str, list[str], Optio
     # Intent 11: summary / overview / dataset
     if re.search(r"\b(summary|overview|total|dataset|how many|all clusters|entire dataset|big picture)\b", t):
         return (
-            "Dataset: 20,000 feedback entries collected Mar 2024 – Feb 2025. "
-            "Overall sentiment: 62% positive, 38% negative. "
+            "Dataset: 20,000 feedback entries. "
+            "Overall sentiment: 33% positive, 67% negative. "
             "Channels: App Review 28%, Social Media 26%, Support Ticket 24%, Beta Testing 22%. "
-            "10 semantic clusters, top priority is Battery & Connectivity (score 94), lowest is General Feedback Cluster B (score 18).",
+            "10 semantic clusters, top priority is Battery, Connectivity & Lag (score 94), lowest is Subscriptions & Update Regressions (score 39).",
             ["summary"],
             None,
         )
@@ -259,11 +256,11 @@ def _match_intent(text: str, history: list[dict]) -> tuple[str, list[str], Optio
     if re.search(r"\b(positive|best|happiest|most satisfied|highest satisfaction|top rated)\b", t):
         return (
             "The three most positive clusters are:\n"
-            "1. Fitness & Social Features — 71% positive (2,340 entries)\n"
-            "2. Water Resistance & Durability — 69% positive (1,980 entries)\n"
-            "3. Notifications & Alerts — 65% positive (2,100 entries)\n"
-            "Users are most satisfied with activity tracking features and hardware durability.",
-            ["cluster:0", "cluster:6", "cluster:4"],
+            "1. Mixed & Neutral Sentiment — 68% positive (2,925 entries)\n"
+            "2. Subscriptions & Update Regressions — 46% positive (382 entries)\n"
+            "3. Fitness Tracking & Customization — 36% positive (7,843 entries)\n"
+            "Mixed & Neutral Sentiment is the only cluster with majority-positive feedback.",
+            ["cluster:7", "cluster:9", "cluster:0"],
             None,
         )
 
@@ -271,11 +268,11 @@ def _match_intent(text: str, history: list[dict]) -> tuple[str, list[str], Optio
     if re.search(r"\b(negative|worst|unhappiest|most dissatisfied|most complaints|critical|unhappy)\b", t):
         return (
             "The three most negative clusters are:\n"
-            "1. Battery & Connectivity — 68% negative (2,180 entries)\n"
-            "2. Data Security & Health — 59% negative (2,220 entries)\n"
-            "3. Customer Support & Setup — 56% negative (1,820 entries)\n"
-            "Battery issues are by far the loudest pain point.",
-            ["cluster:1", "cluster:8", "cluster:3"],
+            "1. Battery, Connectivity & Lag — 90% negative (4,202 entries)\n"
+            "2. Average Product Feedback — 100% negative (232 entries)\n"
+            "3. Health Data Security — 100% negative (105 entries)\n"
+            "Battery, Connectivity & Lag has both the highest volume and worst sentiment — the loudest pain point by far.",
+            ["cluster:1", "cluster:5", "cluster:8"],
             None,
         )
 
@@ -283,12 +280,11 @@ def _match_intent(text: str, history: list[dict]) -> tuple[str, list[str], Optio
     if re.search(r"\b(roadmap|planned|backlog|under review|active item|initiative)\b", t):
         return (
             "Roadmap status across 8 initiatives:\n"
-            "Active (3): PWL-ROAD-02 Battery & Connectivity, PWL-ROAD-04 Customer Support, PWL-ROAD-07 Data Security\n"
-            "Also Active: PWL-ROAD-01 Fitness & Social Features\n"
-            "Planned (2): PWL-ROAD-03 Multi-User & Privacy, PWL-ROAD-08 Premium Features\n"
-            "Under Review (1): PWL-ROAD-05 Notifications & Alerts\n"
-            "Backlog (1): PWL-ROAD-06 Water Resistance & Durability\n"
-            "Clusters 5 and 7 (General Feedback) have no roadmap items.",
+            "Active (4): PWL-ROAD-01 Fitness Tracking, PWL-ROAD-02 Battery & Lag, PWL-ROAD-04 Support & Setup, PWL-ROAD-07 Health Data Security\n"
+            "Planned (2): PWL-ROAD-03 Privacy & Multi-User, PWL-ROAD-08 Subscriptions & Updates\n"
+            "Under Review (1): PWL-ROAD-05 Notification Settings\n"
+            "Backlog (1): PWL-ROAD-06 Water Resistance\n"
+            "Clusters 5 and 7 have no roadmap items.",
             ["roadmap"],
             None,
         )
@@ -321,10 +317,10 @@ def _match_intent(text: str, history: list[dict]) -> tuple[str, list[str], Optio
     if re.search(r"\b(recommend|what should (i|we|ethan)|action|next step|suggest|what to do|prioritize)\b", t):
         return (
             "Based on the data, three immediate recommendations:\n"
-            "1. Fix battery drain and Bluetooth stability — 68% negative rate, 2,180 entries, already Active (PWL-ROAD-02). This needs sprint-level escalation.\n"
-            "2. Strengthen health data encryption and HIPAA compliance — 59% negative, Active (PWL-ROAD-07). Security issues grow reputationally fast.\n"
-            "3. Revamp onboarding and support docs — 56% negative, Active (PWL-ROAD-04). First-time user experience directly impacts retention.",
-            ["cluster:1", "cluster:8", "cluster:3"],
+            "1. Fix battery drain and connectivity lag — 90% negative, 4,202 entries, Active (PWL-ROAD-02). Highest priority in the dataset; nearly every user is dissatisfied.\n"
+            "2. Improve fitness tracking accuracy and social features — 64% negative, 7,843 entries, Active (PWL-ROAD-01). Largest volume cluster; even small sentiment gains have major impact.\n"
+            "3. Improve notification customization — 69% negative, 2,135 entries, Under Review (PWL-ROAD-05). High negative rate needs to move from Under Review to Active.",
+            ["cluster:1", "cluster:0", "cluster:4"],
             None,
         )
 
@@ -332,16 +328,16 @@ def _match_intent(text: str, history: list[dict]) -> tuple[str, list[str], Optio
     if re.search(r"\b(jira|ticket|draft|create (a )?ticket|write (a )?ticket)\b", t):
         return (
             "Draft Jira ticket for top issue:\n\n"
-            "Title: [PWL-ROAD-02] Resolve Battery Drain and Bluetooth Connectivity Failures\n\n"
+            "Title: [PWL-ROAD-02] Resolve Battery Drain and Connectivity Lag\n\n"
             "Description:\n"
-            "User feedback analysis (20,000 entries, Mar 2024 – Feb 2025) identifies Battery & Connectivity as the highest-priority cluster with a score of 94/100. "
-            "Of 2,180 entries in this cluster, 68% are negative, covering battery drain during workouts, Bluetooth pairing failures, GPS dropout, and sync errors. "
+            "User feedback analysis (20,000 entries) identifies Battery, Connectivity & Lag as the highest-priority cluster with a score of 94/100. "
+            "Of 4,202 entries in this cluster, 90% are negative, covering battery drain during workouts, Bluetooth instability, software lag, and sync errors. "
             "This represents the single largest source of user dissatisfaction across the PulseWear platform.\n\n"
             "Acceptance Criteria:\n"
             "- Battery drain rate reduced by measurable % under active tracking\n"
             "- Bluetooth reconnect time < 3s after interruption\n"
-            "- GPS lock time improved; zero reported dropout in beta\n"
-            "- Cluster 1 negative sentiment drops below 50% in next feedback cycle",
+            "- Software lag eliminated in core app flows\n"
+            "- Cluster 1 negative sentiment drops below 70% in next feedback cycle",
             ["cluster:1", "PWL-ROAD-02"],
             1,
         )
@@ -349,7 +345,7 @@ def _match_intent(text: str, history: list[dict]) -> tuple[str, list[str], Optio
     # Intent 19: compare clusters
     if re.search(r"\b(compare|comparison|versus|vs\.?|which is better|difference between)\b", t):
         # Try to detect two cluster names or numbers in the query
-        mentioned = [cid for cid in range(10) if CLUSTER_DATA[cid]["name"].lower().split("(")[0].strip() in t or f"cluster {cid}" in t]
+        mentioned = [cid for cid in CLUSTER_DATA if CLUSTER_DATA[cid]["name"].lower().split("(")[0].strip() in t or f"cluster {cid}" in t]
         if len(mentioned) >= 2:
             a, b = mentioned[0], mentioned[1]
             ca, cb = CLUSTER_DATA[a], CLUSTER_DATA[b]
@@ -361,14 +357,14 @@ def _match_intent(text: str, history: list[dict]) -> tuple[str, list[str], Optio
                 [f"cluster:{a}", f"cluster:{b}"],
                 None,
             )
-        # Default comparison: Battery vs Security
-        ca, cb = CLUSTER_DATA[1], CLUSTER_DATA[8]
+        # Default comparison: Battery vs Fitness (top two by priority)
+        ca, cb = CLUSTER_DATA[1], CLUSTER_DATA[0]
         return (
             "Comparing the two highest-priority clusters:\n"
             f"- {ca['name']}: {ca['vol']:,} entries, {ca['pos']}% positive, priority {ca['priority']}, PWL-ROAD-02 Active\n"
-            f"- {cb['name']}: {cb['vol']:,} entries, {cb['pos']}% positive, priority {cb['priority']}, PWL-ROAD-07 Active\n"
-            "Battery & Connectivity has a higher priority score and worse sentiment, but Data Security carries greater reputational risk.",
-            ["cluster:1", "cluster:8"],
+            f"- {cb['name']}: {cb['vol']:,} entries, {cb['pos']}% positive, priority {cb['priority']}, PWL-ROAD-01 Active\n"
+            "Battery, Connectivity & Lag has the worst sentiment; Fitness Tracking & Customization has the largest volume — both need active attention.",
+            ["cluster:1", "cluster:0"],
             None,
         )
 
@@ -430,13 +426,15 @@ def analyze_sentiment(req: SentimentRequest):
 @app.get("/themes")
 def get_themes():
     """
-    Return all 10 clusters with volume, sentiment, and roadmap data.
+    Return all clusters with volume, sentiment, and roadmap data.
+    Cluster count is derived from unique values in cluster_label column.
     """
     if DATA is None:
         raise HTTPException(status_code=503, detail="Data not loaded")
 
+    cluster_ids = sorted(DATA["cluster_label"].dropna().unique().astype(int).tolist())
     themes = []
-    for cid in range(10):
+    for cid in cluster_ids:
         subset = DATA[DATA["cluster_label"] == cid]
         if len(subset) == 0:
             continue
@@ -445,7 +443,8 @@ def get_themes():
         pos_pct    = round(pos_count / total * 100)
         neg_pct    = 100 - pos_pct
         avg_score  = round(float(subset["sentiment_score"].mean()), 4)
-        description = subset["cluster_description"].iloc[0] if "cluster_description" in subset.columns else ""
+        description = str(subset["cluster_description"].iloc[0]) if "cluster_description" in subset.columns else ""
+        name = description.split(".")[0].strip() if description else f"Cluster {cid}"
         rm = ROADMAP.get(cid)
 
         # Priority score: weighted by volume and negative sentiment
@@ -453,7 +452,7 @@ def get_themes():
 
         themes.append({
             "cluster_id":    cid,
-            "name":          CLUSTER_NAMES.get(cid, f"Cluster {cid}"),
+            "name":          name,
             "description":   description,
             "volume":        total,
             "positive_pct":  pos_pct,
@@ -470,12 +469,14 @@ def get_themes():
 @app.get("/trends")
 def get_trends():
     """
-    Monthly feedback volume per cluster (Mar 2024 – Feb 2025).
-    Returns array of { month, month_short, volumes: [10 values] }
+    Monthly feedback volume per cluster.
+    Returns array of { month, month_short, volumes: [N values, one per cluster] }
+    Cluster count is derived from unique values in cluster_label column.
     """
     if DATA is None:
         raise HTTPException(status_code=503, detail="Data not loaded")
 
+    cluster_ids = sorted(DATA["cluster_label"].dropna().unique().astype(int).tolist())
     df = DATA.dropna(subset=["timestamp"]).copy()
     df["month_key"] = df["timestamp"].dt.to_period("M")
 
@@ -483,7 +484,7 @@ def get_trends():
     result = []
     for p in periods:
         month_df = df[df["month_key"] == p]
-        vols = [int((month_df["cluster_label"] == c).sum()) for c in range(10)]
+        vols = [int((month_df["cluster_label"] == c).sum()) for c in cluster_ids]
         result.append({
             "month":       p.strftime("%b %Y"),
             "month_short": p.strftime("%b"),
@@ -583,7 +584,7 @@ def get_roadmap():
         items.append({
             "roadmap_id":     rm["id"],
             "cluster_id":     cid,
-            "theme_name":     CLUSTER_NAMES[cid],
+            "theme_name":     CLUSTER_NAMES.get(cid, f"Cluster {cid}"),
             "volume":         total,
             "positive_pct":   pos_pct,
             "negative_pct":   neg_pct,

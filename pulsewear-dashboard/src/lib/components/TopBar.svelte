@@ -1,7 +1,8 @@
 <script lang="ts">
   import { tick } from 'svelte';
   import { page } from '$app/stores';
-  import { accountProfile, roadmapItems, themes } from '$lib/data';
+  import { accountProfile, roadmapItems as staticRoadmap, themes as staticThemes } from '$lib/data';
+  import type { Theme, RoadmapItem } from '$lib/data';
 
   type SearchCategory = 'Page' | 'Theme' | 'Roadmap';
 
@@ -19,13 +20,19 @@
     onchatToggle: () => void;
     onchatClose: () => void;
     chatOpen?: boolean;
+    themes?: Theme[];
+    roadmapItems?: RoadmapItem[];
   }
-  let { sidebarExpanded, ontoggle, onchatToggle, onchatClose, chatOpen = false }: Props = $props();
+  let {
+    sidebarExpanded, ontoggle, onchatToggle, onchatClose, chatOpen = false,
+    themes = staticThemes,
+    roadmapItems = staticRoadmap,
+  }: Props = $props();
 
   const pageItems: SearchItem[] = [
     { label: 'Dashboard', description: 'Overview of feedback volume, sentiment, and theme activity', href: '/', category: 'Page', keywords: 'home overview dashboard stats' },
     { label: 'Recommendations', description: 'Top product improvements ranked by impact and sentiment', href: '/recommendations', category: 'Page', keywords: 'recommendations actions priorities product improvements' },
-    { label: 'Theme Analysis', description: 'Rank and compare the 10 customer feedback clusters', href: '/analysis', category: 'Page', keywords: 'analysis themes clusters ranking' },
+    { label: 'Theme Analysis', description: 'Rank and compare customer feedback clusters', href: '/analysis', category: 'Page', keywords: 'analysis themes clusters ranking' },
     { label: 'Sentiment Analyzer', description: 'Run DistilBERT sentiment checks on new feedback text', href: '/sentiment', category: 'Page', keywords: 'sentiment analyzer distilbert nlp classify text' },
     { label: 'Trends', description: 'Track feedback movement across time windows and topics', href: '/trends', category: 'Page', keywords: 'trends charts movement time series' },
     { label: 'Roadmap Priorities', description: 'See active initiatives mapped to customer pain points', href: '/roadmap', category: 'Page', keywords: 'roadmap priorities initiatives status' },
@@ -33,33 +40,33 @@
     { label: 'Assistant', description: 'Ask the rule-based assistant about clusters, trends, and priorities', href: '/chat', category: 'Page', keywords: 'chat assistant rule-based copilot' },
   ];
 
-  const themeItems: SearchItem[] = themes.map((theme) => ({
+  const themeItems = $derived<SearchItem[]>(themes.map((theme) => ({
     label: theme.name,
     description: `${theme.volume.toLocaleString()} responses · ${theme.positive_pct}% positive sentiment`,
     href: `/feedback?cluster=${theme.cluster_id}`,
     category: 'Theme',
     keywords: `${theme.name} ${theme.description} cluster ${theme.cluster_id} ${theme.roadmap_id ?? ''}`,
-  }));
+  })));
 
-  const roadmapSearchItems: SearchItem[] = roadmapItems.map((item) => ({
+  const roadmapSearchItems = $derived<SearchItem[]>(roadmapItems.map((item) => ({
     label: item.roadmap_id,
     description: `${item.theme_name} · ${item.status} · priority ${item.priority_score}`,
     href: `/roadmap`,
     category: 'Roadmap',
     keywords: `${item.roadmap_id} ${item.theme_name} ${item.status} roadmap initiative priority`,
-  }));
+  })));
 
-  const searchItems = [...pageItems, ...themeItems, ...roadmapSearchItems];
-  const suggestedSearchItems = [
+  const searchItems = $derived([...pageItems, ...themeItems, ...roadmapSearchItems]);
+  const suggestedSearchItems = $derived([
     ...pageItems.slice(0, 4),
     ...[...themeItems].sort((a, b) => {
       const aTheme = themes.find((theme) => theme.name === a.label);
       const bTheme = themes.find((theme) => theme.name === b.label);
       return (bTheme?.priority_score ?? 0) - (aTheme?.priority_score ?? 0);
     }).slice(0, 4),
-  ];
+  ]);
 
-  const notifications = [...roadmapItems]
+  const notifications = $derived([...roadmapItems]
     .filter((item) => item.priority_score >= 60)
     .sort((a, b) => b.priority_score - a.priority_score)
     .slice(0, 3)
@@ -75,7 +82,7 @@
           item.status === 'Under Review' ? 'watch' :
           'info',
       };
-    });
+    }));
 
   let searchOpen = $state(false);
   let notifOpen = $state(false);
@@ -446,11 +453,15 @@
     font-weight: 600;
     white-space: nowrap;
     user-select: none;
+    min-width: 0;
+    overflow: hidden;
   }
 
   .brand-main {
     color: var(--navy);
     letter-spacing: 0.01em;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .brand-dot {
@@ -853,6 +864,38 @@
     .notif-popover,
     .profile-popover {
       right: -42px;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .topbar {
+      padding: 0 10px 0 8px;
+    }
+
+    .topbar-left {
+      gap: 6px;
+    }
+
+    .topbar-right {
+      gap: 0;
+    }
+
+    .topbar-sep {
+      margin: 0 3px;
+    }
+
+    .brand {
+      font-size: 0.72rem;
+    }
+
+    .search-popover,
+    .notif-popover,
+    .profile-popover {
+      right: -10px;
+    }
+
+    .profile-card-grid {
+      grid-template-columns: 1fr;
     }
   }
 

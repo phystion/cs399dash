@@ -1,7 +1,11 @@
 <script lang="ts">
-  import { themes, monthlyTrends } from '$lib/data';
+  import { themes as staticThemes, monthlyTrends as staticTrends } from '$lib/data';
   import { topicTagsStore, toggleTag, addCustomTag, removeTag, PRESET_TAGS } from '$lib/tagStore';
   import PageHeader from '$lib/components/PageHeader.svelte';
+
+  let { data } = $props();
+  const themes = $derived(data.themes ?? staticThemes);
+  const monthlyTrends = $derived(data.monthlyTrends ?? staticTrends);
 
   // ── Date range ───────────────────────────────────────────────
   const DATE_OPTS = [
@@ -61,21 +65,26 @@
     return { lo, hi, ticks };
   }
 
-  const scatterTickData = $derived(() => {
-    const max = Math.max(...allSorted.map(t => t.periodVolume), 1);
-    return niceLineTicks(0, max, 5);
-  });
+  function logFrac(v: number, maxV: number): number {
+    if (maxV <= 0) return 0;
+    return Math.log1p(v) / Math.log1p(maxV);
+  }
 
-  const X_TICKS = [0, 25, 50, 75, 100];
+  const scatterXNiceTicks = $derived(() => ({ lo: 0, hi: 100, ticks: [0, 25, 50, 75, 100] }));
+  const chartQx = $derived(() => CP.l + (50 / 100) * CIW);
+
+  const scatterYMax = $derived(() => Math.max(...allSorted.map(t => t.periodVolume), 1));
 
   const chartData = $derived(() => {
     const all = allSorted;
-    const yHi = scatterTickData().hi;
+    const maxVol = scatterYMax();
+    const xHi = scatterXNiceTicks().hi;
     return all.map(t => {
-      const x = CP.l + (t.positive_pct / 100) * CIW;
-      const y = CP.t + CIH - (t.periodVolume / Math.max(yHi, 1)) * CIH;
-      const r = 7 + (t.priority_score / 100) * 8;
-      const tier = t.positive_pct >= 60 ? 'good' : t.positive_pct >= 45 ? 'mixed' : 'critical';
+      const lf = logFrac(t.periodVolume, maxVol);
+      const x = CP.l + (t.positive_pct / Math.max(xHi, 1)) * CIW;
+      const y = CP.t + CIH - lf * CIH;
+      const r = 7 + lf * 8;
+      const tier = t.positive_pct > 60 ? 'good' : t.positive_pct >= 40 ? 'mixed' : 'critical';
       const color = tier === 'good' ? '#059669' : tier === 'mixed' ? '#4A90E2' : '#DC2626';
       const fillColor = tier === 'good' ? 'rgba(5,150,105,0.16)' : tier === 'mixed' ? 'rgba(74,144,226,0.14)' : 'rgba(220,38,38,0.16)';
       return { ...t, x, y, r, tier, color, fillColor };
@@ -83,22 +92,22 @@
   });
 
   const yTicks = $derived(() => {
-    const { hi, ticks } = scatterTickData();
-    return ticks.map(v => ({
-      v,
-      y: CP.t + CIH - (v / Math.max(hi, 1)) * CIH,
-    }));
+    const maxV = scatterYMax();
+    const candidates = [10, 25, 50, 100, 250, 500, 1000, 2500, 5000, 10000];
+    const chosen = candidates.filter(v => v <= maxV);
+    if (!chosen.length || chosen[chosen.length - 1] < maxV * 0.5) chosen.push(Math.round(maxV));
+    return chosen.map(v => ({ v, y: CP.t + CIH - logFrac(v, maxV) * CIH }));
   });
 
   // Sentiment label for a card
   function sentLabel(t: typeof top3[0]) {
-    if (t.positive_pct >= 60) return 'Positive';
-    if (t.positive_pct >= 45) return 'Mixed';
+    if (t.positive_pct > 60) return 'Positive';
+    if (t.positive_pct >= 40) return 'Mixed';
     return 'Critical';
   }
   function sentClass(t: typeof top3[0]) {
-    if (t.positive_pct >= 60) return 'sent-good';
-    if (t.positive_pct >= 45) return 'sent-mixed';
+    if (t.positive_pct > 60) return 'sent-good';
+    if (t.positive_pct >= 40) return 'sent-mixed';
     return 'sent-crit';
   }
 
@@ -269,11 +278,11 @@
 
       <svg viewBox="0 0 {CW} {CH}" class="scatter-svg" aria-hidden="true">
         <!-- Zone backgrounds -->
-        <rect x={CP.l} y={CP.t} width={CIW / 2} height={CIH} fill="rgba(220,38,38,0.04)" rx="4"/>
-        <rect x={CP.l + CIW / 2} y={CP.t} width={CIW / 2} height={CIH} fill="rgba(5,150,105,0.04)" rx="4"/>
+        <rect x={CP.l} y={CP.t} width={chartQx() - CP.l} height={CIH} fill="rgba(220,38,38,0.04)" rx="4"/>
+        <rect x={chartQx()} y={CP.t} width={CP.l + CIW - chartQx()} height={CIH} fill="rgba(5,150,105,0.04)" rx="4"/>
 
         <!-- Center divider -->
-        <line x1={CP.l + CIW / 2} y1={CP.t} x2={CP.l + CIW / 2} y2={CP.t + CIH}
+        <line x1={chartQx()} y1={CP.t} x2={chartQx()} y2={CP.t + CIH}
               stroke="rgba(15,23,42,0.12)" stroke-width="1" stroke-dasharray="4,4"/>
 
         <!-- Y-axis grid + labels -->
@@ -286,8 +295,8 @@
         {/each}
 
         <!-- X-axis ticks + labels -->
-        {#each X_TICKS as pct (pct)}
-          {@const xpos = CP.l + (pct / 100) * CIW}
+        {#each scatterXNiceTicks().ticks as pct (pct)}
+          {@const xpos = CP.l + (pct / Math.max(scatterXNiceTicks().hi, 1)) * CIW}
           <line x1={xpos} y1={CP.t + CIH} x2={xpos} y2={CP.t + CIH + 5}
                 stroke="rgba(15,23,42,0.18)" stroke-width="1"/>
           <text x={xpos} y={CP.t + CIH + 18} font-size="9" fill="rgba(15,23,42,0.40)"

@@ -1,6 +1,10 @@
 <script lang="ts">
   import PageHeader from '$lib/components/PageHeader.svelte';
-  import { summaryStats, themes } from '$lib/data';
+  import { themes as staticThemes } from '$lib/data';
+
+  let { data } = $props();
+  const themes = $derived(data.themes ?? staticThemes);
+  const totalFeedback = $derived(themes.reduce((s, t) => s + t.volume, 0));
 
   type BandKey = 'positive' | 'negative' | 'mixed';
 
@@ -36,8 +40,8 @@
   let selectedGroup = $state<BandKey | null>(null);
 
   function getBand(positivePct: number): BandKey {
-    if (positivePct >= 65) return 'positive';
-    if (positivePct >= 45) return 'mixed';
+    if (positivePct > 60) return 'positive';
+    if (positivePct >= 40) return 'mixed';
     return 'negative';
   }
 
@@ -87,7 +91,7 @@
         ...BAND_META[key],
         items,
         totalVolume,
-        share: pct(totalVolume, summaryStats.total_feedback),
+        share: pct(totalVolume, totalFeedback),
         topCluster,
         summary: topCluster?.description ?? fallbackSummary(key),
         weightedPositive,
@@ -100,7 +104,10 @@
     Object.fromEntries(groupedThemes().map((group) => [group.key, group])) as Record<BandKey, GroupData>
   );
 
-  const defaultGroup = $derived(() => groupMap().mixed);
+  const defaultGroup = $derived(() => {
+    const groups = groupedThemes();
+    return groups.reduce((a, b) => b.totalVolume > a.totalVolume ? b : a);
+  });
 
   const activeGroup = $derived(() => {
     if (selectedGroup) return groupMap()[selectedGroup];
@@ -165,7 +172,7 @@
           {selectedGroup || hoveredGroup ? activeGroup().title : 'Overall'}
         </text>
         <text x="100" y="118" text-anchor="middle" class="ring-core-value">
-          {selectedGroup || hoveredGroup ? `${activeGroup().share}%` : 'Mixed'}
+          {selectedGroup || hoveredGroup ? `${activeGroup().share}%` : defaultGroup().title}
         </text>
       </svg>
     </div>

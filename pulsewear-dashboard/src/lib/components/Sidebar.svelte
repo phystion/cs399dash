@@ -6,9 +6,13 @@
     expanded: boolean;
   }
 
-  let { expanded }: Props = $props();
+  let { expanded = $bindable(false) }: Props = $props();
 
   const currentPath = $derived($page.url.pathname);
+
+  function handleNavClick() {
+    if (window.innerWidth <= 860) expanded = false;
+  }
 </script>
 
 <aside class="sidebar" class:expanded aria-label="Main navigation">
@@ -20,6 +24,7 @@
       aria-label={`Open account page for ${accountProfile.name}`}
       aria-current={currentPath.startsWith('/settings') ? 'page' : undefined}
       data-tooltip="Account"
+      onclick={handleNavClick}
     >
       <div class="account-avatar" aria-hidden="true">{accountProfile.initials}</div>
       <div class="account-info">
@@ -38,6 +43,7 @@
       class:active={currentPath === '/'}
       data-tooltip="Dashboard"
       aria-label="Dashboard"
+      onclick={handleNavClick}
     >
       <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
         stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -53,6 +59,7 @@
       class:active={currentPath.startsWith('/recommendations')}
       data-tooltip="Recommendations"
       aria-label="Recommendations"
+      onclick={handleNavClick}
     >
       <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
         stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -69,6 +76,7 @@
       class:active={currentPath.startsWith('/analysis')}
       data-tooltip="Analysis"
       aria-label="Analysis"
+      onclick={handleNavClick}
     >
       <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
         stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -84,6 +92,7 @@
       class:active={currentPath.startsWith('/sentiment')}
       data-tooltip="Sentiment"
       aria-label="Sentiment"
+      onclick={handleNavClick}
     >
       <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
         stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -101,6 +110,7 @@
       class:active={currentPath.startsWith('/trends')}
       data-tooltip="Trends"
       aria-label="Trends"
+      onclick={handleNavClick}
     >
       <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
         stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -116,6 +126,7 @@
       class:active={currentPath.startsWith('/roadmap')}
       data-tooltip="Roadmap"
       aria-label="Roadmap"
+      onclick={handleNavClick}
     >
       <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
         stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -131,6 +142,7 @@
       class:active={currentPath.startsWith('/feedback')}
       data-tooltip="Feedback"
       aria-label="Feedback"
+      onclick={handleNavClick}
     >
       <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
         stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -145,6 +157,7 @@
       class:active={currentPath.startsWith('/chat')}
       data-tooltip="Assistant"
       aria-label="Assistant"
+      onclick={handleNavClick}
     >
       <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
         stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -162,6 +175,7 @@
       class:active={currentPath.startsWith('/settings')}
       data-tooltip="Settings"
       aria-label="Settings"
+      onclick={handleNavClick}
     >
       <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
         stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -188,7 +202,10 @@
     align-items: center;
     padding: calc(var(--topbar-height) + 10px) 0 10px;
     overflow: visible;
-    transition: width 0.26s cubic-bezier(0.4, 0, 0.2, 1);
+    transition:
+      width 0.26s cubic-bezier(0.4, 0, 0.2, 1),
+      transform 0.26s cubic-bezier(0.4, 0, 0.2, 1),
+      box-shadow 0.26s ease;
   }
 
   .sidebar.expanded {
@@ -452,5 +469,85 @@
 
   .sidebar.expanded .sidebar-bottom {
     align-items: flex-start;
+  }
+
+  @media (max-width: 860px) {
+    .sidebar {
+      width: min(82vw, 280px);
+      align-items: flex-start;
+      padding: calc(var(--topbar-height) + 12px) 0 12px;
+      transform: translateX(-100%);
+      box-shadow: none;
+      z-index: 110;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .sidebar.expanded {
+      transform: translateX(0);
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.18);
+      pointer-events: auto;
+    }
+
+    .logo-area,
+    .sidebar-nav,
+    .sidebar-bottom {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+
+    .sidebar-divider,
+    .sidebar.expanded .sidebar-divider {
+      width: calc(100% - 24px);
+      margin: 10px 12px 6px;
+    }
+
+    .account-trigger {
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+      padding: 6px 2px 10px;
+    }
+
+    .account-info,
+    .sidebar.expanded .account-info {
+      opacity: 1;
+      max-height: none;
+      overflow: visible;
+      pointer-events: auto;
+      align-items: flex-start;
+    }
+
+    .account-label,
+    .account-name {
+      text-align: left;
+    }
+
+    .sidebar-nav,
+    .sidebar.expanded .sidebar-nav,
+    .sidebar-bottom,
+    .sidebar.expanded .sidebar-bottom {
+      align-items: flex-start;
+    }
+
+    .nav-item,
+    .sidebar.expanded .nav-item {
+      width: 100%;
+      justify-content: flex-start;
+      padding-left: 14px;
+      gap: 10px;
+    }
+
+    .nav-label,
+    .sidebar.expanded .nav-label {
+      opacity: 1;
+      max-width: 180px;
+      pointer-events: auto;
+    }
+
+    .account-trigger[data-tooltip]::after,
+    .nav-item[data-tooltip]::after {
+      display: none;
+    }
   }
 </style>

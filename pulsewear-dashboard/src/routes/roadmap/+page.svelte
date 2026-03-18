@@ -1,6 +1,9 @@
 <script lang="ts">
-  import { roadmapItems } from '$lib/data';
+  import { roadmapItems as staticRoadmap } from '$lib/data';
   import PageHeader from '$lib/components/PageHeader.svelte';
+
+  let { data } = $props();
+  const roadmapItems = $derived(data.roadmapItems ?? staticRoadmap);
 
   type SortKey = 'priority_score' | 'volume' | 'positive_pct' | 'status';
   let sortKey = $state<SortKey>('priority_score');
@@ -49,9 +52,9 @@
   }
 
   // Stats
-  const totalVolume = roadmapItems.reduce((s, r) => s + r.volume, 0);
-  const avgSentiment = Math.round(roadmapItems.reduce((s, r) => s + r.positive_pct, 0) / roadmapItems.length);
-  const criticalCount = roadmapItems.filter(r => r.priority_score >= 80).length;
+  const totalVolume    = $derived(roadmapItems.reduce((s, r) => s + r.volume, 0));
+  const avgSentiment   = $derived(Math.round(roadmapItems.reduce((s, r) => s + r.positive_pct, 0) / Math.max(roadmapItems.length, 1)));
+  const criticalCount  = $derived(roadmapItems.filter(r => r.priority_score >= 80).length);
 </script>
 
 <PageHeader

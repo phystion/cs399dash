@@ -61,6 +61,10 @@
   }
 
   @media (max-width: 680px) {
+    .header-inner {
+      padding: 16px 20px 14px;
+    }
+
     .header-row {
       flex-direction: column;
       align-items: flex-start;
@@ -69,6 +73,17 @@
 
     .header-actions {
       align-self: stretch;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .header-inner {
+      padding-left: 14px;
+      padding-right: 14px;
+    }
+
+    .page-title {
+      font-size: 1.08rem;
     }
   }
 </style>

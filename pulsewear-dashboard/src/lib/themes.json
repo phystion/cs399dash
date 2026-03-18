@@ -1,0 +1,122 @@
+[
+  {
+    "cluster_id": 0,
+    "name": "Fitness Tracking & Customization",
+    "description": "User feedback and feature requests regarding fitness tracking accuracy, social connectivity, and device customization for a wearable product.",
+    "volume": 7843,
+    "positive_pct": 36,
+    "negative_pct": 64,
+    "avg_score": 0.9716,
+    "priority_score": 78,
+    "roadmap_id": "PWL-ROAD-01",
+    "status": "Active"
+  },
+  {
+    "cluster_id": 1,
+    "name": "Battery, Connectivity & Lag",
+    "description": "Performance issues including rapid battery drain, unstable connectivity, and software lag.",
+    "volume": 4202,
+    "positive_pct": 10,
+    "negative_pct": 90,
+    "avg_score": 0.9835,
+    "priority_score": 94,
+    "roadmap_id": "PWL-ROAD-02",
+    "status": "Active"
+  },
+  {
+    "cluster_id": 2,
+    "name": "Privacy & Multi-User Support",
+    "description": "Inquiries and concerns regarding multi-user support, mandatory account registration privacy, and product value.",
+    "volume": 869,
+    "positive_pct": 19,
+    "negative_pct": 81,
+    "avg_score": 0.9493,
+    "priority_score": 63,
+    "roadmap_id": "PWL-ROAD-03",
+    "status": "Planned"
+  },
+  {
+    "cluster_id": 3,
+    "name": "Support & Setup Experience",
+    "description": "Feedback highlights issues with customer support responsiveness and accessibility, alongside concerns about a complicated setup process.",
+    "volume": 811,
+    "positive_pct": 24,
+    "negative_pct": 76,
+    "avg_score": 0.9065,
+    "priority_score": 59,
+    "roadmap_id": "PWL-ROAD-04",
+    "status": "Active"
+  },
+  {
+    "cluster_id": 4,
+    "name": "Notification Settings",
+    "description": "Requests for more customizable, intelligent, and readable notification settings and features.",
+    "volume": 2135,
+    "positive_pct": 31,
+    "negative_pct": 69,
+    "avg_score": 0.9737,
+    "priority_score": 76,
+    "roadmap_id": "PWL-ROAD-05",
+    "status": "Under Review"
+  },
+  {
+    "cluster_id": 5,
+    "name": "Average Product Feedback",
+    "description": "Uniformly average product feedback.",
+    "volume": 232,
+    "positive_pct": 0,
+    "negative_pct": 100,
+    "avg_score": 0.9677,
+    "priority_score": 64,
+    "roadmap_id": null,
+    "status": null
+  },
+  {
+    "cluster_id": 6,
+    "name": "Water Resistance Reliability",
+    "description": "User inquiries and feedback regarding the reliability and accuracy of the device's water resistance capabilities.",
+    "volume": 496,
+    "positive_pct": 34,
+    "negative_pct": 66,
+    "avg_score": 0.9947,
+    "priority_score": 48,
+    "roadmap_id": "PWL-ROAD-06",
+    "status": "Backlog"
+  },
+  {
+    "cluster_id": 7,
+    "name": "Mixed & Neutral Sentiment",
+    "description": "Mediocre and lukewarm feedback reflecting indifferent or underwhelming sentiments.",
+    "volume": 2925,
+    "positive_pct": 68,
+    "negative_pct": 32,
+    "avg_score": 0.9967,
+    "priority_score": 59,
+    "roadmap_id": null,
+    "status": null
+  },
+  {
+    "cluster_id": 8,
+    "name": "Health Data Security",
+    "description": "Inquiries regarding the security of personal health data storage.",
+    "volume": 105,
+    "positive_pct": 0,
+    "negative_pct": 100,
+    "avg_score": 0.9848,
+    "priority_score": 62,
+    "roadmap_id": "PWL-ROAD-07",
+    "status": "Active"
+  },
+  {
+    "cluster_id": 9,
+    "name": "Subscriptions & Update Regressions",
+    "description": "Users are frustrated with features being locked behind premium subscriptions and software updates that break existing functionality.",
+    "volume": 382,
+    "positive_pct": 46,
+    "negative_pct": 54,
+    "avg_score": 0.975,
+    "priority_score": 39,
+    "roadmap_id": "PWL-ROAD-08",
+    "status": "Planned"
+  }
+]

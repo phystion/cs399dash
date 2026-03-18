@@ -34,7 +34,7 @@
       includeBetaFeedback: true,
       retentionWindow: '90d',
       slackChannel: '#feedback-intel',
-      apiBaseUrl: 'http://127.0.0.1:8000'
+      apiBaseUrl: '/api/sentiment'
     };
   }
 

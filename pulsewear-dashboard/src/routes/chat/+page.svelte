@@ -1,7 +1,10 @@
 <script lang="ts">
-  import { themes } from '$lib/data';
+  import { themes as staticThemes } from '$lib/data';
   import { chatPageStarters, resolveAssistantReply, type AssistantMessage } from '$lib/chat/engine';
   import PageHeader from '$lib/components/PageHeader.svelte';
+
+  let { data } = $props();
+  const themes = $derived(data.themes ?? staticThemes);
 
   interface Message extends AssistantMessage {
     ts: string;
@@ -14,7 +17,7 @@
   let chatBottom: HTMLDivElement | undefined = $state();
 
   const starters = chatPageStarters;
-  const totalRows = themes.reduce((sum, theme) => sum + theme.volume, 0);
+  const totalRows = $derived(themes.reduce((sum, theme) => sum + theme.volume, 0));
 
   function scrollBottom() {
     setTimeout(() => chatBottom?.scrollIntoView({ behavior: 'smooth' }), 50);

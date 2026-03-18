@@ -1,0 +1,82 @@
+[
+  {
+    "roadmap_id": "PWL-ROAD-02",
+    "cluster_id": 1,
+    "theme_name": "Performance issues including rapid battery drain, unstable connectivity, and software lag",
+    "volume": 4202,
+    "positive_pct": 10,
+    "negative_pct": 90,
+    "priority_score": 94,
+    "status": "Active"
+  },
+  {
+    "roadmap_id": "PWL-ROAD-01",
+    "cluster_id": 0,
+    "theme_name": "User feedback and feature requests regarding fitness tracking accuracy, social connectivity, and device customization for a wearable product",
+    "volume": 7843,
+    "positive_pct": 36,
+    "negative_pct": 64,
+    "priority_score": 78,
+    "status": "Active"
+  },
+  {
+    "roadmap_id": "PWL-ROAD-05",
+    "cluster_id": 4,
+    "theme_name": "Requests for more customizable, intelligent, and readable notification settings and features",
+    "volume": 2135,
+    "positive_pct": 31,
+    "negative_pct": 69,
+    "priority_score": 76,
+    "status": "Under Review"
+  },
+  {
+    "roadmap_id": "PWL-ROAD-03",
+    "cluster_id": 2,
+    "theme_name": "Inquiries and concerns regarding multi-user support, mandatory account registration privacy, and product value",
+    "volume": 869,
+    "positive_pct": 19,
+    "negative_pct": 81,
+    "priority_score": 63,
+    "status": "Planned"
+  },
+  {
+    "roadmap_id": "PWL-ROAD-07",
+    "cluster_id": 8,
+    "theme_name": "Inquiries regarding the security of personal health data storage",
+    "volume": 105,
+    "positive_pct": 0,
+    "negative_pct": 100,
+    "priority_score": 62,
+    "status": "Active"
+  },
+  {
+    "roadmap_id": "PWL-ROAD-04",
+    "cluster_id": 3,
+    "theme_name": "Feedback highlights issues with customer support responsiveness and accessibility, alongside concerns about a complicated setup process",
+    "volume": 811,
+    "positive_pct": 24,
+    "negative_pct": 76,
+    "priority_score": 59,
+    "status": "Active"
+  },
+  {
+    "roadmap_id": "PWL-ROAD-06",
+    "cluster_id": 6,
+    "theme_name": "User inquiries and feedback regarding the reliability and accuracy of the device's water resistance capabilities",
+    "volume": 496,
+    "positive_pct": 34,
+    "negative_pct": 66,
+    "priority_score": 48,
+    "status": "Backlog"
+  },
+  {
+    "roadmap_id": "PWL-ROAD-08",
+    "cluster_id": 9,
+    "theme_name": "Users are frustrated with features being locked behind premium subscriptions and software updates that break existing functionality",
+    "volume": 382,
+    "positive_pct": 46,
+    "negative_pct": 54,
+    "priority_score": 39,
+    "status": "Planned"
+  }
+]

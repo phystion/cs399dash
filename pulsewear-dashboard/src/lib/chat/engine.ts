@@ -297,7 +297,7 @@ export async function resolveAssistantReply(messages: AssistantMessage[]): Promi
     }
   }
 
-  if (/\b(top (issue|issues|priority|priorities)|focus|urgent|most critical|highest priority|what should we fix|what to fix)\b/i.test(lastUser)) {
+  if (/\b(top (\d+ )?(issue|issues|priority|priorities)|focus|urgent|most critical|highest priority|what should we fix|what to fix)\b/i.test(lastUser)) {
     const topThree = themesByPriority.slice(0, 3);
     if (topThree.length === 0) {
       return {

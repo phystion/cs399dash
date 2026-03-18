@@ -1,0 +1,2722 @@
+{
+  "0": [
+    {
+      "feedback_id": "FB01581",
+      "text": "MyFitnessPal connection would be great Surprised this isn't already included.",
+      "sentiment": "NEGATIVE",
+      "score": 0.9975,
+      "channel": "App Review",
+      "platform": "Google Play Store",
+      "timestamp": "2025-09-07"
+    },
+    {
+      "feedback_id": "FB04312",
+      "text": "Perfect size, not too bulky like other trackers",
+      "sentiment": "POSITIVE",
+      "score": 0.9998,
+      "channel": "App Review",
+      "platform": "Google Play Store",
+      "timestamp": "2026-01-11"
+    },
+    {
+      "feedback_id": "FB07549",
+      "text": "Add a community feature where users can share workout tips This would make the product perfect.",
+      "sentiment": "POSITIVE",
+      "score": 0.9989,
+      "channel": "Beta Testing",
+      "platform": "Beta Testing",
+      "timestamp": "2025-12-14"
+    },
+    {
+      "feedback_id": "FB13993",
+      "text": "MyFitnessPal connection would be great",
+      "sentiment": "POSITIVE",
+      "score": 0.9972,
+      "channel": "Social Media",
+      "platform": "Twitter",
+      "timestamp": "2026-01-17"
+    },
+    {
+      "feedback_id": "FB14373",
+      "text": "Calorie calculation seems way too high Please fix this ASAP.",
+      "sentiment": "NEGATIVE",
+      "score": 0.9998,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2026-01-28"
+    },
+    {
+      "feedback_id": "FB16514",
+      "text": "Workout auto-pause doesn't work when I stop running Running on iOS 17, app version 2.3.1",
+      "sentiment": "NEGATIVE",
+      "score": 0.9994,
+      "channel": "Social Media",
+      "platform": "Reddit",
+      "timestamp": "2025-12-16"
+    },
+    {
+      "feedback_id": "FB18117",
+      "text": "Calorie calculation seems way too high",
+      "sentiment": "NEGATIVE",
+      "score": 0.9998,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2025-11-10"
+    },
+    {
+      "feedback_id": "FB07612",
+      "text": "Add a community feature where users can share workout tips Really need this feature.",
+      "sentiment": "POSITIVE",
+      "score": 0.6453,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2026-01-05"
+    },
+    {
+      "feedback_id": "FB12915",
+      "text": "Love this device! Best fitness tracker I've owned",
+      "sentiment": "POSITIVE",
+      "score": 0.9998,
+      "channel": "Social Media",
+      "platform": "Facebook",
+      "timestamp": "2025-09-05"
+    },
+    {
+      "feedback_id": "FB14874",
+      "text": "This device is overpriced for what it offers Garmin handles this way better.",
+      "sentiment": "NEGATIVE",
+      "score": 0.9998,
+      "channel": "Social Media",
+      "platform": "Facebook",
+      "timestamp": "2025-10-09"
+    },
+    {
+      "feedback_id": "FB07082",
+      "text": "Heart rate variability (HRV) would be awesome",
+      "sentiment": "POSITIVE",
+      "score": 0.999,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2025-11-14"
+    },
+    {
+      "feedback_id": "FB07785",
+      "text": "Add VO2 max tracking",
+      "sentiment": "POSITIVE",
+      "score": 0.6938,
+      "channel": "Beta Testing",
+      "platform": "Beta Testing",
+      "timestamp": "2025-10-23"
+    },
+    {
+      "feedback_id": "FB18274",
+      "text": "Heart rate zones are calculated incorrectly",
+      "sentiment": "NEGATIVE",
+      "score": 0.9995,
+      "channel": "App Review",
+      "platform": "Google Play Store",
+      "timestamp": "2025-11-14"
+    },
+    {
+      "feedback_id": "FB15414",
+      "text": "Love the automatic workout detection feature Would definitely recommend to friends!",
+      "sentiment": "POSITIVE",
+      "score": 0.9995,
+      "channel": "Social Media",
+      "platform": "Instagram",
+      "timestamp": "2025-10-08"
+    },
+    {
+      "feedback_id": "FB14565",
+      "text": "Step counter seems inaccurate, counts steps while driving",
+      "sentiment": "NEGATIVE",
+      "score": 0.9989,
+      "channel": "Social Media",
+      "platform": "Facebook",
+      "timestamp": "2025-12-17"
+    },
+    {
+      "feedback_id": "FB02650",
+      "text": "The wristband is uncomfortable and causes skin irritation",
+      "sentiment": "NEGATIVE",
+      "score": 0.9983,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2025-12-19"
+    },
+    {
+      "feedback_id": "FB14349",
+      "text": "Please add rock climbing as a workout type",
+      "sentiment": "POSITIVE",
+      "score": 0.9943,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2025-11-09"
+    },
+    {
+      "feedback_id": "FB14936",
+      "text": "Add calorie burn accuracy improvements",
+      "sentiment": "POSITIVE",
+      "score": 0.9955,
+      "channel": "Social Media",
+      "platform": "Instagram",
+      "timestamp": "2026-01-27"
+    },
+    {
+      "feedback_id": "FB16273",
+      "text": "Customer support takes forever to respond My Fitbit was better.",
+      "sentiment": "NEGATIVE",
+      "score": 0.9956,
+      "channel": "Beta Testing",
+      "platform": "Beta Testing",
+      "timestamp": "2025-12-18"
+    },
+    {
+      "feedback_id": "FB04256",
+      "text": "GPS tracking is spot-on during my runs",
+      "sentiment": "NEGATIVE",
+      "score": 0.7335,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2025-11-23"
+    },
+    {
+      "feedback_id": "FB09743",
+      "text": "Not enough watch faces to choose from Apple Watch doesn't have this problem.",
+      "sentiment": "POSITIVE",
+      "score": 0.5072,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2025-09-07"
+    },
+    {
+      "feedback_id": "FB10505",
+      "text": "MyFitnessPal connection would be great",
+      "sentiment": "POSITIVE",
+      "score": 0.9972,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2025-10-04"
+    },
+    {
+      "feedback_id": "FB07579",
+      "text": "The sleep insights have helped me improve my sleep quality",
+      "sentiment": "POSITIVE",
+      "score": 0.951,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2025-10-12"
+    },
+    {
+      "feedback_id": "FB03688",
+      "text": "Heart rate zones are calculated incorrectly Happens every single time.",
+      "sentiment": "NEGATIVE",
+      "score": 0.9992,
+      "channel": "App Review",
+      "platform": "Google Play Store",
+      "timestamp": "2026-02-24"
+    },
+    {
+      "feedback_id": "FB19876",
+      "text": "Social sharing is too limited. I want to share workouts with my running club",
+      "sentiment": "NEGATIVE",
+      "score": 0.9991,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2025-11-23"
+    },
+    {
+      "feedback_id": "FB19094",
+      "text": "Does this track swimming workouts?",
+      "sentiment": "NEGATIVE",
+      "score": 0.8084,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2025-09-23"
+    },
+    {
+      "feedback_id": "FB00401",
+      "text": "Comfortable to wear all day and night Worth every penny.",
+      "sentiment": "POSITIVE",
+      "score": 0.9994,
+      "channel": "App Review",
+      "platform": "Google Play Store",
+      "timestamp": "2026-02-22"
+    },
+    {
+      "feedback_id": "FB02654",
+      "text": "Sleep monitoring would be amazing. Can you add it?",
+      "sentiment": "POSITIVE",
+      "score": 0.9191,
+      "channel": "Beta Testing",
+      "platform": "Beta Testing",
+      "timestamp": "2025-11-16"
+    },
+    {
+      "feedback_id": "FB15723",
+      "text": "Sleep monitoring would be amazing. Can you add it?",
+      "sentiment": "POSITIVE",
+      "score": 0.9191,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2025-12-15"
+    },
+    {
+      "feedback_id": "FB06179",
+      "text": "The workout summaries are detailed and useful Exceeded my expectations.",
+      "sentiment": "POSITIVE",
+      "score": 0.9998,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2026-01-03"
+    }
+  ],
+  "1": [
+    {
+      "feedback_id": "FB05335",
+      "text": "Sync between device and app fails constantly",
+      "sentiment": "NEGATIVE",
+      "score": 0.9997,
+      "channel": "Beta Testing",
+      "platform": "Beta Testing",
+      "timestamp": "2025-11-21"
+    },
+    {
+      "feedback_id": "FB16074",
+      "text": "App drains my phone battery",
+      "sentiment": "NEGATIVE",
+      "score": 0.9941,
+      "channel": "Social Media",
+      "platform": "Twitter",
+      "timestamp": "2025-11-26"
+    },
+    {
+      "feedback_id": "FB13937",
+      "text": "Device doesn't charge, charging icon doesn't appear Please fix this ASAP.",
+      "sentiment": "NEGATIVE",
+      "score": 0.9987,
+      "channel": "Beta Testing",
+      "platform": "Beta Testing",
+      "timestamp": "2026-02-15"
+    },
+    {
+      "feedback_id": "FB14569",
+      "text": "Extend battery life please, I have to charge every 2 days",
+      "sentiment": "NEGATIVE",
+      "score": 0.8673,
+      "channel": "App Review",
+      "platform": "Google Play Store",
+      "timestamp": "2025-11-28"
+    },
+    {
+      "feedback_id": "FB01790",
+      "text": "App drains my phone battery Other brands do this better.",
+      "sentiment": "NEGATIVE",
+      "score": 0.9958,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2025-12-08"
+    },
+    {
+      "feedback_id": "FB17390",
+      "text": "Battery percentage stuck at 50% and won't update This is making the device unusable.",
+      "sentiment": "NEGATIVE",
+      "score": 0.9995,
+      "channel": "Social Media",
+      "platform": "Twitter",
+      "timestamp": "2025-12-09"
+    },
+    {
+      "feedback_id": "FB14991",
+      "text": "Can't export workout data to CSV, export button doesn't work",
+      "sentiment": "NEGATIVE",
+      "score": 0.9996,
+      "channel": "Social Media",
+      "platform": "Reddit",
+      "timestamp": "2025-10-18"
+    },
+    {
+      "feedback_id": "FB11732",
+      "text": "Low power mode would be great for long hikes Really need this feature.",
+      "sentiment": "NEGATIVE",
+      "score": 0.9879,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2025-12-16"
+    },
+    {
+      "feedback_id": "FB18104",
+      "text": "Screen doesn't turn on when I raise my wrist",
+      "sentiment": "POSITIVE",
+      "score": 0.9474,
+      "channel": "Social Media",
+      "platform": "Twitter",
+      "timestamp": "2026-02-06"
+    },
+    {
+      "feedback_id": "FB18571",
+      "text": "App is slow and laggy on older phones",
+      "sentiment": "NEGATIVE",
+      "score": 0.9997,
+      "channel": "App Review",
+      "platform": "Google Play Store",
+      "timestamp": "2025-10-13"
+    },
+    {
+      "feedback_id": "FB10539",
+      "text": "Low power mode would be great for long hikes This is a must-have!",
+      "sentiment": "NEGATIVE",
+      "score": 0.9388,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2026-02-02"
+    },
+    {
+      "feedback_id": "FB19424",
+      "text": "Bluetooth connection drops every 10 minutes Running on iOS 17, app version 2.3.1",
+      "sentiment": "NEGATIVE",
+      "score": 0.9981,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2025-11-28"
+    },
+    {
+      "feedback_id": "FB13567",
+      "text": "How do I update the firmware?",
+      "sentiment": "NEGATIVE",
+      "score": 0.9991,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2026-02-24"
+    },
+    {
+      "feedback_id": "FB19643",
+      "text": "Battery life is terrible compared to competitors",
+      "sentiment": "NEGATIVE",
+      "score": 0.9992,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2025-12-25"
+    },
+    {
+      "feedback_id": "FB17877",
+      "text": "Can't export workout data to CSV, export button doesn't work",
+      "sentiment": "NEGATIVE",
+      "score": 0.9996,
+      "channel": "Social Media",
+      "platform": "Twitter",
+      "timestamp": "2026-02-20"
+    },
+    {
+      "feedback_id": "FB01934",
+      "text": "App login fails with 'invalid credentials' even with correct password",
+      "sentiment": "NEGATIVE",
+      "score": 0.9996,
+      "channel": "App Review",
+      "platform": "Google Play Store",
+      "timestamp": "2025-10-20"
+    },
+    {
+      "feedback_id": "FB16220",
+      "text": "Device doesn't charge, charging icon doesn't appear",
+      "sentiment": "NEGATIVE",
+      "score": 0.9814,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2026-01-19"
+    },
+    {
+      "feedback_id": "FB08125",
+      "text": "How do I update the firmware?",
+      "sentiment": "NEGATIVE",
+      "score": 0.9991,
+      "channel": "Social Media",
+      "platform": "Instagram",
+      "timestamp": "2025-10-16"
+    },
+    {
+      "feedback_id": "FB02132",
+      "text": "App login fails with 'invalid credentials' even with correct password",
+      "sentiment": "NEGATIVE",
+      "score": 0.9996,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2025-12-10"
+    },
+    {
+      "feedback_id": "FB03146",
+      "text": "Battery lasts longer than advertised!",
+      "sentiment": "NEGATIVE",
+      "score": 0.9749,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2025-11-13"
+    },
+    {
+      "feedback_id": "FB17174",
+      "text": "App drains my phone battery",
+      "sentiment": "NEGATIVE",
+      "score": 0.9941,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2025-12-13"
+    },
+    {
+      "feedback_id": "FB09596",
+      "text": "App login fails with 'invalid credentials' even with correct password",
+      "sentiment": "NEGATIVE",
+      "score": 0.9996,
+      "channel": "App Review",
+      "platform": "Google Play Store",
+      "timestamp": "2025-12-27"
+    },
+    {
+      "feedback_id": "FB13528",
+      "text": "Extend battery life please, I have to charge every 2 days",
+      "sentiment": "NEGATIVE",
+      "score": 0.8673,
+      "channel": "Social Media",
+      "platform": "Twitter",
+      "timestamp": "2026-01-01"
+    },
+    {
+      "feedback_id": "FB04324",
+      "text": "How do I reset my device to factory settings?",
+      "sentiment": "NEGATIVE",
+      "score": 0.9996,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2025-09-14"
+    },
+    {
+      "feedback_id": "FB17625",
+      "text": "App is slow and laggy on older phones",
+      "sentiment": "NEGATIVE",
+      "score": 0.9997,
+      "channel": "App Review",
+      "platform": "Google Play Store",
+      "timestamp": "2025-09-28"
+    },
+    {
+      "feedback_id": "FB12694",
+      "text": "Device freezes on the clock face and needs restart",
+      "sentiment": "NEGATIVE",
+      "score": 0.9991,
+      "channel": "Beta Testing",
+      "platform": "Beta Testing",
+      "timestamp": "2025-09-23"
+    },
+    {
+      "feedback_id": "FB14646",
+      "text": "App login fails with 'invalid credentials' even with correct password",
+      "sentiment": "NEGATIVE",
+      "score": 0.9996,
+      "channel": "Social Media",
+      "platform": "Instagram",
+      "timestamp": "2025-12-05"
+    },
+    {
+      "feedback_id": "FB14560",
+      "text": "Device doesn't charge, charging icon doesn't appear",
+      "sentiment": "NEGATIVE",
+      "score": 0.9814,
+      "channel": "Social Media",
+      "platform": "Twitter",
+      "timestamp": "2025-09-22"
+    },
+    {
+      "feedback_id": "FB01887",
+      "text": "Battery life is good but could be better. Maybe add a power saving mode?",
+      "sentiment": "NEGATIVE",
+      "score": 0.954,
+      "channel": "Social Media",
+      "platform": "Facebook",
+      "timestamp": "2026-01-15"
+    },
+    {
+      "feedback_id": "FB07504",
+      "text": "App login fails with 'invalid credentials' even with correct password This started after the latest update.",
+      "sentiment": "NEGATIVE",
+      "score": 0.9997,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2025-11-25"
+    }
+  ],
+  "2": [
+    {
+      "feedback_id": "FB02788",
+      "text": "Device looks cheap and plasticky",
+      "sentiment": "NEGATIVE",
+      "score": 0.9998,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2025-12-11"
+    },
+    {
+      "feedback_id": "FB06976",
+      "text": "This device is overpriced for what it offers",
+      "sentiment": "NEGATIVE",
+      "score": 0.9998,
+      "channel": "App Review",
+      "platform": "Google Play Store",
+      "timestamp": "2026-02-18"
+    },
+    {
+      "feedback_id": "FB02355",
+      "text": "Is there a warranty on this device?",
+      "sentiment": "NEGATIVE",
+      "score": 0.9979,
+      "channel": "Social Media",
+      "platform": "Facebook",
+      "timestamp": "2025-11-18"
+    },
+    {
+      "feedback_id": "FB08012",
+      "text": "Device looks cheap and plasticky",
+      "sentiment": "NEGATIVE",
+      "score": 0.9998,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2026-02-18"
+    },
+    {
+      "feedback_id": "FB17769",
+      "text": "Can't use device without creating an account, privacy concern",
+      "sentiment": "POSITIVE",
+      "score": 0.7428,
+      "channel": "App Review",
+      "platform": "Google Play Store",
+      "timestamp": "2025-09-04"
+    },
+    {
+      "feedback_id": "FB00160",
+      "text": "Can't use device without creating an account, privacy concern",
+      "sentiment": "POSITIVE",
+      "score": 0.7428,
+      "channel": "App Review",
+      "platform": "Google Play Store",
+      "timestamp": "2025-09-23"
+    },
+    {
+      "feedback_id": "FB02618",
+      "text": "Can I use this without a smartphone?",
+      "sentiment": "NEGATIVE",
+      "score": 0.9961,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2026-02-14"
+    },
+    {
+      "feedback_id": "FB01842",
+      "text": "Can multiple users share one device?",
+      "sentiment": "NEGATIVE",
+      "score": 0.9929,
+      "channel": "App Review",
+      "platform": "Google Play Store",
+      "timestamp": "2025-09-16"
+    },
+    {
+      "feedback_id": "FB07048",
+      "text": "Can multiple users share one device?",
+      "sentiment": "NEGATIVE",
+      "score": 0.9929,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2025-10-27"
+    },
+    {
+      "feedback_id": "FB19137",
+      "text": "This device is overpriced for what it offers",
+      "sentiment": "NEGATIVE",
+      "score": 0.9998,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2025-11-23"
+    },
+    {
+      "feedback_id": "FB17243",
+      "text": "Can't use device without creating an account, privacy concern",
+      "sentiment": "POSITIVE",
+      "score": 0.7428,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2026-01-08"
+    },
+    {
+      "feedback_id": "FB17712",
+      "text": "Can't use device without creating an account, privacy concern My Fitbit was better.",
+      "sentiment": "NEGATIVE",
+      "score": 0.9861,
+      "channel": "Beta Testing",
+      "platform": "Beta Testing",
+      "timestamp": "2025-12-05"
+    },
+    {
+      "feedback_id": "FB13915",
+      "text": "This device is overpriced for what it offers",
+      "sentiment": "NEGATIVE",
+      "score": 0.9998,
+      "channel": "Social Media",
+      "platform": "Facebook",
+      "timestamp": "2025-12-27"
+    },
+    {
+      "feedback_id": "FB10843",
+      "text": "This device is overpriced for what it offers",
+      "sentiment": "NEGATIVE",
+      "score": 0.9998,
+      "channel": "App Review",
+      "platform": "Google Play Store",
+      "timestamp": "2026-01-08"
+    },
+    {
+      "feedback_id": "FB01851",
+      "text": "This device is overpriced for what it offers",
+      "sentiment": "NEGATIVE",
+      "score": 0.9998,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2025-11-21"
+    },
+    {
+      "feedback_id": "FB06268",
+      "text": "Can I use this without a smartphone?",
+      "sentiment": "NEGATIVE",
+      "score": 0.9961,
+      "channel": "Beta Testing",
+      "platform": "Beta Testing",
+      "timestamp": "2026-01-22"
+    },
+    {
+      "feedback_id": "FB02342",
+      "text": "Can multiple users share one device?",
+      "sentiment": "NEGATIVE",
+      "score": 0.9929,
+      "channel": "App Review",
+      "platform": "Google Play Store",
+      "timestamp": "2025-12-05"
+    },
+    {
+      "feedback_id": "FB16578",
+      "text": "Device looks cheap and plasticky",
+      "sentiment": "NEGATIVE",
+      "score": 0.9998,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2025-09-03"
+    },
+    {
+      "feedback_id": "FB11532",
+      "text": "This device is overpriced for what it offers",
+      "sentiment": "NEGATIVE",
+      "score": 0.9998,
+      "channel": "App Review",
+      "platform": "Google Play Store",
+      "timestamp": "2026-01-06"
+    },
+    {
+      "feedback_id": "FB09265",
+      "text": "Can't use device without creating an account, privacy concern",
+      "sentiment": "POSITIVE",
+      "score": 0.7428,
+      "channel": "Beta Testing",
+      "platform": "Beta Testing",
+      "timestamp": "2025-11-09"
+    },
+    {
+      "feedback_id": "FB19484",
+      "text": "Can multiple users share one device?",
+      "sentiment": "NEGATIVE",
+      "score": 0.9929,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2026-01-31"
+    },
+    {
+      "feedback_id": "FB09610",
+      "text": "Device looks cheap and plasticky",
+      "sentiment": "NEGATIVE",
+      "score": 0.9998,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2025-12-21"
+    },
+    {
+      "feedback_id": "FB08843",
+      "text": "Device looks cheap and plasticky",
+      "sentiment": "NEGATIVE",
+      "score": 0.9998,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2025-12-30"
+    },
+    {
+      "feedback_id": "FB12660",
+      "text": "Is there a warranty on this device?",
+      "sentiment": "NEGATIVE",
+      "score": 0.9979,
+      "channel": "Beta Testing",
+      "platform": "Beta Testing",
+      "timestamp": "2025-11-17"
+    },
+    {
+      "feedback_id": "FB08441",
+      "text": "Can't use device without creating an account, privacy concern",
+      "sentiment": "POSITIVE",
+      "score": 0.7428,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2025-11-24"
+    },
+    {
+      "feedback_id": "FB16476",
+      "text": "Can't use device without creating an account, privacy concern",
+      "sentiment": "POSITIVE",
+      "score": 0.7428,
+      "channel": "Social Media",
+      "platform": "Twitter",
+      "timestamp": "2026-01-01"
+    },
+    {
+      "feedback_id": "FB18740",
+      "text": "Can multiple users share one device?",
+      "sentiment": "NEGATIVE",
+      "score": 0.9929,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2026-02-25"
+    },
+    {
+      "feedback_id": "FB08682",
+      "text": "Device looks cheap and plasticky Other brands do this better.",
+      "sentiment": "NEGATIVE",
+      "score": 0.9995,
+      "channel": "App Review",
+      "platform": "Google Play Store",
+      "timestamp": "2026-02-24"
+    },
+    {
+      "feedback_id": "FB12013",
+      "text": "Device looks cheap and plasticky",
+      "sentiment": "NEGATIVE",
+      "score": 0.9998,
+      "channel": "Beta Testing",
+      "platform": "Beta Testing",
+      "timestamp": "2026-02-21"
+    },
+    {
+      "feedback_id": "FB12045",
+      "text": "Device looks cheap and plasticky",
+      "sentiment": "NEGATIVE",
+      "score": 0.9998,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2025-09-18"
+    }
+  ],
+  "3": [
+    {
+      "feedback_id": "FB09005",
+      "text": "Setup process is overly complicated",
+      "sentiment": "NEGATIVE",
+      "score": 0.9994,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2026-01-05"
+    },
+    {
+      "feedback_id": "FB17076",
+      "text": "No way to contact support directly from the app",
+      "sentiment": "NEGATIVE",
+      "score": 0.9997,
+      "channel": "App Review",
+      "platform": "Google Play Store",
+      "timestamp": "2025-10-26"
+    },
+    {
+      "feedback_id": "FB13186",
+      "text": "Setup process is overly complicated",
+      "sentiment": "NEGATIVE",
+      "score": 0.9994,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2026-01-08"
+    },
+    {
+      "feedback_id": "FB19677",
+      "text": "No way to contact support directly from the app",
+      "sentiment": "NEGATIVE",
+      "score": 0.9997,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2025-12-26"
+    },
+    {
+      "feedback_id": "FB05305",
+      "text": "No way to contact support directly from the app",
+      "sentiment": "NEGATIVE",
+      "score": 0.9997,
+      "channel": "Social Media",
+      "platform": "Twitter",
+      "timestamp": "2025-11-03"
+    },
+    {
+      "feedback_id": "FB11374",
+      "text": "No way to contact support directly from the app",
+      "sentiment": "NEGATIVE",
+      "score": 0.9997,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2025-09-07"
+    },
+    {
+      "feedback_id": "FB17141",
+      "text": "No way to contact support directly from the app",
+      "sentiment": "NEGATIVE",
+      "score": 0.9997,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2026-01-15"
+    },
+    {
+      "feedback_id": "FB09544",
+      "text": "Customer support takes forever to respond",
+      "sentiment": "NEGATIVE",
+      "score": 0.6089,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2025-10-22"
+    },
+    {
+      "feedback_id": "FB19160",
+      "text": "No way to contact support directly from the app Garmin handles this way better.",
+      "sentiment": "NEGATIVE",
+      "score": 0.9998,
+      "channel": "Social Media",
+      "platform": "Twitter",
+      "timestamp": "2025-12-19"
+    },
+    {
+      "feedback_id": "FB07143",
+      "text": "No way to contact support directly from the app",
+      "sentiment": "NEGATIVE",
+      "score": 0.9997,
+      "channel": "Social Media",
+      "platform": "Facebook",
+      "timestamp": "2025-10-27"
+    },
+    {
+      "feedback_id": "FB08834",
+      "text": "No way to contact support directly from the app",
+      "sentiment": "NEGATIVE",
+      "score": 0.9997,
+      "channel": "Social Media",
+      "platform": "Twitter",
+      "timestamp": "2026-02-15"
+    },
+    {
+      "feedback_id": "FB16257",
+      "text": "Setup process is overly complicated",
+      "sentiment": "NEGATIVE",
+      "score": 0.9994,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2026-01-07"
+    },
+    {
+      "feedback_id": "FB01266",
+      "text": "Customer support takes forever to respond",
+      "sentiment": "NEGATIVE",
+      "score": 0.6089,
+      "channel": "App Review",
+      "platform": "Google Play Store",
+      "timestamp": "2025-11-25"
+    },
+    {
+      "feedback_id": "FB04844",
+      "text": "Customer support was very helpful when I had an issue Exceeded my expectations.",
+      "sentiment": "POSITIVE",
+      "score": 0.9823,
+      "channel": "App Review",
+      "platform": "Google Play Store",
+      "timestamp": "2025-09-04"
+    },
+    {
+      "feedback_id": "FB08695",
+      "text": "Customer support was very helpful when I had an issue",
+      "sentiment": "POSITIVE",
+      "score": 0.9918,
+      "channel": "Social Media",
+      "platform": "Facebook",
+      "timestamp": "2026-01-04"
+    },
+    {
+      "feedback_id": "FB12383",
+      "text": "Customer support was very helpful when I had an issue",
+      "sentiment": "POSITIVE",
+      "score": 0.9918,
+      "channel": "Beta Testing",
+      "platform": "Beta Testing",
+      "timestamp": "2025-11-28"
+    },
+    {
+      "feedback_id": "FB12562",
+      "text": "Customer support was very helpful when I had an issue Would definitely recommend to friends!",
+      "sentiment": "POSITIVE",
+      "score": 0.9989,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2025-12-22"
+    },
+    {
+      "feedback_id": "FB17534",
+      "text": "No way to contact support directly from the app",
+      "sentiment": "NEGATIVE",
+      "score": 0.9997,
+      "channel": "App Review",
+      "platform": "Google Play Store",
+      "timestamp": "2026-02-04"
+    },
+    {
+      "feedback_id": "FB02817",
+      "text": "Setup process is overly complicated",
+      "sentiment": "NEGATIVE",
+      "score": 0.9994,
+      "channel": "Beta Testing",
+      "platform": "Beta Testing",
+      "timestamp": "2025-12-07"
+    },
+    {
+      "feedback_id": "FB12569",
+      "text": "Setup process is overly complicated Other brands do this better.",
+      "sentiment": "NEGATIVE",
+      "score": 0.9974,
+      "channel": "Social Media",
+      "platform": "Facebook",
+      "timestamp": "2025-11-05"
+    },
+    {
+      "feedback_id": "FB05809",
+      "text": "No way to contact support directly from the app Garmin handles this way better.",
+      "sentiment": "NEGATIVE",
+      "score": 0.9998,
+      "channel": "Social Media",
+      "platform": "Reddit",
+      "timestamp": "2026-01-29"
+    },
+    {
+      "feedback_id": "FB09367",
+      "text": "Customer support was very helpful when I had an issue",
+      "sentiment": "POSITIVE",
+      "score": 0.9918,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2026-02-14"
+    },
+    {
+      "feedback_id": "FB13172",
+      "text": "No way to contact support directly from the app",
+      "sentiment": "NEGATIVE",
+      "score": 0.9997,
+      "channel": "Social Media",
+      "platform": "Reddit",
+      "timestamp": "2025-12-13"
+    },
+    {
+      "feedback_id": "FB16657",
+      "text": "Customer support was very helpful when I had an issue Exceeded my expectations.",
+      "sentiment": "POSITIVE",
+      "score": 0.9823,
+      "channel": "Social Media",
+      "platform": "Instagram",
+      "timestamp": "2025-12-13"
+    },
+    {
+      "feedback_id": "FB06549",
+      "text": "Setup process is overly complicated",
+      "sentiment": "NEGATIVE",
+      "score": 0.9994,
+      "channel": "Social Media",
+      "platform": "Twitter",
+      "timestamp": "2026-02-22"
+    },
+    {
+      "feedback_id": "FB02383",
+      "text": "Setup process is overly complicated",
+      "sentiment": "NEGATIVE",
+      "score": 0.9994,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2026-02-23"
+    },
+    {
+      "feedback_id": "FB17049",
+      "text": "Setup process is overly complicated",
+      "sentiment": "NEGATIVE",
+      "score": 0.9994,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2025-09-20"
+    },
+    {
+      "feedback_id": "FB15929",
+      "text": "Setup process is overly complicated",
+      "sentiment": "NEGATIVE",
+      "score": 0.9994,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2026-01-11"
+    },
+    {
+      "feedback_id": "FB11856",
+      "text": "No way to contact support directly from the app",
+      "sentiment": "NEGATIVE",
+      "score": 0.9997,
+      "channel": "Social Media",
+      "platform": "Instagram",
+      "timestamp": "2026-01-11"
+    },
+    {
+      "feedback_id": "FB10431",
+      "text": "No way to contact support directly from the app",
+      "sentiment": "NEGATIVE",
+      "score": 0.9997,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2026-02-11"
+    }
+  ],
+  "4": [
+    {
+      "feedback_id": "FB00005",
+      "text": "Add widgets for home screen This is a must-have!",
+      "sentiment": "POSITIVE",
+      "score": 0.9995,
+      "channel": "App Review",
+      "platform": "Google Play Store",
+      "timestamp": "2025-10-31"
+    },
+    {
+      "feedback_id": "FB13406",
+      "text": "Let me choose which apps can send notifications to my device",
+      "sentiment": "NEGATIVE",
+      "score": 0.9936,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2026-02-10"
+    },
+    {
+      "feedback_id": "FB15556",
+      "text": "Need better integration with social media platforms",
+      "sentiment": "NEGATIVE",
+      "score": 0.9979,
+      "channel": "Social Media",
+      "platform": "Facebook",
+      "timestamp": "2025-09-12"
+    },
+    {
+      "feedback_id": "FB18800",
+      "text": "Add widgets for home screen",
+      "sentiment": "POSITIVE",
+      "score": 0.944,
+      "channel": "Beta Testing",
+      "platform": "Beta Testing",
+      "timestamp": "2026-02-03"
+    },
+    {
+      "feedback_id": "FB19969",
+      "text": "Dark mode for the app would be perfect",
+      "sentiment": "NEGATIVE",
+      "score": 0.985,
+      "channel": "Beta Testing",
+      "platform": "Beta Testing",
+      "timestamp": "2025-09-09"
+    },
+    {
+      "feedback_id": "FB12233",
+      "text": "Spotify control from the device screen",
+      "sentiment": "NEGATIVE",
+      "score": 0.9447,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2026-02-03"
+    },
+    {
+      "feedback_id": "FB04194",
+      "text": "Spotify control from the device screen",
+      "sentiment": "NEGATIVE",
+      "score": 0.9447,
+      "channel": "Beta Testing",
+      "platform": "Beta Testing",
+      "timestamp": "2025-09-27"
+    },
+    {
+      "feedback_id": "FB07066",
+      "text": "Notifications don't vibrate anymore after latest update Happens every single time.",
+      "sentiment": "NEGATIVE",
+      "score": 0.9831,
+      "channel": "App Review",
+      "platform": "Google Play Store",
+      "timestamp": "2025-12-29"
+    },
+    {
+      "feedback_id": "FB14305",
+      "text": "Need better integration with social media platforms",
+      "sentiment": "NEGATIVE",
+      "score": 0.9979,
+      "channel": "Social Media",
+      "platform": "Twitter",
+      "timestamp": "2026-02-23"
+    },
+    {
+      "feedback_id": "FB15501",
+      "text": "Screen is too small to read notifications My Fitbit was better.",
+      "sentiment": "NEGATIVE",
+      "score": 0.9992,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2025-10-26"
+    },
+    {
+      "feedback_id": "FB10685",
+      "text": "The app interface is clean and intuitive",
+      "sentiment": "POSITIVE",
+      "score": 0.9995,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2026-01-06"
+    },
+    {
+      "feedback_id": "FB08442",
+      "text": "Notifications don't vibrate anymore after latest update Happens every single time.",
+      "sentiment": "NEGATIVE",
+      "score": 0.9831,
+      "channel": "Beta Testing",
+      "platform": "Beta Testing",
+      "timestamp": "2025-10-06"
+    },
+    {
+      "feedback_id": "FB01255",
+      "text": "Screen is too small to read notifications",
+      "sentiment": "NEGATIVE",
+      "score": 0.9994,
+      "channel": "Social Media",
+      "platform": "Twitter",
+      "timestamp": "2025-10-31"
+    },
+    {
+      "feedback_id": "FB14708",
+      "text": "Add smart notifications that learn my preferences",
+      "sentiment": "POSITIVE",
+      "score": 0.9973,
+      "channel": "Social Media",
+      "platform": "Facebook",
+      "timestamp": "2025-10-03"
+    },
+    {
+      "feedback_id": "FB01823",
+      "text": "The app interface is clean and intuitive",
+      "sentiment": "POSITIVE",
+      "score": 0.9995,
+      "channel": "App Review",
+      "platform": "Google Play Store",
+      "timestamp": "2025-12-12"
+    },
+    {
+      "feedback_id": "FB09207",
+      "text": "Let me choose which apps can send notifications to my device",
+      "sentiment": "NEGATIVE",
+      "score": 0.9936,
+      "channel": "Social Media",
+      "platform": "Twitter",
+      "timestamp": "2025-09-27"
+    },
+    {
+      "feedback_id": "FB02194",
+      "text": "Notifications don't vibrate anymore after latest update Very frustrating!",
+      "sentiment": "NEGATIVE",
+      "score": 0.9933,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2025-12-12"
+    },
+    {
+      "feedback_id": "FB11171",
+      "text": "Add smart notifications that learn my preferences Surprised this isn't already included.",
+      "sentiment": "POSITIVE",
+      "score": 0.8148,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2026-02-17"
+    },
+    {
+      "feedback_id": "FB18624",
+      "text": "The app interface is clean and intuitive Worth every penny.",
+      "sentiment": "POSITIVE",
+      "score": 0.9996,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2026-01-08"
+    },
+    {
+      "feedback_id": "FB00894",
+      "text": "Notifications don't vibrate anymore after latest update",
+      "sentiment": "NEGATIVE",
+      "score": 0.9857,
+      "channel": "Social Media",
+      "platform": "Twitter",
+      "timestamp": "2026-02-19"
+    },
+    {
+      "feedback_id": "FB02791",
+      "text": "Notification filtering is needed - too many spam alerts",
+      "sentiment": "NEGATIVE",
+      "score": 0.9995,
+      "channel": "App Review",
+      "platform": "Google Play Store",
+      "timestamp": "2025-11-20"
+    },
+    {
+      "feedback_id": "FB12237",
+      "text": "Add smart notifications that learn my preferences",
+      "sentiment": "POSITIVE",
+      "score": 0.9973,
+      "channel": "Social Media",
+      "platform": "Facebook",
+      "timestamp": "2025-09-04"
+    },
+    {
+      "feedback_id": "FB14526",
+      "text": "More customizable notification options please",
+      "sentiment": "POSITIVE",
+      "score": 0.9699,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2025-12-23"
+    },
+    {
+      "feedback_id": "FB00124",
+      "text": "Need better integration with social media platforms",
+      "sentiment": "NEGATIVE",
+      "score": 0.9979,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2026-02-05"
+    },
+    {
+      "feedback_id": "FB11170",
+      "text": "Notifications don't vibrate anymore after latest update This started after the latest update.",
+      "sentiment": "NEGATIVE",
+      "score": 0.9822,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2026-01-30"
+    },
+    {
+      "feedback_id": "FB13104",
+      "text": "The app interface is clean and intuitive",
+      "sentiment": "POSITIVE",
+      "score": 0.9995,
+      "channel": "App Review",
+      "platform": "Google Play Store",
+      "timestamp": "2025-09-30"
+    },
+    {
+      "feedback_id": "FB18429",
+      "text": "More customizable notification options please",
+      "sentiment": "POSITIVE",
+      "score": 0.9699,
+      "channel": "Social Media",
+      "platform": "Facebook",
+      "timestamp": "2026-01-22"
+    },
+    {
+      "feedback_id": "FB14734",
+      "text": "Let me choose which apps can send notifications to my device",
+      "sentiment": "NEGATIVE",
+      "score": 0.9936,
+      "channel": "App Review",
+      "platform": "Google Play Store",
+      "timestamp": "2026-02-13"
+    },
+    {
+      "feedback_id": "FB06398",
+      "text": "The app interface is confusing. Needs a redesign",
+      "sentiment": "NEGATIVE",
+      "score": 0.9997,
+      "channel": "Beta Testing",
+      "platform": "Beta Testing",
+      "timestamp": "2026-02-19"
+    },
+    {
+      "feedback_id": "FB07353",
+      "text": "Screen is too small to read notifications Other brands do this better.",
+      "sentiment": "NEGATIVE",
+      "score": 0.9994,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2025-10-04"
+    }
+  ],
+  "5": [
+    {
+      "feedback_id": "FB15841",
+      "text": "Average product",
+      "sentiment": "NEGATIVE",
+      "score": 0.9677,
+      "channel": "Social Media",
+      "platform": "Facebook",
+      "timestamp": "2025-09-15"
+    },
+    {
+      "feedback_id": "FB09867",
+      "text": "Average product",
+      "sentiment": "NEGATIVE",
+      "score": 0.9677,
+      "channel": "Social Media",
+      "platform": "Twitter",
+      "timestamp": "2026-01-09"
+    },
+    {
+      "feedback_id": "FB18377",
+      "text": "Average product",
+      "sentiment": "NEGATIVE",
+      "score": 0.9677,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2026-02-24"
+    },
+    {
+      "feedback_id": "FB19611",
+      "text": "Average product",
+      "sentiment": "NEGATIVE",
+      "score": 0.9677,
+      "channel": "Beta Testing",
+      "platform": "Beta Testing",
+      "timestamp": "2025-10-21"
+    },
+    {
+      "feedback_id": "FB19259",
+      "text": "Average product",
+      "sentiment": "NEGATIVE",
+      "score": 0.9677,
+      "channel": "Beta Testing",
+      "platform": "Beta Testing",
+      "timestamp": "2026-02-19"
+    },
+    {
+      "feedback_id": "FB16087",
+      "text": "Average product",
+      "sentiment": "NEGATIVE",
+      "score": 0.9677,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2025-09-28"
+    },
+    {
+      "feedback_id": "FB02838",
+      "text": "Average product",
+      "sentiment": "NEGATIVE",
+      "score": 0.9677,
+      "channel": "App Review",
+      "platform": "Google Play Store",
+      "timestamp": "2026-02-12"
+    },
+    {
+      "feedback_id": "FB19007",
+      "text": "Average product",
+      "sentiment": "NEGATIVE",
+      "score": 0.9677,
+      "channel": "Beta Testing",
+      "platform": "Beta Testing",
+      "timestamp": "2025-09-29"
+    },
+    {
+      "feedback_id": "FB17995",
+      "text": "Average product",
+      "sentiment": "NEGATIVE",
+      "score": 0.9677,
+      "channel": "App Review",
+      "platform": "Google Play Store",
+      "timestamp": "2025-11-02"
+    },
+    {
+      "feedback_id": "FB07731",
+      "text": "Average product",
+      "sentiment": "NEGATIVE",
+      "score": 0.9677,
+      "channel": "App Review",
+      "platform": "Google Play Store",
+      "timestamp": "2025-11-18"
+    },
+    {
+      "feedback_id": "FB17293",
+      "text": "Average product",
+      "sentiment": "NEGATIVE",
+      "score": 0.9677,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2025-09-17"
+    },
+    {
+      "feedback_id": "FB18402",
+      "text": "Average product",
+      "sentiment": "NEGATIVE",
+      "score": 0.9677,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2026-02-16"
+    },
+    {
+      "feedback_id": "FB07246",
+      "text": "Average product",
+      "sentiment": "NEGATIVE",
+      "score": 0.9677,
+      "channel": "App Review",
+      "platform": "Google Play Store",
+      "timestamp": "2025-12-12"
+    },
+    {
+      "feedback_id": "FB08242",
+      "text": "Average product",
+      "sentiment": "NEGATIVE",
+      "score": 0.9677,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2025-10-17"
+    },
+    {
+      "feedback_id": "FB08072",
+      "text": "Average product",
+      "sentiment": "NEGATIVE",
+      "score": 0.9677,
+      "channel": "Social Media",
+      "platform": "Instagram",
+      "timestamp": "2025-10-19"
+    },
+    {
+      "feedback_id": "FB18526",
+      "text": "Average product",
+      "sentiment": "NEGATIVE",
+      "score": 0.9677,
+      "channel": "Beta Testing",
+      "platform": "Beta Testing",
+      "timestamp": "2025-11-12"
+    },
+    {
+      "feedback_id": "FB14995",
+      "text": "Average product",
+      "sentiment": "NEGATIVE",
+      "score": 0.9677,
+      "channel": "Social Media",
+      "platform": "Twitter",
+      "timestamp": "2025-11-09"
+    },
+    {
+      "feedback_id": "FB18256",
+      "text": "Average product",
+      "sentiment": "NEGATIVE",
+      "score": 0.9677,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2026-02-09"
+    },
+    {
+      "feedback_id": "FB07192",
+      "text": "Average product",
+      "sentiment": "NEGATIVE",
+      "score": 0.9677,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2025-09-04"
+    },
+    {
+      "feedback_id": "FB16321",
+      "text": "Average product",
+      "sentiment": "NEGATIVE",
+      "score": 0.9677,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2025-10-12"
+    },
+    {
+      "feedback_id": "FB00727",
+      "text": "Average product",
+      "sentiment": "NEGATIVE",
+      "score": 0.9677,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2025-12-03"
+    },
+    {
+      "feedback_id": "FB12294",
+      "text": "Average product",
+      "sentiment": "NEGATIVE",
+      "score": 0.9677,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2025-10-27"
+    },
+    {
+      "feedback_id": "FB13311",
+      "text": "Average product",
+      "sentiment": "NEGATIVE",
+      "score": 0.9677,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2025-09-25"
+    },
+    {
+      "feedback_id": "FB14555",
+      "text": "Average product",
+      "sentiment": "NEGATIVE",
+      "score": 0.9677,
+      "channel": "Beta Testing",
+      "platform": "Beta Testing",
+      "timestamp": "2025-10-16"
+    },
+    {
+      "feedback_id": "FB12699",
+      "text": "Average product",
+      "sentiment": "NEGATIVE",
+      "score": 0.9677,
+      "channel": "Beta Testing",
+      "platform": "Beta Testing",
+      "timestamp": "2025-11-18"
+    },
+    {
+      "feedback_id": "FB06452",
+      "text": "Average product",
+      "sentiment": "NEGATIVE",
+      "score": 0.9677,
+      "channel": "App Review",
+      "platform": "Google Play Store",
+      "timestamp": "2026-02-17"
+    },
+    {
+      "feedback_id": "FB10497",
+      "text": "Average product",
+      "sentiment": "NEGATIVE",
+      "score": 0.9677,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2025-11-09"
+    },
+    {
+      "feedback_id": "FB10682",
+      "text": "Average product",
+      "sentiment": "NEGATIVE",
+      "score": 0.9677,
+      "channel": "Social Media",
+      "platform": "Twitter",
+      "timestamp": "2025-12-08"
+    },
+    {
+      "feedback_id": "FB07284",
+      "text": "Average product",
+      "sentiment": "NEGATIVE",
+      "score": 0.9677,
+      "channel": "App Review",
+      "platform": "Google Play Store",
+      "timestamp": "2025-12-06"
+    },
+    {
+      "feedback_id": "FB10053",
+      "text": "Average product",
+      "sentiment": "NEGATIVE",
+      "score": 0.9677,
+      "channel": "App Review",
+      "platform": "Google Play Store",
+      "timestamp": "2025-12-22"
+    }
+  ],
+  "6": [
+    {
+      "feedback_id": "FB09028",
+      "text": "Water resistance rating seems wrong, device got wet and stopped working",
+      "sentiment": "NEGATIVE",
+      "score": 0.9994,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2025-09-16"
+    },
+    {
+      "feedback_id": "FB13391",
+      "text": "Water resistance is legit, wore it swimming with no issues 5 stars from me!",
+      "sentiment": "POSITIVE",
+      "score": 0.9799,
+      "channel": "Beta Testing",
+      "platform": "Beta Testing",
+      "timestamp": "2026-02-05"
+    },
+    {
+      "feedback_id": "FB11174",
+      "text": "Water resistance rating seems wrong, device got wet and stopped working",
+      "sentiment": "NEGATIVE",
+      "score": 0.9994,
+      "channel": "Beta Testing",
+      "platform": "Beta Testing",
+      "timestamp": "2025-12-13"
+    },
+    {
+      "feedback_id": "FB04600",
+      "text": "Is the device waterproof or just water resistant?",
+      "sentiment": "NEGATIVE",
+      "score": 0.9932,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2026-01-01"
+    },
+    {
+      "feedback_id": "FB14022",
+      "text": "Water resistance rating seems wrong, device got wet and stopped working",
+      "sentiment": "NEGATIVE",
+      "score": 0.9994,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2025-12-10"
+    },
+    {
+      "feedback_id": "FB19168",
+      "text": "Water resistance is legit, wore it swimming with no issues",
+      "sentiment": "POSITIVE",
+      "score": 0.992,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2025-09-28"
+    },
+    {
+      "feedback_id": "FB06213",
+      "text": "Water resistance rating seems wrong, device got wet and stopped working",
+      "sentiment": "NEGATIVE",
+      "score": 0.9994,
+      "channel": "Social Media",
+      "platform": "Instagram",
+      "timestamp": "2026-01-07"
+    },
+    {
+      "feedback_id": "FB14081",
+      "text": "Is the device waterproof or just water resistant?",
+      "sentiment": "NEGATIVE",
+      "score": 0.9932,
+      "channel": "Beta Testing",
+      "platform": "Beta Testing",
+      "timestamp": "2026-02-11"
+    },
+    {
+      "feedback_id": "FB07497",
+      "text": "Water resistance is legit, wore it swimming with no issues 5 stars from me!",
+      "sentiment": "POSITIVE",
+      "score": 0.9799,
+      "channel": "App Review",
+      "platform": "Google Play Store",
+      "timestamp": "2025-11-08"
+    },
+    {
+      "feedback_id": "FB10710",
+      "text": "Water resistance rating seems wrong, device got wet and stopped working",
+      "sentiment": "NEGATIVE",
+      "score": 0.9994,
+      "channel": "Beta Testing",
+      "platform": "Beta Testing",
+      "timestamp": "2026-02-26"
+    },
+    {
+      "feedback_id": "FB01180",
+      "text": "Water resistance rating seems wrong, device got wet and stopped working",
+      "sentiment": "NEGATIVE",
+      "score": 0.9994,
+      "channel": "Beta Testing",
+      "platform": "Beta Testing",
+      "timestamp": "2026-01-24"
+    },
+    {
+      "feedback_id": "FB05414",
+      "text": "Is the device waterproof or just water resistant?",
+      "sentiment": "NEGATIVE",
+      "score": 0.9932,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2025-10-20"
+    },
+    {
+      "feedback_id": "FB02858",
+      "text": "Water resistance is legit, wore it swimming with no issues",
+      "sentiment": "POSITIVE",
+      "score": 0.992,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2025-10-04"
+    },
+    {
+      "feedback_id": "FB07899",
+      "text": "Is the device waterproof or just water resistant?",
+      "sentiment": "NEGATIVE",
+      "score": 0.9932,
+      "channel": "App Review",
+      "platform": "Google Play Store",
+      "timestamp": "2025-12-25"
+    },
+    {
+      "feedback_id": "FB01340",
+      "text": "Water resistance is legit, wore it swimming with no issues 5 stars from me!",
+      "sentiment": "POSITIVE",
+      "score": 0.9799,
+      "channel": "Social Media",
+      "platform": "Reddit",
+      "timestamp": "2026-01-26"
+    },
+    {
+      "feedback_id": "FB14306",
+      "text": "Water resistance rating seems wrong, device got wet and stopped working Very frustrating!",
+      "sentiment": "NEGATIVE",
+      "score": 0.9996,
+      "channel": "Beta Testing",
+      "platform": "Beta Testing",
+      "timestamp": "2025-11-26"
+    },
+    {
+      "feedback_id": "FB14578",
+      "text": "Water resistance rating seems wrong, device got wet and stopped working",
+      "sentiment": "NEGATIVE",
+      "score": 0.9994,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2025-09-18"
+    },
+    {
+      "feedback_id": "FB16890",
+      "text": "Water resistance is legit, wore it swimming with no issues",
+      "sentiment": "POSITIVE",
+      "score": 0.992,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2026-02-21"
+    },
+    {
+      "feedback_id": "FB10761",
+      "text": "Water resistance rating seems wrong, device got wet and stopped working This is making the device unusable.",
+      "sentiment": "NEGATIVE",
+      "score": 0.9996,
+      "channel": "Social Media",
+      "platform": "Twitter",
+      "timestamp": "2026-01-15"
+    },
+    {
+      "feedback_id": "FB16777",
+      "text": "Water resistance rating seems wrong, device got wet and stopped working",
+      "sentiment": "NEGATIVE",
+      "score": 0.9994,
+      "channel": "Social Media",
+      "platform": "Twitter",
+      "timestamp": "2025-09-07"
+    },
+    {
+      "feedback_id": "FB11585",
+      "text": "Water resistance rating seems wrong, device got wet and stopped working",
+      "sentiment": "NEGATIVE",
+      "score": 0.9994,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2025-11-26"
+    },
+    {
+      "feedback_id": "FB09234",
+      "text": "Water resistance is legit, wore it swimming with no issues Already told my gym buddies about it.",
+      "sentiment": "POSITIVE",
+      "score": 0.9963,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2025-10-20"
+    },
+    {
+      "feedback_id": "FB04428",
+      "text": "Water resistance rating seems wrong, device got wet and stopped working Happens every single time.",
+      "sentiment": "NEGATIVE",
+      "score": 0.999,
+      "channel": "App Review",
+      "platform": "Google Play Store",
+      "timestamp": "2025-09-05"
+    },
+    {
+      "feedback_id": "FB10210",
+      "text": "Is the device waterproof or just water resistant?",
+      "sentiment": "NEGATIVE",
+      "score": 0.9932,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2026-02-05"
+    },
+    {
+      "feedback_id": "FB08019",
+      "text": "Water resistance is legit, wore it swimming with no issues",
+      "sentiment": "POSITIVE",
+      "score": 0.992,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2026-02-08"
+    },
+    {
+      "feedback_id": "FB06851",
+      "text": "Is the device waterproof or just water resistant?",
+      "sentiment": "NEGATIVE",
+      "score": 0.9932,
+      "channel": "Social Media",
+      "platform": "Reddit",
+      "timestamp": "2026-01-29"
+    },
+    {
+      "feedback_id": "FB17483",
+      "text": "Water resistance is legit, wore it swimming with no issues",
+      "sentiment": "POSITIVE",
+      "score": 0.992,
+      "channel": "Social Media",
+      "platform": "Facebook",
+      "timestamp": "2025-10-21"
+    },
+    {
+      "feedback_id": "FB03077",
+      "text": "Water resistance is legit, wore it swimming with no issues",
+      "sentiment": "POSITIVE",
+      "score": 0.992,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2025-09-10"
+    },
+    {
+      "feedback_id": "FB15046",
+      "text": "Water resistance is legit, wore it swimming with no issues",
+      "sentiment": "POSITIVE",
+      "score": 0.992,
+      "channel": "App Review",
+      "platform": "Google Play Store",
+      "timestamp": "2026-02-04"
+    },
+    {
+      "feedback_id": "FB19562",
+      "text": "Water resistance is legit, wore it swimming with no issues",
+      "sentiment": "POSITIVE",
+      "score": 0.992,
+      "channel": "Social Media",
+      "platform": "Twitter",
+      "timestamp": "2026-02-07"
+    }
+  ],
+  "7": [
+    {
+      "feedback_id": "FB02931",
+      "text": "Not impressed",
+      "sentiment": "NEGATIVE",
+      "score": 0.9995,
+      "channel": "Social Media",
+      "platform": "Twitter",
+      "timestamp": "2025-12-29"
+    },
+    {
+      "feedback_id": "FB05728",
+      "text": "Fine for the price",
+      "sentiment": "POSITIVE",
+      "score": 0.9907,
+      "channel": "App Review",
+      "platform": "Google Play Store",
+      "timestamp": "2025-10-06"
+    },
+    {
+      "feedback_id": "FB01606",
+      "text": "Fine for the price",
+      "sentiment": "POSITIVE",
+      "score": 0.9907,
+      "channel": "Social Media",
+      "platform": "Facebook",
+      "timestamp": "2025-12-24"
+    },
+    {
+      "feedback_id": "FB14847",
+      "text": "Pretty good",
+      "sentiment": "POSITIVE",
+      "score": 0.9999,
+      "channel": "App Review",
+      "platform": "Google Play Store",
+      "timestamp": "2025-12-09"
+    },
+    {
+      "feedback_id": "FB01097",
+      "text": "Not great",
+      "sentiment": "NEGATIVE",
+      "score": 0.9997,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2026-01-20"
+    },
+    {
+      "feedback_id": "FB09580",
+      "text": "Meh",
+      "sentiment": "POSITIVE",
+      "score": 0.979,
+      "channel": "App Review",
+      "platform": "Google Play Store",
+      "timestamp": "2025-11-17"
+    },
+    {
+      "feedback_id": "FB18353",
+      "text": "Meh",
+      "sentiment": "POSITIVE",
+      "score": 0.979,
+      "channel": "Social Media",
+      "platform": "Facebook",
+      "timestamp": "2025-10-08"
+    },
+    {
+      "feedback_id": "FB09804",
+      "text": "I don't know, it's alright",
+      "sentiment": "POSITIVE",
+      "score": 0.9995,
+      "channel": "Social Media",
+      "platform": "Twitter",
+      "timestamp": "2025-09-03"
+    },
+    {
+      "feedback_id": "FB05056",
+      "text": "Not impressed",
+      "sentiment": "NEGATIVE",
+      "score": 0.9995,
+      "channel": "Social Media",
+      "platform": "Reddit",
+      "timestamp": "2025-12-09"
+    },
+    {
+      "feedback_id": "FB04769",
+      "text": "Fine for the price",
+      "sentiment": "POSITIVE",
+      "score": 0.9907,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2025-11-22"
+    },
+    {
+      "feedback_id": "FB03556",
+      "text": "Nothing special",
+      "sentiment": "NEGATIVE",
+      "score": 0.9996,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2026-01-08"
+    },
+    {
+      "feedback_id": "FB13334",
+      "text": "Fine for the price",
+      "sentiment": "POSITIVE",
+      "score": 0.9907,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2026-01-26"
+    },
+    {
+      "feedback_id": "FB03200",
+      "text": "Decent",
+      "sentiment": "POSITIVE",
+      "score": 0.9998,
+      "channel": "Social Media",
+      "platform": "Twitter",
+      "timestamp": "2025-10-02"
+    },
+    {
+      "feedback_id": "FB12938",
+      "text": "Not great",
+      "sentiment": "NEGATIVE",
+      "score": 0.9997,
+      "channel": "Beta Testing",
+      "platform": "Beta Testing",
+      "timestamp": "2025-09-05"
+    },
+    {
+      "feedback_id": "FB08943",
+      "text": "Great value for money, highly recommend",
+      "sentiment": "POSITIVE",
+      "score": 0.9999,
+      "channel": "Social Media",
+      "platform": "Twitter",
+      "timestamp": "2026-02-04"
+    },
+    {
+      "feedback_id": "FB18514",
+      "text": "Not impressed",
+      "sentiment": "NEGATIVE",
+      "score": 0.9995,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2025-12-19"
+    },
+    {
+      "feedback_id": "FB14139",
+      "text": "Not impressed",
+      "sentiment": "NEGATIVE",
+      "score": 0.9995,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2026-02-18"
+    },
+    {
+      "feedback_id": "FB02886",
+      "text": "Not impressed",
+      "sentiment": "NEGATIVE",
+      "score": 0.9995,
+      "channel": "Social Media",
+      "platform": "Facebook",
+      "timestamp": "2025-11-29"
+    },
+    {
+      "feedback_id": "FB01137",
+      "text": "Works fine",
+      "sentiment": "POSITIVE",
+      "score": 0.9999,
+      "channel": "Beta Testing",
+      "platform": "Beta Testing",
+      "timestamp": "2025-10-04"
+    },
+    {
+      "feedback_id": "FB12066",
+      "text": "Meh",
+      "sentiment": "POSITIVE",
+      "score": 0.979,
+      "channel": "Social Media",
+      "platform": "Facebook",
+      "timestamp": "2025-11-05"
+    },
+    {
+      "feedback_id": "FB13228",
+      "text": "I don't know, it's alright",
+      "sentiment": "POSITIVE",
+      "score": 0.9995,
+      "channel": "Social Media",
+      "platform": "Instagram",
+      "timestamp": "2025-09-21"
+    },
+    {
+      "feedback_id": "FB18196",
+      "text": "Nothing special",
+      "sentiment": "NEGATIVE",
+      "score": 0.9996,
+      "channel": "Beta Testing",
+      "platform": "Beta Testing",
+      "timestamp": "2025-12-30"
+    },
+    {
+      "feedback_id": "FB02862",
+      "text": "Not impressed",
+      "sentiment": "NEGATIVE",
+      "score": 0.9995,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2026-01-20"
+    },
+    {
+      "feedback_id": "FB19091",
+      "text": "Not impressed",
+      "sentiment": "NEGATIVE",
+      "score": 0.9995,
+      "channel": "Social Media",
+      "platform": "Facebook",
+      "timestamp": "2025-11-09"
+    },
+    {
+      "feedback_id": "FB02161",
+      "text": "It does what it says",
+      "sentiment": "POSITIVE",
+      "score": 0.9997,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2025-12-19"
+    },
+    {
+      "feedback_id": "FB04374",
+      "text": "Works fine",
+      "sentiment": "POSITIVE",
+      "score": 0.9999,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2026-01-10"
+    },
+    {
+      "feedback_id": "FB04708",
+      "text": "Nothing special",
+      "sentiment": "NEGATIVE",
+      "score": 0.9996,
+      "channel": "Beta Testing",
+      "platform": "Beta Testing",
+      "timestamp": "2025-11-23"
+    },
+    {
+      "feedback_id": "FB15678",
+      "text": "Fine for the price",
+      "sentiment": "POSITIVE",
+      "score": 0.9907,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2025-09-17"
+    },
+    {
+      "feedback_id": "FB18149",
+      "text": "It does what it says",
+      "sentiment": "POSITIVE",
+      "score": 0.9997,
+      "channel": "Beta Testing",
+      "platform": "Beta Testing",
+      "timestamp": "2026-02-10"
+    },
+    {
+      "feedback_id": "FB19624",
+      "text": "Not great",
+      "sentiment": "NEGATIVE",
+      "score": 0.9997,
+      "channel": "App Review",
+      "platform": "Google Play Store",
+      "timestamp": "2026-01-25"
+    }
+  ],
+  "8": [
+    {
+      "feedback_id": "FB14279",
+      "text": "Is my health data stored securely?",
+      "sentiment": "NEGATIVE",
+      "score": 0.9848,
+      "channel": "Beta Testing",
+      "platform": "Beta Testing",
+      "timestamp": "2026-01-21"
+    },
+    {
+      "feedback_id": "FB05893",
+      "text": "Is my health data stored securely?",
+      "sentiment": "NEGATIVE",
+      "score": 0.9848,
+      "channel": "Social Media",
+      "platform": "Twitter",
+      "timestamp": "2025-11-22"
+    },
+    {
+      "feedback_id": "FB09364",
+      "text": "Is my health data stored securely?",
+      "sentiment": "NEGATIVE",
+      "score": 0.9848,
+      "channel": "Social Media",
+      "platform": "Twitter",
+      "timestamp": "2025-11-22"
+    },
+    {
+      "feedback_id": "FB11890",
+      "text": "Is my health data stored securely?",
+      "sentiment": "NEGATIVE",
+      "score": 0.9848,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2025-12-13"
+    },
+    {
+      "feedback_id": "FB10368",
+      "text": "Is my health data stored securely?",
+      "sentiment": "NEGATIVE",
+      "score": 0.9848,
+      "channel": "App Review",
+      "platform": "Google Play Store",
+      "timestamp": "2026-01-02"
+    },
+    {
+      "feedback_id": "FB03764",
+      "text": "Is my health data stored securely?",
+      "sentiment": "NEGATIVE",
+      "score": 0.9848,
+      "channel": "Social Media",
+      "platform": "Twitter",
+      "timestamp": "2025-09-23"
+    },
+    {
+      "feedback_id": "FB14044",
+      "text": "Is my health data stored securely?",
+      "sentiment": "NEGATIVE",
+      "score": 0.9848,
+      "channel": "Social Media",
+      "platform": "Reddit",
+      "timestamp": "2025-09-07"
+    },
+    {
+      "feedback_id": "FB05824",
+      "text": "Is my health data stored securely?",
+      "sentiment": "NEGATIVE",
+      "score": 0.9848,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2025-12-25"
+    },
+    {
+      "feedback_id": "FB11980",
+      "text": "Is my health data stored securely?",
+      "sentiment": "NEGATIVE",
+      "score": 0.9848,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2026-02-16"
+    },
+    {
+      "feedback_id": "FB03732",
+      "text": "Is my health data stored securely?",
+      "sentiment": "NEGATIVE",
+      "score": 0.9848,
+      "channel": "Beta Testing",
+      "platform": "Beta Testing",
+      "timestamp": "2026-03-01"
+    },
+    {
+      "feedback_id": "FB18420",
+      "text": "Is my health data stored securely?",
+      "sentiment": "NEGATIVE",
+      "score": 0.9848,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2026-02-08"
+    },
+    {
+      "feedback_id": "FB06512",
+      "text": "Is my health data stored securely?",
+      "sentiment": "NEGATIVE",
+      "score": 0.9848,
+      "channel": "Social Media",
+      "platform": "Reddit",
+      "timestamp": "2026-01-19"
+    },
+    {
+      "feedback_id": "FB17207",
+      "text": "Is my health data stored securely?",
+      "sentiment": "NEGATIVE",
+      "score": 0.9848,
+      "channel": "Beta Testing",
+      "platform": "Beta Testing",
+      "timestamp": "2025-09-26"
+    },
+    {
+      "feedback_id": "FB13656",
+      "text": "Is my health data stored securely?",
+      "sentiment": "NEGATIVE",
+      "score": 0.9848,
+      "channel": "App Review",
+      "platform": "Google Play Store",
+      "timestamp": "2025-09-19"
+    },
+    {
+      "feedback_id": "FB19058",
+      "text": "Is my health data stored securely?",
+      "sentiment": "NEGATIVE",
+      "score": 0.9848,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2025-10-27"
+    },
+    {
+      "feedback_id": "FB05294",
+      "text": "Is my health data stored securely?",
+      "sentiment": "NEGATIVE",
+      "score": 0.9848,
+      "channel": "Social Media",
+      "platform": "Reddit",
+      "timestamp": "2026-02-25"
+    },
+    {
+      "feedback_id": "FB01859",
+      "text": "Is my health data stored securely?",
+      "sentiment": "NEGATIVE",
+      "score": 0.9848,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2025-10-22"
+    },
+    {
+      "feedback_id": "FB19802",
+      "text": "Is my health data stored securely?",
+      "sentiment": "NEGATIVE",
+      "score": 0.9848,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2026-01-18"
+    },
+    {
+      "feedback_id": "FB00198",
+      "text": "Is my health data stored securely?",
+      "sentiment": "NEGATIVE",
+      "score": 0.9848,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2026-02-16"
+    },
+    {
+      "feedback_id": "FB17724",
+      "text": "Is my health data stored securely?",
+      "sentiment": "NEGATIVE",
+      "score": 0.9848,
+      "channel": "App Review",
+      "platform": "Google Play Store",
+      "timestamp": "2026-01-28"
+    },
+    {
+      "feedback_id": "FB01736",
+      "text": "Is my health data stored securely?",
+      "sentiment": "NEGATIVE",
+      "score": 0.9848,
+      "channel": "Social Media",
+      "platform": "Facebook",
+      "timestamp": "2025-09-12"
+    },
+    {
+      "feedback_id": "FB05159",
+      "text": "Is my health data stored securely?",
+      "sentiment": "NEGATIVE",
+      "score": 0.9848,
+      "channel": "Social Media",
+      "platform": "Facebook",
+      "timestamp": "2025-12-10"
+    },
+    {
+      "feedback_id": "FB13388",
+      "text": "Is my health data stored securely?",
+      "sentiment": "NEGATIVE",
+      "score": 0.9848,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2026-02-06"
+    },
+    {
+      "feedback_id": "FB12390",
+      "text": "Is my health data stored securely?",
+      "sentiment": "NEGATIVE",
+      "score": 0.9848,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2025-10-27"
+    },
+    {
+      "feedback_id": "FB06923",
+      "text": "Is my health data stored securely?",
+      "sentiment": "NEGATIVE",
+      "score": 0.9848,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2026-01-05"
+    },
+    {
+      "feedback_id": "FB04537",
+      "text": "Is my health data stored securely?",
+      "sentiment": "NEGATIVE",
+      "score": 0.9848,
+      "channel": "Social Media",
+      "platform": "Facebook",
+      "timestamp": "2025-11-03"
+    },
+    {
+      "feedback_id": "FB07801",
+      "text": "Is my health data stored securely?",
+      "sentiment": "NEGATIVE",
+      "score": 0.9848,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2026-02-10"
+    },
+    {
+      "feedback_id": "FB05551",
+      "text": "Is my health data stored securely?",
+      "sentiment": "NEGATIVE",
+      "score": 0.9848,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2026-01-06"
+    },
+    {
+      "feedback_id": "FB04661",
+      "text": "Is my health data stored securely?",
+      "sentiment": "NEGATIVE",
+      "score": 0.9848,
+      "channel": "Beta Testing",
+      "platform": "Beta Testing",
+      "timestamp": "2026-01-09"
+    },
+    {
+      "feedback_id": "FB02487",
+      "text": "Is my health data stored securely?",
+      "sentiment": "NEGATIVE",
+      "score": 0.9848,
+      "channel": "App Review",
+      "platform": "Google Play Store",
+      "timestamp": "2026-02-18"
+    }
+  ],
+  "9": [
+    {
+      "feedback_id": "FB02091",
+      "text": "Updates break features that were working fine",
+      "sentiment": "POSITIVE",
+      "score": 0.9956,
+      "channel": "Beta Testing",
+      "platform": "Beta Testing",
+      "timestamp": "2025-10-21"
+    },
+    {
+      "feedback_id": "FB01416",
+      "text": "Too many features locked behind premium subscription",
+      "sentiment": "NEGATIVE",
+      "score": 0.9976,
+      "channel": "Social Media",
+      "platform": "Facebook",
+      "timestamp": "2025-11-05"
+    },
+    {
+      "feedback_id": "FB16367",
+      "text": "Too many features locked behind premium subscription",
+      "sentiment": "NEGATIVE",
+      "score": 0.9976,
+      "channel": "Social Media",
+      "platform": "Twitter",
+      "timestamp": "2025-11-19"
+    },
+    {
+      "feedback_id": "FB16077",
+      "text": "Updates break features that were working fine",
+      "sentiment": "POSITIVE",
+      "score": 0.9956,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2025-09-30"
+    },
+    {
+      "feedback_id": "FB10366",
+      "text": "Too many features locked behind premium subscription",
+      "sentiment": "NEGATIVE",
+      "score": 0.9976,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2026-02-05"
+    },
+    {
+      "feedback_id": "FB08792",
+      "text": "Updates break features that were working fine",
+      "sentiment": "POSITIVE",
+      "score": 0.9956,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2025-09-07"
+    },
+    {
+      "feedback_id": "FB13280",
+      "text": "Too many features locked behind premium subscription",
+      "sentiment": "NEGATIVE",
+      "score": 0.9976,
+      "channel": "Social Media",
+      "platform": "Twitter",
+      "timestamp": "2026-02-15"
+    },
+    {
+      "feedback_id": "FB12451",
+      "text": "Too many features locked behind premium subscription",
+      "sentiment": "NEGATIVE",
+      "score": 0.9976,
+      "channel": "Beta Testing",
+      "platform": "Beta Testing",
+      "timestamp": "2026-01-05"
+    },
+    {
+      "feedback_id": "FB12256",
+      "text": "Too many features locked behind premium subscription",
+      "sentiment": "NEGATIVE",
+      "score": 0.9976,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2025-09-06"
+    },
+    {
+      "feedback_id": "FB11417",
+      "text": "Too many features locked behind premium subscription",
+      "sentiment": "NEGATIVE",
+      "score": 0.9976,
+      "channel": "Social Media",
+      "platform": "Twitter",
+      "timestamp": "2025-11-11"
+    },
+    {
+      "feedback_id": "FB04890",
+      "text": "Updates break features that were working fine",
+      "sentiment": "POSITIVE",
+      "score": 0.9956,
+      "channel": "Social Media",
+      "platform": "Twitter",
+      "timestamp": "2025-09-10"
+    },
+    {
+      "feedback_id": "FB05854",
+      "text": "Too many features locked behind premium subscription",
+      "sentiment": "NEGATIVE",
+      "score": 0.9976,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2026-01-02"
+    },
+    {
+      "feedback_id": "FB14203",
+      "text": "Updates break features that were working fine My Fitbit was better.",
+      "sentiment": "NEGATIVE",
+      "score": 0.6608,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2025-11-28"
+    },
+    {
+      "feedback_id": "FB10358",
+      "text": "Updates break features that were working fine",
+      "sentiment": "POSITIVE",
+      "score": 0.9956,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2025-10-16"
+    },
+    {
+      "feedback_id": "FB16167",
+      "text": "Updates break features that were working fine",
+      "sentiment": "POSITIVE",
+      "score": 0.9956,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2026-01-07"
+    },
+    {
+      "feedback_id": "FB06671",
+      "text": "Updates break features that were working fine",
+      "sentiment": "POSITIVE",
+      "score": 0.9956,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2025-12-06"
+    },
+    {
+      "feedback_id": "FB10242",
+      "text": "Too many features locked behind premium subscription",
+      "sentiment": "NEGATIVE",
+      "score": 0.9976,
+      "channel": "Social Media",
+      "platform": "Facebook",
+      "timestamp": "2025-12-14"
+    },
+    {
+      "feedback_id": "FB09629",
+      "text": "Updates break features that were working fine",
+      "sentiment": "POSITIVE",
+      "score": 0.9956,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2025-09-11"
+    },
+    {
+      "feedback_id": "FB13639",
+      "text": "Too many features locked behind premium subscription",
+      "sentiment": "NEGATIVE",
+      "score": 0.9976,
+      "channel": "App Review",
+      "platform": "Google Play Store",
+      "timestamp": "2025-09-09"
+    },
+    {
+      "feedback_id": "FB02509",
+      "text": "Updates break features that were working fine Other brands do this better.",
+      "sentiment": "NEGATIVE",
+      "score": 0.9119,
+      "channel": "Beta Testing",
+      "platform": "Beta Testing",
+      "timestamp": "2025-11-07"
+    },
+    {
+      "feedback_id": "FB11633",
+      "text": "Too many features locked behind premium subscription",
+      "sentiment": "NEGATIVE",
+      "score": 0.9976,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2026-02-12"
+    },
+    {
+      "feedback_id": "FB16690",
+      "text": "Updates break features that were working fine",
+      "sentiment": "POSITIVE",
+      "score": 0.9956,
+      "channel": "Social Media",
+      "platform": "Facebook",
+      "timestamp": "2026-02-13"
+    },
+    {
+      "feedback_id": "FB10346",
+      "text": "Updates break features that were working fine",
+      "sentiment": "POSITIVE",
+      "score": 0.9956,
+      "channel": "App Review",
+      "platform": "Google Play Store",
+      "timestamp": "2026-02-24"
+    },
+    {
+      "feedback_id": "FB07566",
+      "text": "Updates break features that were working fine",
+      "sentiment": "POSITIVE",
+      "score": 0.9956,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2026-01-16"
+    },
+    {
+      "feedback_id": "FB09781",
+      "text": "Too many features locked behind premium subscription",
+      "sentiment": "NEGATIVE",
+      "score": 0.9976,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2026-02-22"
+    },
+    {
+      "feedback_id": "FB02292",
+      "text": "Updates break features that were working fine",
+      "sentiment": "POSITIVE",
+      "score": 0.9956,
+      "channel": "Beta Testing",
+      "platform": "Beta Testing",
+      "timestamp": "2026-02-06"
+    },
+    {
+      "feedback_id": "FB19432",
+      "text": "Updates break features that were working fine Other brands do this better.",
+      "sentiment": "NEGATIVE",
+      "score": 0.9119,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2025-12-17"
+    },
+    {
+      "feedback_id": "FB16745",
+      "text": "Updates break features that were working fine",
+      "sentiment": "POSITIVE",
+      "score": 0.9956,
+      "channel": "App Review",
+      "platform": "iOS App Store",
+      "timestamp": "2025-11-11"
+    },
+    {
+      "feedback_id": "FB13404",
+      "text": "Too many features locked behind premium subscription",
+      "sentiment": "NEGATIVE",
+      "score": 0.9976,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2026-03-01"
+    },
+    {
+      "feedback_id": "FB06773",
+      "text": "Too many features locked behind premium subscription",
+      "sentiment": "NEGATIVE",
+      "score": 0.9976,
+      "channel": "Support Ticket",
+      "platform": "Support Ticket",
+      "timestamp": "2025-11-08"
+    }
+  ]
+}

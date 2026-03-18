@@ -1,7 +1,11 @@
 <script lang="ts">
   import { flip } from 'svelte/animate';
-  import { themes, monthlyTrends, getTrend } from '$lib/data';
+  import { themes as staticThemes, monthlyTrends as staticTrends, getTrend } from '$lib/data';
   import PageHeader from '$lib/components/PageHeader.svelte';
+
+  let { data } = $props();
+  const themes = $derived(data.themes ?? staticThemes);
+  const monthlyTrends = $derived(data.monthlyTrends ?? staticTrends);
 
   // ── Time range types ─────────────────────────────────────────
   type TimeRange = 'week' | 'month' | 'quarter' | 'year';
@@ -15,8 +19,10 @@
 
   // Calendar: start/end month index into monthlyTrends
   let calStart = $state(0);
-  let calEnd   = $state(monthlyTrends.length - 1);
+  let calEnd   = $state(0);
   let calPickingEnd = $state(false);
+
+  $effect(() => { calEnd = monthlyTrends.length - 1; });
 
   // Comparison cluster selection (max 3)
   let compIds = $state<number[]>([0, 1, 8]);
@@ -39,7 +45,7 @@
     for (let i = 0; i < data.length; i += 3) {
       const chunk = data.slice(i, i + 3);
       const label = 'Q' + (Math.floor(i / 3) + 1) + ' ' + chunk[0].month.split(' ')[1];
-      const vols = Array(10).fill(0).map((_, c) => chunk.reduce((s, m) => s + m.volumes[c], 0));
+      const vols = Array(themes.length).fill(0).map((_, c) => chunk.reduce((s, m) => s + m.volumes[c], 0));
       out.push({ label, vols });
     }
     return out;
@@ -50,7 +56,7 @@
     const groups = new Map<string, number[]>();
     for (const m of data) {
       const year = m.month.split(' ')[1];
-      if (!groups.has(year)) groups.set(year, Array(10).fill(0));
+      if (!groups.has(year)) groups.set(year, Array(themes.length).fill(0));
       const acc = groups.get(year)!;
       m.volumes.forEach((v, i) => { acc[i] += v; });
     }

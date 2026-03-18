@@ -1,6 +1,9 @@
 <script lang="ts">
-  import { themes } from '$lib/data';
+  import { themes as staticThemes } from '$lib/data';
   import { topicTagsStore, toggleTag, addCustomTag, removeTag, PRESET_TAGS } from '$lib/tagStore';
+
+  let { data } = $props();
+  const themes = $derived(data.themes ?? staticThemes);
   import PageHeader from '$lib/components/PageHeader.svelte';
 
   // ── Sentiment filter ─────────────────────────────────────────
@@ -40,9 +43,9 @@
   // ── Filtered + sorted data ───────────────────────────────────
   const filteredSorted = $derived(() => {
     let items = themes.filter(t => {
-      if (sentFilter === 'positive') return t.positive_pct >= 60;
-      if (sentFilter === 'negative') return t.positive_pct < 45;
-      if (sentFilter === 'mixed')    return t.positive_pct >= 45 && t.positive_pct < 60;
+      if (sentFilter === 'positive') return t.positive_pct > 60;
+      if (sentFilter === 'negative') return t.positive_pct < 40;
+      if (sentFilter === 'mixed')    return t.positive_pct >= 40 && t.positive_pct <= 60;
       return true;
     });
 
@@ -68,20 +71,20 @@
 
   // ── Sentiment display helpers ────────────────────────────────
   function sentLabel(t: typeof themes[0]) {
-    if (t.positive_pct >= 60) return 'Positive';
-    if (t.positive_pct >= 45) return 'Mixed';
+    if (t.positive_pct > 60) return 'Positive';
+    if (t.positive_pct >= 40) return 'Mixed';
     return 'Negative';
   }
   function sentClass(t: typeof themes[0]) {
-    if (t.positive_pct >= 60) return 'pos';
-    if (t.positive_pct >= 45) return 'mixed';
+    if (t.positive_pct > 60) return 'pos';
+    if (t.positive_pct >= 40) return 'mixed';
     return 'neg';
   }
 </script>
 
 <PageHeader
   title="Theme Analysis"
-  subtitle="10 feedback clusters ranked by volume and sentiment — spot which themes need immediate attention."
+  subtitle="{themes.length} feedback clusters ranked by volume and sentiment — spot which themes need immediate attention."
 >
   <div class="record-count">
     <span class="rc-num">{filteredSorted().length}</span>

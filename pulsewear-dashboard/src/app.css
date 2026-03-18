@@ -133,6 +133,22 @@ body {
   padding: 0 28px;
 }
 
+@media (max-width: 860px) {
+  .page-container {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 560px) {
+  :root {
+    --topbar-height: 52px;
+  }
+
+  .page-container {
+    padding: 0 14px;
+  }
+}
+
 /* ============================================================
    Form elements
    ============================================================ */
